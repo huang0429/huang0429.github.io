@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="網頁設計-環境建置">
+<meta property="og:url" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei_2022-07-04_%E4%B8%8B%E5%8D%888.59.08.png">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei-2022-07-05-%E4%B8%8B%E5%8D%886.26.13.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.26.22.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.26.31.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.31.43.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.34.50.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.35.58.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.36.06.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.47.23.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.49.05.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.49.59.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.12.12.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.03.07.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.06.54.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.09.07.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.12.121.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.53.39.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.13.45.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.13.52.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.12.122.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.22.35.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.47.4366.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.41.04.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.47.43.jpg">
+<meta property="article:published_time" content="2022-07-05T13:41:30.000Z">
+<meta property="article:modified_time" content="2022-07-05T13:41:30.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="Settings Sync">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei_2022-07-04_%E4%B8%8B%E5%8D%888.59.08.png">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/","path":"2022/07/05/網頁設計-環境建置/","title":"網頁設計-環境建置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>網頁設計-環境建置 | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">3</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E9%9B%BB%E8%85%A6"><span class="nav-number">1.</span> <span class="nav-text">我的電腦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E6%BA%96%E5%82%99"><span class="nav-number">2.</span> <span class="nav-text">需要準備</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E5%81%9A%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">要做什麼？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E2%80%A6"><span class="nav-number">4.</span> <span class="nav-text">開始…</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-VSCode-%E4%B8%8A%E5%AE%89%E8%A3%9D-Settings-Sync-%E5%A5%97%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">在 VSCode 上安裝 Settings Sync 套件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B0-GitHub-%E8%A8%AD%E5%AE%9A-Gist"><span class="nav-number">5.1.</span> <span class="nav-text">到 GitHub 設定 Gist</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-Settings-Sync"><span class="nav-number">5.2.</span> <span class="nav-text">安裝 Settings Sync</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%BE%E8%81%B2%E2%80%A6"><span class="nav-number">6.</span> <span class="nav-text">尾聲…</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分類</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">標籤</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="網頁設計-環境建置 | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          網頁設計-環境建置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-05 21:41:30" itemprop="dateCreated datePublished" datetime="2022-07-05T21:41:30+08:00">2022-07-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/VSCode/" itemprop="url" rel="index"><span itemprop="name">VSCode</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <pre><code>🚨 在開始之前，要先把文章看完再動手，先了解你要幹什麼。
+</code></pre>
+<pre><code>🚨 如果想要對某些工具有更深的了解，請善用Google搜尋，
+Google搜尋現在做的很強大，只要輸入關鍵字都可以看到很多的文章。 
+</code></pre>
+<h2 id="我的電腦"><a href="#我的電腦" class="headerlink" title="我的電腦"></a>我的電腦</h2><p>macOS Monterey12.2</p>
+<h2 id="需要準備"><a href="#需要準備" class="headerlink" title="需要準備"></a>需要準備</h2><ul>
+<li>編輯器：VSCode</li>
+<li>Git</li>
+<li>GitHub帳號</li>
+<li>可以 Push 資料到 GitHub</li>
+</ul>
+<h2 id="要做什麼？"><a href="#要做什麼？" class="headerlink" title="要做什麼？"></a>要做什麼？</h2><ul>
+<li>在 VSCode 上安裝 <strong><strong>Settings Sync</strong></strong> 套件</li>
+<li>設定 PicGO 方便將圖片上傳到 GitHub  ，讓 GitHub 成為圖床</li>
+<li>在 VSCode 上安裝 markdown 套件，方便做筆記</li>
+</ul>
+<h2 id="開始…"><a href="#開始…" class="headerlink" title="開始…"></a>開始…</h2><p><img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei_2022-07-04_%E4%B8%8B%E5%8D%888.59.08.png" alt="Settings Sync"></p>
+<h2 id="在-VSCode-上安裝-Settings-Sync-套件"><a href="#在-VSCode-上安裝-Settings-Sync-套件" class="headerlink" title="在 VSCode 上安裝 Settings Sync 套件"></a>在 VSCode 上安裝 <strong><strong>Settings Sync</strong></strong> 套件</h2><p>每每換個工作環境，自己使用的電腦環境就要重新設定，在公司用公司的電腦，在家裡用自己的電腦，如果有在學校學習，也會用到學校的電腦，尤其是學校的電腦，重開機之後電腦設定就會還原了。</p>
+<p>像 VSCode 這樣強大的編輯器，有相當多好用的套件，如果每換一台電就要重新安裝套件，這真的是很累的事情，最近戴老師介紹我們安裝 Settings Sync ，真心覺得好用又方便，真的很感謝作者，好人一生平安。</p>
+<pre><code>🌟 這個外掛是使用 Gist 來同步你的設定，GitHub 可以設定。
+</code></pre>
+<h3 id="到-GitHub-設定-Gist"><a href="#到-GitHub-設定-Gist" class="headerlink" title="到 GitHub 設定 Gist"></a>到 GitHub 設定 Gist</h3><p>路徑：<br>➡ 登入 GitHub<br>➡ 右上角有個倒三角形，點選 <code>Sttings</code></p>
+<p><img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei-2022-07-05-%E4%B8%8B%E5%8D%886.26.13.jpg"></p>
+<p>➡ 左側最下方有個 <code>Developer settings</code> 點進去</p>
+<p>   <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.26.22.jpg"></p>
+<p>➡ 點進 <code>Personal access tokens</code></p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.26.31.jpg"></p>
+<p>➡ 點進 <code>Generate new tokens</code></p>
+<p><img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.31.43.jpg"></p>
+<p>設定內容：<br>➡ Note：說明<br>➡ token 的有效時間</p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.34.50.jpg"></p>
+<p>➡ 點選 <code>gist</code><br>➡ 完成</p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.35.58.jpg"></p>
+<p>➡ 這時候就產出了 token 了。  </p>
+<p><img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.36.06.jpg"></p>
+<pre><code>🌟 token 產出之後只會顯示一次，所以要好好的保存
+</code></pre>
+<h3 id="安裝-Settings-Sync"><a href="#安裝-Settings-Sync" class="headerlink" title="安裝 Settings Sync"></a>安裝 Settings Sync</h3><p>➡ 打開 VSCode<br>➡ 點選 <code>延伸模組</code></p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.47.23.jpg"></p>
+<p>➡ 在上面的框框裡輸入 <code>Settings Sync</code></p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.49.05.jpg"></p>
+<p>➡ 點選我們要的套件，並安裝</p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.49.59.jpg"></p>
+<p>➡ 安裝完後會出現這個畫面：</p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.12.12.jpg"></p>
+<p>➡ 回到 GitHub 主頁，點選右上方的倒三角形，點選 <code>your gists</code>，會出現這個畫面：  </p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.03.07.jpg"></p>
+<p>➡ 然後按下 <code>Create a gist</code>  </p>
+<p>➡ 會出現下面的畫面，在內容處隨便輸入幾個字，然後存檔  </p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.06.54.jpg"></p>
+<p>➡ 然後上方，你的 username 旁邊會有一行看似不規則的序號，copy 下來  </p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.09.07.jpg"></p>
+<p>➡ 回到這個畫面  </p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.12.121.jpg"></p>
+<p>➡ 按下 <code>LOGIN WITH GITHUB</code>連結 GitHub  </p>
+<p>➡ 畫面會跳到全版面的網頁上，並出現成功的訊息，這個畫面可以直接關掉  </p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%886.53.39.jpg"></p>
+<p>➡ 再回到 VSCode 會看到這個畫面  </p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.13.45.jpg"></p>
+<p>➡ 白色框框內會看到 gist 的序號，點下去  </p>
+<p>➡ 出現這個對話框，就表示序號被存入了，按 <code>CLOSE TAB</code>  </p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.13.52.jpg">  </p>
+<p>➡ 回到這個畫面，按下 <code>EDIT CONFIGORATION</code>  </p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.12.122.jpg"></p>
+<p>➡ 會出現這個畫面  </p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.22.35.jpg"></p>
+<p>➡ 這兩個框框都有內容就是成功了<br>➡ 最後，按快捷键「shift + option + U」上傳你最新的 VSCode 套件設定<br>➡ 然後下方回出現終端機畫面，最後會有個 Done 的字樣，就表示上傳成功了  </p>
+<p>  <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.47.4366.jpg"></p>
+<p>➡ 回到 Gist 的畫面，重整一下，就會看到你的設定  </p>
+<p> <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.41.04.jpg"></p>
+<p>➡ 成功  </p>
+<h2 id="尾聲…"><a href="#尾聲…" class="headerlink" title="尾聲…"></a>尾聲…</h2><p>下次如果還要打開設定畫面<br>快捷鍵： <code>shift + command + p</code><br>輸入 <code>Sync</code><br>選 <code>進階選項</code> &#x3D;&gt; <code>打開設定</code>  </p>
+<p> <img src="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/HuangSiaoPei2022-07-05%E4%B8%8B%E5%8D%887.47.43.jpg"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Settings-Sync/" rel="tag"># Settings Sync</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/03/%E4%BD%BF%E7%94%A8-Hexo-GitHub-Pages-%E6%9E%B6%E8%A8%AD%E5%80%8B%E4%BA%BA%E7%B6%B2%E8%AA%8C/" rel="prev" title="使用 Hexo + GitHub Pages 架設個人網誌">
+                  <i class="fa fa-chevron-left"></i> 使用 Hexo + GitHub Pages 架設個人網誌
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
