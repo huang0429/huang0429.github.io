@@ -20,25 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="不要把我看的太重，因為我贏不了你">
-<meta property="og:type" content="website">
-<meta property="og:title" content="天下第一不是我">
-<meta property="og:url" content="https://huang0429.github.io/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="Swift-集合1_陣列Array">
+<meta property="og:url" content="https://huang0429.github.io/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/index.html">
 <meta property="og:site_name" content="天下第一不是我">
-<meta property="og:description" content="不要把我看的太重，因為我贏不了你">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://github.com/oli2022/pic/blob/main/%E6%88%AA%E5%9C%96%202022-07-06%20%E4%B8%8B%E5%8D%882.07.29.png?raw=true">
+<meta property="article:published_time" content="2022-07-06T09:44:50.000Z">
+<meta property="article:modified_time" content="2022-07-06T09:44:50.000Z">
 <meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="Swift">
+<meta property="article:tag" content="集合">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/oli2022/pic/blob/main/%E6%88%AA%E5%9C%96%202022-07-06%20%E4%B8%8B%E5%8D%882.07.29.png?raw=true">
 
 
-<link rel="canonical" href="https://huang0429.github.io/">
+<link rel="canonical" href="https://huang0429.github.io/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/","path":"2022/07/06/Swift-集合1-陣列Array/","title":"Swift-集合1_陣列Array"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>天下第一不是我</title>
+<title>Swift-集合1_陣列Array | 天下第一不是我</title>
   
 
 
@@ -68,7 +72,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">天下第一不是我</h1>
+      <p class="site-title">天下第一不是我</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">我學的很快樂</p>
@@ -101,7 +105,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -114,6 +118,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%9E%8B%E5%88%A5"><span class="nav-number">1.</span> <span class="nav-text">集合型別</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%A3%E5%88%97-Array"><span class="nav-number">2.</span> <span class="nav-text">陣列 Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%8C-%E9%9B%86%E5%90%88%E7%9A%84%E5%88%97%E8%88%89%E5%8C%96-enumerationize-the-elements-in-Collection"><span class="nav-number">2.1.</span> <span class="nav-text">📌 集合的列舉化 enumerationize the elements in Collection</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -177,16 +182,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -200,13 +206,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 天下第一不是我">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="Swift-集合1_陣列Array | 天下第一不是我">
+      <meta itemprop="description" content=" ">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/" class="post-title-link" itemprop="url">Swift-集合1_陣列Array</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Swift-集合1_陣列Array
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -231,6 +237,7 @@
   
 </div>
 
+            <div class="post-description"> </div>
         </div>
       </header>
 
@@ -238,16 +245,123 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p> </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+        <p><img src="https://github.com/oli2022/pic/blob/main/%E6%88%AA%E5%9C%96%202022-07-06%20%E4%B8%8B%E5%8D%882.07.29.png?raw=true" alt="https://github.com/oli2022/pic/blob/main/%E6%88%AA%E5%9C%96%202022-07-06%20%E4%B8%8B%E5%8D%882.07.29.png?raw=true"></p>
+<h1 id="集合型別"><a href="#集合型別" class="headerlink" title="集合型別"></a>集合型別</h1><ul>
+<li>陣列（ Array ）<ul>
+<li>是有序的集合</li>
+<li>索引從0開始</li>
+<li>元素要同一型態</li>
+</ul>
+</li>
+<li>字典（Dictionary）<ul>
+<li>元素以：key ⇒ value 的形式構成 ( 鍵 ⇒ 值 )</li>
+<li>通常是用 key 來進行存取</li>
+<li>key 不能重覆</li>
+<li>無序的集合</li>
+<li>元素型態可不一樣</li>
+</ul>
+</li>
+<li>集合（ Set ）<ul>
+<li>與陣列類似</li>
+<li>無序的集合</li>
+<li>集合內的值不可重複</li>
+<li>元素要同一型態</li>
+</ul>
+</li>
+<li>元組（ 雜堆 ）（ Tuple ）<ul>
+<li>元素有順序（可用 index 或 key）</li>
+<li>一旦決𤴓元素內容，就不能再更動</li>
+<li>元素、index 、key 不限型態，可以混用</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="陣列-Array"><a href="#陣列-Array" class="headerlink" title="陣列 Array"></a>陣列 Array</h1><p>宣告方式是使用中括號</p>
+<pre><code class="swift">var score: [Int] = [80, 88, 90]
+</code></pre>
+<p>陣列也支援型別推斷，所以程式碼也可以簡化如下：</p>
+<pre><code class="swift">var score = [80, 88, 90]
+</code></pre>
+<p>建立空陣列：</p>
+<pre><code class="swift">var score: [Int] = []
+</code></pre>
+<p>使用索引取值：</p>
+<pre><code class="swift">var score = [80, 88, 90]
+print(score[0]) // 80
+print(score[1]) // 88
+print(score[2]) // 90
+</code></pre>
+<p>🔎 <strong>【 陣列操作 】新增</strong></p>
+<p>使用  <code>append</code> 函式來進行新增，新增的資料會放在最尾端：</p>
+<pre><code class="swift">var score = [80, 88, 90]
+score.append(100)
+print(score)
+
+// [80, 88, 90, 100]
+</code></pre>
+<p>🔎 <strong>【</strong> 陣列操作 <strong>】刪除</strong></p>
+<p>使用 <code>remove(at: )</code>函式來進行刪除，是根劇索引來刪除資料。</p>
+<pre><code class="swift">var score = [60, 78, 90]
+score.remove(at: 0)
+print(score)
+
+// [78, 90]
+</code></pre>
+<p>🔎 <strong>【</strong> 陣列操作 <strong>】修改</strong></p>
+<p>透過索引值來更改更改</p>
+<pre><code class="swift">var score = [60, 78, 90]
+score[0] = 666
+print(score)
+
+// [666, 78, 90]
+</code></pre>
+<p>🔎 <strong>【</strong> 陣列操作 <strong>】合併</strong></p>
+<p>可以用加法運算子 ＋ 來合併：</p>
+<pre><code class="swift">var scoreA = [60, 78, 90]
+var scoreB = [59, 90, 85]
+let score = scoreA + scoreB
+print(score)
+
+// [60, 78, 90, 59, 90, 85]
+</code></pre>
+<p>🔎 <strong>【</strong> 陣列操作 <strong>】排序</strong></p>
+<p>使用 <code>sorted(by: )</code>函式來排序：</p>
+<pre><code class="swift">var score = [60, 78, 90, 100]
+let scoreA = score.sorted(by: &gt;)
+let scoreB = score.sorted(by: &lt;)
+print(scoreA) // [100, 90, 78, 60]
+print(scoreB) // [60, 78, 90, 100]
+</code></pre>
+<p>🔎 <strong>【</strong> 陣列操作 <strong>】insert(_:at:)</strong></p>
+<p>將資料插入指定索引處</p>
+<pre><code class="swift">var score = [60, 78, 90, 100]
+score.insert(666, at:2)
+print(score) // [60, 78, 666, 90, 100]
+</code></pre>
+<h2 id="📌-集合的列舉化-enumerationize-the-elements-in-Collection"><a href="#📌-集合的列舉化-enumerationize-the-elements-in-Collection" class="headerlink" title="📌 集合的列舉化 enumerationize the elements in Collection"></a>📌 集合的列舉化 enumerationize the elements in Collection</h2><p>絕大部份的集合物件都有一個 <code>enumerated()</code> 函數。</p>
+<p>把一個集合物件數字化其實就是為集合的每一個元素依序配一個整數號碼。</p>
+<pre><code class="swift">import Foundation
+
+var arr = [&quot;John&quot;,&quot;Mary&quot;,&quot;Tom&quot;,&quot;Peter&quot;,&quot;Ares&quot;]
+
+var es:EnumeratedSequence&lt;[String]&gt;
+es = arr.enumerated()
+for (index,value) in es &#123;
+    print(&quot;數列化： \(index)： \(value)&quot;)
+&#125;
+
+// 結果：
+數列化： 0： John
+數列化： 1： Mary
+數列化： 2： Tom
+數列化： 3： Peter
+數列化： 4： Ares
+Program ended with exit code: 0
+</code></pre>
+<p>enumeration數列化就是把集合的元素編號之後（從0開始），重新裝成一種叫做EnumeratedSequence&lt;要數列化的集合&gt;的新集合<br>只要是集合就可以被迭代，因為EnumeratedSequence每個元素都有兩個值（編號，原來的元素）。  </p>
+<p>這種元素有一個以上內容的集合要迭代的話，for 後面必須提供足夠的變數去承接，這時就是”雜堆”登場的場合之一。</p>
+
     </div>
 
     
@@ -255,257 +369,26 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+          <div class="post-tags">
+              <a href="/tags/Swift/" rel="tag"># Swift</a>
+              <a href="/tags/%E9%9B%86%E5%90%88/" rel="tag"># 集合</a>
+          </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/../images/avatar.png">
-      <meta itemprop="name" content="黃筱珮">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="天下第一不是我">
-      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 天下第一不是我">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/" class="post-title-link" itemprop="url">網頁設計-環境建置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2022-07-05 21:41:30" itemprop="dateCreated datePublished" datetime="2022-07-05T21:41:30+08:00">2022-07-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/VSCode/" itemprop="url" rel="index"><span itemprop="name">VSCode</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p> </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/03/%E4%BD%BF%E7%94%A8-Hexo-GitHub-Pages-%E6%9E%B6%E8%A8%AD%E5%80%8B%E4%BA%BA%E7%B6%B2%E8%AA%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/../images/avatar.png">
-      <meta itemprop="name" content="黃筱珮">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="天下第一不是我">
-      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 天下第一不是我">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/03/%E4%BD%BF%E7%94%A8-Hexo-GitHub-Pages-%E6%9E%B6%E8%A8%AD%E5%80%8B%E4%BA%BA%E7%B6%B2%E8%AA%8C/" class="post-title-link" itemprop="url">使用 Hexo + GitHub Pages 架設個人網誌</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2022-07-03 16:04:13" itemprop="dateCreated datePublished" datetime="2022-07-03T16:04:13+08:00">2022-07-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p> </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/07/03/%E4%BD%BF%E7%94%A8-Hexo-GitHub-Pages-%E6%9E%B6%E8%A8%AD%E5%80%8B%E4%BA%BA%E7%B6%B2%E8%AA%8C/">
-                閱讀全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/" rel="prev" title="網頁設計-環境建置">
+                  <i class="fa fa-chevron-left"></i> 網頁設計-環境建置
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/02/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/../images/avatar.png">
-      <meta itemprop="name" content="黃筱珮">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="天下第一不是我">
-      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 天下第一不是我">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/02/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2022-07-02 09:51:19" itemprop="dateCreated datePublished" datetime="2022-07-02T09:51:19+08:00">2022-07-02</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p> </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/07/02/hello-world/">
-                閱讀全文 &raquo;
-              </a>
+            <div class="post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 
