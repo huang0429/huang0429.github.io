@@ -21,28 +21,26 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="article">
-<meta property="og:title" content="Swift-集合1_陣列Array">
-<meta property="og:url" content="https://huang0429.github.io/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/index.html">
+<meta property="og:title" content="Swift-集合2_字典Dictionary">
+<meta property="og:url" content="https://huang0429.github.io/2022/07/08/Swift-%E9%9B%86%E5%90%882-%E5%AD%97%E5%85%B8Dictionary/index.html">
 <meta property="og:site_name" content="天下第一不是我">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://github.com/oli2022/pic/blob/main/%E6%88%AA%E5%9C%96%202022-07-06%20%E4%B8%8B%E5%8D%882.07.29.png?raw=true">
-<meta property="article:published_time" content="2022-07-06T09:44:50.000Z">
-<meta property="article:modified_time" content="2022-07-06T09:44:50.000Z">
+<meta property="article:published_time" content="2022-07-08T12:14:12.000Z">
+<meta property="article:modified_time" content="2022-07-08T12:14:12.000Z">
 <meta property="article:author" content="黃筱珮">
 <meta property="article:tag" content="Swift">
 <meta property="article:tag" content="集合">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/oli2022/pic/blob/main/%E6%88%AA%E5%9C%96%202022-07-06%20%E4%B8%8B%E5%8D%882.07.29.png?raw=true">
 
 
-<link rel="canonical" href="https://huang0429.github.io/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/">
+<link rel="canonical" href="https://huang0429.github.io/2022/07/08/Swift-%E9%9B%86%E5%90%882-%E5%AD%97%E5%85%B8Dictionary/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/","path":"2022/07/06/Swift-集合1-陣列Array/","title":"Swift-集合1_陣列Array"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/08/Swift-%E9%9B%86%E5%90%882-%E5%AD%97%E5%85%B8Dictionary/","path":"2022/07/08/Swift-集合2-字典Dictionary/","title":"Swift-集合2_字典Dictionary"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Swift-集合1_陣列Array | 天下第一不是我</title>
+<title>Swift-集合2_字典Dictionary | 天下第一不是我</title>
   
 
 
@@ -118,7 +116,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%9E%8B%E5%88%A5"><span class="nav-number">1.</span> <span class="nav-text">集合型別</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%A3%E5%88%97-Array"><span class="nav-number">2.</span> <span class="nav-text">陣列 Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%8C-%E9%9B%86%E5%90%88%E7%9A%84%E5%88%97%E8%88%89%E5%8C%96-enumerationize-the-elements-in-Collection"><span class="nav-number">2.1.</span> <span class="nav-text">📌 集合的列舉化 enumerationize the elements in Collection</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%9E%8B%E5%88%A5"><span class="nav-number">1.</span> <span class="nav-text">集合型別</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%EF%BC%88Dictionary%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">字典（Dictionary）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%A3%E5%91%8A"><span class="nav-number">3.</span> <span class="nav-text">宣告</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E5%88%9D%E5%A7%8B%E8%B3%87%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">設定初始資料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E-or-%E4%BF%AE%E6%94%B9%E8%B3%87%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">新增 or 修改資料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%96%E5%87%BA%E6%89%80%E6%9C%89%E9%9B%86%E5%90%88%E8%B3%87%E6%96%99-%E9%81%8D%E6%AD%B7"><span class="nav-number">6.</span> <span class="nav-text">取出所有集合資料 - 遍歷</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9E%8B%E6%85%8B%E6%9F%A5%E8%A9%A2"><span class="nav-number">7.</span> <span class="nav-text">型態查詢</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E6%8C%87%E5%AE%9A%E8%B3%87%E6%96%99"><span class="nav-number">8.</span> <span class="nav-text">刪除指定資料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -193,7 +191,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/08/Swift-%E9%9B%86%E5%90%882-%E5%AD%97%E5%85%B8Dictionary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/../images/avatar.png">
@@ -206,12 +204,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Swift-集合1_陣列Array | 天下第一不是我">
+      <meta itemprop="name" content="Swift-集合2_字典Dictionary | 天下第一不是我">
       <meta itemprop="description" content=" ">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Swift-集合1_陣列Array
+          Swift-集合2_字典Dictionary
         </h1>
 
         <div class="post-meta-container">
@@ -222,7 +220,7 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2022-07-06 17:44:50" itemprop="dateCreated datePublished" datetime="2022-07-06T17:44:50+08:00">2022-07-06</time>
+      <time title="創建時間：2022-07-08 20:14:12" itemprop="dateCreated datePublished" datetime="2022-07-08T20:14:12+08:00">2022-07-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -245,8 +243,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><img src="https://github.com/oli2022/pic/blob/main/%E6%88%AA%E5%9C%96%202022-07-06%20%E4%B8%8B%E5%8D%882.07.29.png?raw=true" alt="https://github.com/oli2022/pic/blob/main/%E6%88%AA%E5%9C%96%202022-07-06%20%E4%B8%8B%E5%8D%882.07.29.png?raw=true"></p>
-<h1 id="集合型別"><a href="#集合型別" class="headerlink" title="集合型別"></a>集合型別</h1><ul>
+        <h1 id="集合型別"><a href="#集合型別" class="headerlink" title="集合型別"></a>集合型別</h1><ul>
 <li>陣列（ Array ）<ul>
 <li>是有序的集合</li>
 <li>索引從0開始</li>
@@ -272,95 +269,66 @@
 <li>元素有順序（可用 index 或 key）</li>
 <li>一旦決𤴓元素內容，就不能再更動</li>
 <li>元素、index 、key 不限型態，可以混用</li>
-<li></li>
 </ul>
 </li>
 </ul>
-<hr>
-<h1 id="陣列-Array"><a href="#陣列-Array" class="headerlink" title="陣列 Array"></a>陣列 Array</h1><p>宣告方式是使用中括號</p>
-<pre><code class="swift">var score: [Int] = [80, 88, 90]
-</code></pre>
-<p>陣列也支援型別推斷，所以程式碼也可以簡化如下：</p>
-<pre><code class="swift">var score = [80, 88, 90]
-</code></pre>
-<p>建立空陣列：</p>
-<pre><code class="swift">var score: [Int] = []
-</code></pre>
-<p>使用索引取值：</p>
-<pre><code class="swift">var score = [80, 88, 90]
-print(score[0]) // 80
-print(score[1]) // 88
-print(score[2]) // 90
-</code></pre>
-<p>🔎 <strong>【 陣列操作 】新增</strong></p>
-<p>使用  <code>append</code> 函式來進行新增，新增的資料會放在最尾端：</p>
-<pre><code class="swift">var score = [80, 88, 90]
-score.append(100)
-print(score)
+<h1 id="字典（Dictionary）"><a href="#字典（Dictionary）" class="headerlink" title="字典（Dictionary）"></a>字典（Dictionary）</h1><ul>
+<li>元素以：key ⇒ value 的形式構成 ( 鍵 ⇒ 值 )</li>
+<li>通常是用 key 來進行存取</li>
+<li>key 不能重覆</li>
+<li>無序的集合</li>
+<li>元素型態可不一樣</li>
+</ul>
+<pre><code class="swift">var animals = [&quot;John&quot;: 1, &quot;Oli&quot;: 2, &quot;Tom&quot;: 3]
 
-// [80, 88, 90, 100]
-</code></pre>
-<p>🔎 <strong>【</strong> 陣列操作 <strong>】刪除</strong></p>
-<p>使用 <code>remove(at: )</code>函式來進行刪除，是根劇索引來刪除資料。</p>
-<pre><code class="swift">var score = [60, 78, 90]
-score.remove(at: 0)
-print(score)
+print(animals)
+var oli = animals[&quot;Oli&quot;] // 複製給 oli
+print(&quot;\(oli!)&quot;)
 
-// [78, 90]
-</code></pre>
-<p>🔎 <strong>【</strong> 陣列操作 <strong>】修改</strong></p>
-<p>透過索引值來更改更改</p>
-<pre><code class="swift">var score = [60, 78, 90]
-score[0] = 666
-print(score)
+animals[&quot;Oli&quot;] = 6 // 更改 Oli 的 value
+print(animals)
+oli = animals[&quot;Oli&quot;] // 覆蓋之前的
+print(oli!)
 
-// [666, 78, 90]
+// 結果
+[&quot;Tom&quot;: 3, &quot;Oli&quot;: 2, &quot;John&quot;: 1]
+2
+[&quot;Tom&quot;: 3, &quot;Oli&quot;: 6, &quot;John&quot;: 1]
+6
 </code></pre>
-<p>🔎 <strong>【</strong> 陣列操作 <strong>】合併</strong></p>
-<p>可以用加法運算子 ＋ 來合併：</p>
-<pre><code class="swift">var scoreA = [60, 78, 90]
-var scoreB = [59, 90, 85]
-let score = scoreA + scoreB
-print(score)
+<h1 id="宣告"><a href="#宣告" class="headerlink" title="宣告"></a>宣告</h1><pre><code class="swift">//完整的宣告方式
+var ohmygod: Dictionary&lt;String, String&gt; = [:]
 
-// [60, 78, 90, 59, 90, 85]
+//省略 Dictionary 的宣告方式
+var ohmygod = [String: String]()
 </code></pre>
-<p>🔎 <strong>【</strong> 陣列操作 <strong>】排序</strong></p>
-<p>使用 <code>sorted(by: )</code>函式來排序：</p>
-<pre><code class="swift">var score = [60, 78, 90, 100]
-let scoreA = score.sorted(by: &gt;)
-let scoreB = score.sorted(by: &lt;)
-print(scoreA) // [100, 90, 78, 60]
-print(scoreB) // [60, 78, 90, 100]
-</code></pre>
-<p>🔎 <strong>【</strong> 陣列操作 <strong>】insert(_:at:)</strong></p>
-<p>將資料插入指定索引處</p>
-<pre><code class="swift">var score = [60, 78, 90, 100]
-score.insert(666, at:2)
-print(score) // [60, 78, 666, 90, 100]
-</code></pre>
-<h2 id="📌-集合的列舉化-enumerationize-the-elements-in-Collection"><a href="#📌-集合的列舉化-enumerationize-the-elements-in-Collection" class="headerlink" title="📌 集合的列舉化 enumerationize the elements in Collection"></a>📌 集合的列舉化 enumerationize the elements in Collection</h2><p>絕大部份的集合物件都有一個 <code>enumerated()</code> 函數。</p>
-<p>把一個集合物件數字化其實就是為集合的每一個元素依序配一個整數號碼。</p>
-<pre><code class="swift">import Foundation
+<h1 id="設定初始資料"><a href="#設定初始資料" class="headerlink" title="設定初始資料"></a>設定初始資料</h1><pre><code class="swift">var ohmygod : Dictionary&lt;String, Int&gt; = [&quot;John&quot;: 1, &quot;Oli&quot;: 2, &quot;Tom&quot;: 3]
 
-var arr = [&quot;John&quot;,&quot;Mary&quot;,&quot;Tom&quot;,&quot;Peter&quot;,&quot;Ares&quot;]
+print(ohmygod)
 
-var es:EnumeratedSequence&lt;[String]&gt;
-es = arr.enumerated()
-for (index,value) in es &#123;
-    print(&quot;數列化： \(index)： \(value)&quot;)
+// [&quot;John&quot;: 1, &quot;Tom&quot;: 3, &quot;Oli&quot;: 2]
+</code></pre>
+<h1 id="新增-or-修改資料"><a href="#新增-or-修改資料" class="headerlink" title="新增 or 修改資料"></a>新增 or 修改資料</h1><pre><code class="swift">ohmygod[&quot;Oli&quot;] = 22
+</code></pre>
+<h1 id="取出所有集合資料-遍歷"><a href="#取出所有集合資料-遍歷" class="headerlink" title="取出所有集合資料 - 遍歷"></a>取出所有集合資料 - 遍歷</h1><pre><code class="swift">for item in ohmygod &#123;
+    print(&quot;\(item.key) : \(item.value)&quot;)
 &#125;
+// 結果：
+John : 1
+Oli : 22
+Tom : 3
+</code></pre>
+<h1 id="型態查詢"><a href="#型態查詢" class="headerlink" title="型態查詢"></a>型態查詢</h1><pre><code class="swift">print(type(of: ohmygod))
+
+//結果：
+Dictionary&lt;String, Int&gt;
+</code></pre>
+<h1 id="刪除指定資料"><a href="#刪除指定資料" class="headerlink" title="刪除指定資料"></a>刪除指定資料</h1><pre><code class="swift">ohmygod.removeValue(forKey: &quot;Oli&quot;)
+print(ohmygod)
 
 // 結果：
-數列化： 0： John
-數列化： 1： Mary
-數列化： 2： Tom
-數列化： 3： Peter
-數列化： 4： Ares
-Program ended with exit code: 0
+[&quot;Tom&quot;: 3, &quot;John&quot;: 1]
 </code></pre>
-<p>enumeration數列化就是把集合的元素編號之後（從0開始），重新裝成一種叫做EnumeratedSequence&lt;要數列化的集合&gt;的新集合<br>只要是集合就可以被迭代，因為EnumeratedSequence每個元素都有兩個值（編號，原來的元素）。  </p>
-<p>這種元素有一個以上內容的集合要迭代的話，for 後面必須提供足夠的變數去承接，這時就是”雜堆”登場的場合之一。</p>
 
     </div>
 
@@ -378,14 +346,11 @@ Program ended with exit code: 0
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/" rel="prev" title="網頁設計-環境建置">
-                  <i class="fa fa-chevron-left"></i> 網頁設計-環境建置
+                <a href="/2022/07/08/google%E8%A1%8C%E4%BA%8B%E6%9B%86%E6%B4%BB%E5%8B%95%E7%94%A8Line%E6%8F%90%E9%86%92/" rel="prev" title="google行事曆活動用Line提醒">
+                  <i class="fa fa-chevron-left"></i> google行事曆活動用Line提醒
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/" rel="next" title="【 Hexo網誌架設 2 】<br>新增網誌">
-                  【 Hexo網誌架設 2 】<br>新增網誌 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
