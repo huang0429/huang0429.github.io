@@ -26,6 +26,10 @@
 <meta property="og:site_name" content="天下第一不是我">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220709_172920.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_092557.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_160131.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_161236.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_161741.jpeg">
 <meta property="article:published_time" content="2022-07-09T12:16:51.000Z">
 <meta property="article:modified_time" content="2022-07-09T12:16:51.000Z">
 <meta property="article:author" content="黃筱珮">
@@ -120,7 +124,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A0%E7%82%BA%E5%BE%8C%E5%A4%A9%E8%A6%81%E4%B8%8APHP%EF%BC%8C%E6%89%80%E4%BB%A5%E6%88%91%E5%B0%B1%E5%85%88%E8%87%AA%E5%B7%B1%E8%A9%A6%E8%91%97%E5%AE%89%E8%A3%9D%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">因為後天要上PHP，所以我就先自己試著安裝。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx"><span class="nav-number">2.</span> <span class="nav-text">nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%84%AA%E9%BB%9E"><span class="nav-number">2.1.</span> <span class="nav-text">優點</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-HomeBrew"><span class="nav-number"></span> <span class="nav-text">使用 HomeBrew</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-Homebrew"><span class="nav-number"></span> <span class="nav-text">安裝 Homebrew</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">基本指令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Nginx"><span class="nav-number"></span> <span class="nav-text">安装Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8C%87%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">安装指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%EF%BC%89%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A48080%E7%AB%AF%E5%8F%A3%E4%B8%BA80"><span class="nav-number">1.1.</span> <span class="nav-text">（如果需要）修改默认8080端口为80</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-%E6%8C%87%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">Nginx 指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2-Nginx-%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE%EF%BC%88%E6%B8%AC%E8%A9%A6nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E8%AA%9E%E6%B3%95%E9%8C%AF%E8%AA%A4"><span class="nav-number">3.</span> <span class="nav-text">查詢 Nginx 文件位置（測試nginx配置文件是否存在語法錯誤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DMysq"><span class="nav-number"></span> <span class="nav-text">安裝Mysq</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D"><span class="nav-number">1.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%9F%E5%8B%95"><span class="nav-number">2.</span> <span class="nav-text">啟動</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%85%A5mysql"><span class="nav-number">3.</span> <span class="nav-text">登入mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql%E5%AF%86%E7%A2%BC%E4%BF%AE%E6%94%B9"><span class="nav-number">4.</span> <span class="nav-text">mysql密碼修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%80%E5%87%BAmysql"><span class="nav-number">5.</span> <span class="nav-text">退出mysql</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DPHP"><span class="nav-number"></span> <span class="nav-text">安裝PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E5%8F%AF%E5%AE%89%E8%A3%9D%E7%89%88%E6%9C%AC"><span class="nav-number">1.</span> <span class="nav-text">查詢可安裝版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-1"><span class="nav-number">2.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%9F%E5%8B%95php-fpm"><span class="nav-number">3.</span> <span class="nav-text">啟動php-fpm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B0%E7%9B%AE%E5%89%8D%E7%82%BA%E6%AD%A2%EF%BC%8C%E5%AE%89%E8%A3%9D%E7%9A%84%E5%BE%88%E9%A0%86%E5%88%A9%EF%BC%8C%E6%B2%92%E6%9C%89%E4%BB%80%E9%BA%BC%E5%95%8F%E9%A1%8C%EF%BC%8C%E4%BD%86%E6%98%AF%E4%B8%AD%E9%96%93%E6%9C%89%E5%80%8B%E6%B5%81%E7%A8%8B%E6%88%91%E7%9C%81%E7%95%A5%E6%8E%89%E4%BA%86%EF%BC%8C%E5%B0%B1%E6%98%AF%E8%A6%81%E8%A8%AD%E5%AE%9A-%E2%80%9C-%E5%B0%87-php-%E8%B7%9F-mysql-%E5%8A%A0%E5%85%A5launchctl%E5%95%9F%E5%8B%95%E6%8E%A7%E5%88%B6-%E2%80%9C-%E5%9B%A0%E7%82%BA%E4%B8%8D%E7%9F%A5%E9%81%93%E9%80%99%E5%80%8B%E8%A8%AD%E5%AE%9A%E8%88%87%E5%90%A6%E6%9C%83%E6%9C%89%E4%BB%80%E9%BA%BC%E5%BD%B1%E9%9F%BF%E6%89%80%E4%BB%A5%E5%B0%B1%E6%9A%AB%E6%99%82%E6%B2%92%E6%9C%89%E8%A8%AD%E5%AE%9A%EF%BC%8C%E4%B9%8B%E5%BE%8C%E5%AD%B8%E4%B8%80%E6%AE%B5%E6%99%82%E9%96%93%E5%BE%8C%E5%86%8D%E7%9C%8B%E7%9C%8B%E3%80%82"><span class="nav-number">4.</span> <span class="nav-text">到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定 “ 將 php 跟 mysql 加入launchctl啟動控制 “ 因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A0%E7%82%BA%E5%BE%8C%E5%A4%A9%E8%A6%81%E4%B8%8APHP%EF%BC%8C%E6%89%80%E4%BB%A5%E6%88%91%E5%B0%B1%E5%85%88%E8%87%AA%E5%B7%B1%E8%A9%A6%E8%91%97%E5%AE%89%E8%A3%9D%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">因為後天要上PHP，所以我就先自己試著安裝。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">注意：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx"><span class="nav-number">2.</span> <span class="nav-text">nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%84%AA%E9%BB%9E"><span class="nav-number">2.1.</span> <span class="nav-text">優點</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-HomeBrew"><span class="nav-number">3.</span> <span class="nav-text">使用 HomeBrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-Homebrew"><span class="nav-number">4.</span> <span class="nav-text">安裝 Homebrew</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4"><span class="nav-number">4.1.</span> <span class="nav-text">基本指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Nginx"><span class="nav-number">5.</span> <span class="nav-text">安装Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8C%87%E4%BB%A4"><span class="nav-number">5.1.</span> <span class="nav-text">安装指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%EF%BC%89%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A48080%E7%AB%AF%E5%8F%A3%E4%B8%BA80"><span class="nav-number">5.2.</span> <span class="nav-text">（如果需要）修改默认8080端口为80</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-%E6%8C%87%E4%BB%A4"><span class="nav-number">6.</span> <span class="nav-text">Nginx 指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2-Nginx-%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE%EF%BC%88%E6%B8%AC%E8%A9%A6nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E8%AA%9E%E6%B3%95%E9%8C%AF%E8%AA%A4"><span class="nav-number">7.</span> <span class="nav-text">查詢 Nginx 文件位置（測試nginx配置文件是否存在語法錯誤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DMysq"><span class="nav-number">8.</span> <span class="nav-text">安裝Mysq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D"><span class="nav-number">9.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%9F%E5%8B%95"><span class="nav-number">10.</span> <span class="nav-text">啟動</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%85%A5mysql"><span class="nav-number">11.</span> <span class="nav-text">登入mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql%E5%AF%86%E7%A2%BC%E4%BF%AE%E6%94%B9"><span class="nav-number">12.</span> <span class="nav-text">mysql密碼修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%80%E5%87%BAmysql"><span class="nav-number">13.</span> <span class="nav-text">退出mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DPHP"><span class="nav-number">14.</span> <span class="nav-text">安裝PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E5%8F%AF%E5%AE%89%E8%A3%9D%E7%89%88%E6%9C%AC"><span class="nav-number">15.</span> <span class="nav-text">查詢可安裝版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-1"><span class="nav-number">16.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%9F%E5%8B%95php-fpm"><span class="nav-number">17.</span> <span class="nav-text">啟動php-fpm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B0%E7%9B%AE%E5%89%8D%E7%82%BA%E6%AD%A2%EF%BC%8C%E5%AE%89%E8%A3%9D%E7%9A%84%E5%BE%88%E9%A0%86%E5%88%A9%EF%BC%8C%E6%B2%92%E6%9C%89%E4%BB%80%E9%BA%BC%E5%95%8F%E9%A1%8C%EF%BC%8C%E4%BD%86%E6%98%AF%E4%B8%AD%E9%96%93%E6%9C%89%E5%80%8B%E6%B5%81%E7%A8%8B%E6%88%91%E7%9C%81%E7%95%A5%E6%8E%89%E4%BA%86%EF%BC%8C%E5%B0%B1%E6%98%AF%E8%A6%81%E8%A8%AD%E5%AE%9A-%E2%80%9C-%E5%B0%87-php-%E8%B7%9F-mysql-%E5%8A%A0%E5%85%A5launchctl%E5%95%9F%E5%8B%95%E6%8E%A7%E5%88%B6-%E2%80%9C-%E5%9B%A0%E7%82%BA%E4%B8%8D%E7%9F%A5%E9%81%93%E9%80%99%E5%80%8B%E8%A8%AD%E5%AE%9A%E8%88%87%E5%90%A6%E6%9C%83%E6%9C%89%E4%BB%80%E9%BA%BC%E5%BD%B1%E9%9F%BF%E6%89%80%E4%BB%A5%E5%B0%B1%E6%9A%AB%E6%99%82%E6%B2%92%E6%9C%89%E8%A8%AD%E5%AE%9A%EF%BC%8C%E4%B9%8B%E5%BE%8C%E5%AD%B8%E4%B8%80%E6%AE%B5%E6%99%82%E9%96%93%E5%BE%8C%E5%86%8D%E7%9C%8B%E7%9C%8B%E3%80%82"><span class="nav-number">18.</span> <span class="nav-text">到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定 “ 將 php 跟 mysql 加入launchctl啟動控制 “ 因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6-nginx"><span class="nav-number">19.</span> <span class="nav-text">測試 nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6-PHP-%E7%A8%8B%E5%BC%8F%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E8%A2%AB%E8%A7%A3%E6%9E%90"><span class="nav-number">20.</span> <span class="nav-text">測試 PHP 程式是否可以被解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B1%E6%95%97%E4%BA%86%EF%BC%81%EF%BC%81%EF%BC%81-%E5%87%BA%E7%8F%BE%E4%BA%86-%E2%80%9C-File-not-found-%E2%80%9C-%E7%9A%84%E6%96%87%E5%AD%97"><span class="nav-number">20.1.</span> <span class="nav-text">失敗了！！！  出現了  “ File not found “ 的文字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E9%96%8B-nginx-conf-%E6%AA%94%E6%A1%88"><span class="nav-number">21.</span> <span class="nav-text">打開 nginx.conf 檔案</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -247,18 +251,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="因為後天要上PHP，所以我就先自己試著安裝。"><a href="#因為後天要上PHP，所以我就先自己試著安裝。" class="headerlink" title="因為後天要上PHP，所以我就先自己試著安裝。"></a>因為後天要上PHP，所以我就先自己試著安裝。</h2><p>過去比較典型的安裝是 PHP＋MySql＋Apache，最近上網看了一些文章，有人使用 nginx ，就想試看看。</p>
+        <h2 id="因為後天要上PHP，所以我就先自己試著安裝。"><a href="#因為後天要上PHP，所以我就先自己試著安裝。" class="headerlink" title="因為後天要上PHP，所以我就先自己試著安裝。"></a>因為後天要上PHP，所以我就先自己試著安裝。</h2><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><ul>
+<li>以下的操作都是實際操作的結果，不是網路文章 copy 來的。</li>
+<li>有些檔案路徑有可能因為版本的不同而有所不同。</li>
+</ul>
+<p>過去比較典型的安裝是 PHP＋MySql＋Apache，最近上網看了一些文章，有人使用 nginx ，就想試看看。</p>
 <h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a><a target="_blank" rel="noopener" href="https://www.nginx.com/">nginx</a></h2><p>是一個免費的開源軟體，一個非同步框架的 web server，不過它的功用遠不僅止於 web server，它更多的用途是作為反向代理、Http Cache、負載平衡器。另外還有一個 web server就是 Apache。</p>
 <h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
 <li>設置簡易</li>
 <li>記憶體消耗低</li>
 <li>反向代理＆負載平衡</li>
 </ul>
-<h1 id="使用-HomeBrew"><a href="#使用-HomeBrew" class="headerlink" title="使用 HomeBrew"></a>使用 <a target="_blank" rel="noopener" href="https://brew.sh/index_zh-tw">HomeBrew</a></h1><p>Homebrew是一種套件管理工具，應用程式的安裝方式不見得簡單，管理起來十分麻煩，通過 Homebrew 可以將應用程式集中管理，不管是要更新還是解安裝，統一使用 Homebrew 提供的指令即可輕易的處理。</p>
-<h1 id="安裝-Homebrew"><a href="#安裝-Homebrew" class="headerlink" title="安裝 Homebrew"></a>安裝 Homebrew</h1><p>打開終端機，輸入<code>brew -v</code> 看看電腦裡有沒有安裝，如果沒有就輸入下面的指令安裝：</p>
+<h2 id="使用-HomeBrew"><a href="#使用-HomeBrew" class="headerlink" title="使用 HomeBrew"></a>使用 <a target="_blank" rel="noopener" href="https://brew.sh/index_zh-tw">HomeBrew</a></h2><p>Homebrew是一種套件管理工具，應用程式的安裝方式不見得簡單，管理起來十分麻煩，通過 Homebrew 可以將應用程式集中管理，不管是要更新還是解安裝，統一使用 Homebrew 提供的指令即可輕易的處理。</p>
+<h2 id="安裝-Homebrew"><a href="#安裝-Homebrew" class="headerlink" title="安裝 Homebrew"></a>安裝 Homebrew</h2><p>打開終端機，輸入<code>brew -v</code> 看看電腦裡有沒有安裝，如果沒有就輸入下面的指令安裝：</p>
 <pre><code class="swift">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
 </code></pre>
-<h2 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h2><pre><code class="sql">#查看homebrew版本
+<h3 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h3><pre><code class="sql">#查看homebrew版本
 $ brew -v
 #帮助
 $ brew -h
@@ -277,7 +285,7 @@ $ brew install &lt;packageName&gt;
 $ brew uninstall &lt;packageName&gt;
     eg: brew uninstall php@7.2
 </code></pre>
-<h1 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h1><h2 id="安装指令"><a href="#安装指令" class="headerlink" title="安装指令"></a>安装指令</h2><pre><code class="swift">$ brew install nginx
+<h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><h3 id="安装指令"><a href="#安装指令" class="headerlink" title="安装指令"></a>安装指令</h3><pre><code class="swift">$ brew install nginx
 </code></pre>
 <p><img src="/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220709_172920.jpeg" alt="HuangSP_20220709_172920.jpeg"></p>
 <h3 id="（如果需要）修改默认8080端口为80"><a href="#（如果需要）修改默认8080端口为80" class="headerlink" title="（如果需要）修改默认8080端口为80"></a>（如果需要）修改默认8080端口为80</h3><pre><code class="swift">$ sudo vim /opt/homebrew/etc/nginx/nginx.conf
@@ -296,7 +304,7 @@ $ nginx -s reload
 </code></pre>
 <h2 id="查詢-Nginx-文件位置（測試nginx配置文件是否存在語法錯誤"><a href="#查詢-Nginx-文件位置（測試nginx配置文件是否存在語法錯誤" class="headerlink" title="查詢 Nginx 文件位置（測試nginx配置文件是否存在語法錯誤"></a>查詢 Nginx 文件位置（測試nginx配置文件是否存在語法錯誤</h2><pre><code class="swift">$ nginx -t
 </code></pre>
-<h1 id="安裝Mysq"><a href="#安裝Mysq" class="headerlink" title="安裝Mysq"></a>安裝Mysq</h1><h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><pre><code class="swift">$ brew install mysql
+<h2 id="安裝Mysq"><a href="#安裝Mysq" class="headerlink" title="安裝Mysq"></a>安裝Mysq</h2><h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><pre><code class="swift">$ brew install mysql
 </code></pre>
 <h2 id="啟動"><a href="#啟動" class="headerlink" title="啟動"></a>啟動</h2><pre><code class="swift">$ mysql.server start
 </code></pre>
@@ -311,7 +319,7 @@ $ mysql -uroot -p
 </code></pre>
 <h2 id="退出mysql"><a href="#退出mysql" class="headerlink" title="退出mysql"></a>退出mysql</h2><pre><code class="sql">$ mysql&gt; exit
 </code></pre>
-<h1 id="安裝PHP"><a href="#安裝PHP" class="headerlink" title="安裝PHP"></a>安裝PHP</h1><h2 id="查詢可安裝版本"><a href="#查詢可安裝版本" class="headerlink" title="查詢可安裝版本"></a>查詢可安裝版本</h2><pre><code class="sql">#查询需要的php版本
+<h2 id="安裝PHP"><a href="#安裝PHP" class="headerlink" title="安裝PHP"></a>安裝PHP</h2><h2 id="查詢可安裝版本"><a href="#查詢可安裝版本" class="headerlink" title="查詢可安裝版本"></a>查詢可安裝版本</h2><pre><code class="sql">#查询需要的php版本
 $ brew search php
 </code></pre>
 <h2 id="安裝-1"><a href="#安裝-1" class="headerlink" title="安裝"></a>安裝</h2><pre><code class="sql">$ brew install php
@@ -321,7 +329,43 @@ $ brew install php@7.2
 </code></pre>
 <h2 id="啟動php-fpm"><a href="#啟動php-fpm" class="headerlink" title="啟動php-fpm"></a>啟動php-fpm</h2><pre><code class="sql">$ brew services start php
 </code></pre>
-<h2 id="到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定-“-將-php-跟-mysql-加入launchctl啟動控制-“-因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。"><a href="#到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定-“-將-php-跟-mysql-加入launchctl啟動控制-“-因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。" class="headerlink" title="到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定 “ 將 php 跟 mysql 加入launchctl啟動控制 “ 因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。"></a>到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定 “ <strong><strong>將 php 跟 mysql 加入launchctl啟動控制 “ 因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。</strong></strong></h2>
+<h2 id="到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定-“-將-php-跟-mysql-加入launchctl啟動控制-“-因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。"><a href="#到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定-“-將-php-跟-mysql-加入launchctl啟動控制-“-因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。" class="headerlink" title="到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定 “ 將 php 跟 mysql 加入launchctl啟動控制 “ 因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。"></a>到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定 “ 將 php 跟 mysql 加入launchctl啟動控制 “ 因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。</h2><h2 id="測試-nginx"><a href="#測試-nginx" class="headerlink" title="測試 nginx"></a>測試 nginx</h2><p>啟動 nginx ：</p>
+<pre><code>$ nginx
+</code></pre>
+<p>打開瀏覽器，輸入 <code>http://localhost/</code>  </p>
+<p><img src="/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_092557.jpeg">  </p>
+<h2 id="測試-PHP-程式是否可以被解析"><a href="#測試-PHP-程式是否可以被解析" class="headerlink" title="測試 PHP 程式是否可以被解析"></a>測試 PHP 程式是否可以被解析</h2><p>新增一個 php 的檔案到 www 資料夾內，因為我是用 homebrew 安裝的，所以我的路徑會是在 homebrew 底下。  </p>
+<p>打開 www 資料夾會看到還有其他兩個 html 檔案，一個是首頁，一個是錯誤頁面。  </p>
+<p>我的路徑：<code>/opt/homebrew/var/www</code>  </p>
+<p>我寫一個簡單的 php 程式碼：</p>
+<pre><code class="php">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;ch02&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;?php
+    phpinfo();
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>打開瀏覽器，輸入 <code>localhost</code>  </p>
+<p><img src="/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_160131.jpeg">  </p>
+<p>成功！！  </p>
+<p>在輸入新增的 php 檔名：</p>
+<h3 id="失敗了！！！-出現了-“-File-not-found-“-的文字"><a href="#失敗了！！！-出現了-“-File-not-found-“-的文字" class="headerlink" title="失敗了！！！  出現了  “ File not found “ 的文字"></a>失敗了！！！  出現了  “ File not found “ 的文字</h3><p>上網搜了一輸～  </p>
+<p>有個地方要改：  </p>
+<h2 id="打開-nginx-conf-檔案"><a href="#打開-nginx-conf-檔案" class="headerlink" title="打開 nginx.conf 檔案"></a>打開 nginx.conf 檔案</h2><p>找到下面這一段：  </p>
+<p><img src="/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_161236.jpeg">  </p>
+<p>改完後存檔  </p>
+<p>重啟 php-fpm 跟 nginx  </p>
+<p>瀏覽器再更新一次就可以了  </p>
+<p><img src="/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_161741.jpeg"></p>
+
     </div>
 
     
