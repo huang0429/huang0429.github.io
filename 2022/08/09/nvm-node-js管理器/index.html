@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="nvm-node.js管理器">
+<meta property="og:url" content="https://huang0429.github.io/2022/08/09/nvm-node-js%E7%AE%A1%E7%90%86%E5%99%A8/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-08-09T10:05:12.000Z">
+<meta property="article:modified_time" content="2022-08-09T10:05:12.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="nvm">
+<meta property="article:tag" content="nodejs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/08/09/nvm-node-js%E7%AE%A1%E7%90%86%E5%99%A8/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/08/09/nvm-node-js%E7%AE%A1%E7%90%86%E5%99%A8/","path":"2022/08/09/nvm-node-js管理器/","title":"nvm-node.js管理器"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>nvm-node.js管理器 | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">32</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">16</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">35</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AA%B2%E5%A4%96%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%9D-nvm-node-js%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">課外工具安裝-nvm-node.js管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-NVM"><span class="nav-number">1.1.</span> <span class="nav-text">安裝 NVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%AB%E5%85%A5%E6%87%89%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">寫入應用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%9F%E7%9C%8B%E5%8F%AF%E7%94%A8%E7%9A%84%E5%AE%89%E8%A3%9D%E7%89%88%E6%9C%AC"><span class="nav-number">1.3.</span> <span class="nav-text">察看可用的安裝版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-NVM-%E5%AE%89%E8%A3%9D-Node-js"><span class="nav-number">1.4.</span> <span class="nav-text">利用 NVM 安裝 Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%89%8D%E5%AE%89%E8%A3%9D%E4%BA%86%E5%93%AA%E4%BA%9B%E7%89%88%E6%9C%AC"><span class="nav-number">1.5.</span> <span class="nav-text">查看目前安裝了哪些版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8F%9B-Node-js-%E7%89%88%E6%9C%AC"><span class="nav-number">1.6.</span> <span class="nav-text">切換 Node.js 版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%9F%E7%9C%8B%E7%9B%AE%E5%89%8D%E4%BD%BF%E7%94%A8%E7%89%88%E6%9C%AC"><span class="nav-number">1.7.</span> <span class="nav-text">察看目前使用版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E5%9F%B7%E8%A1%8C-Node-js"><span class="nav-number">1.8.</span> <span class="nav-text">直接執行 Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E8%A6%81%E5%9F%B7%E8%A1%8C%E7%9A%84-Node-js-%E7%89%88%E6%9C%AC"><span class="nav-number">1.9.</span> <span class="nav-text">指定要執行的 Node.js 版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%9F%E7%9C%8B-Node-js-%E7%9A%84%E5%AE%89%E8%A3%9D%E8%B7%AF%E5%BE%91"><span class="nav-number">1.10.</span> <span class="nav-text">察看 Node.js 的安裝路徑</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/08/09/nvm-node-js%E7%AE%A1%E7%90%86%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="nvm-node.js管理器 | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          nvm-node.js管理器
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-08-09 18:05:12" itemprop="dateCreated datePublished" datetime="2022-08-09T18:05:12+08:00">2022-08-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/NodeJs/" itemprop="url" rel="index"><span itemprop="name">NodeJs</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="課外工具安裝-nvm-node-js管理器"><a href="#課外工具安裝-nvm-node-js管理器" class="headerlink" title="課外工具安裝-nvm-node.js管理器"></a>課外工具安裝-nvm-node.js管理器</h1><p>nvm 是 Node.js 的版本管理器 (version manager)，可在同一台主機上安裝多個版本的 Node.js 環境，因為不同專案可能會使用不同的 Node.js 版本，那就需要透過一個版本管理器來切換不同的 Node.js 版本。  </p>
+<h2 id="安裝-NVM"><a href="#安裝-NVM" class="headerlink" title="安裝 NVM"></a>安裝 NVM</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>安裝此腳本會將<code>nvm repo clone</code>到 <code>~/.nvm</code>，並且將 <code>source line </code>新增至你的<code>profile</code>設定 ( ~&#x2F;.bash_profile、~&#x2F;.zshrc、~&#x2F;.profile 或 ~&#x2F;.bashrc )：  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NVM_DIR</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.nvm"</span>
+<span class="token punctuation">[</span> -s <span class="token string">"<span class="token variable">$NVM_DIR</span>/nvm.sh"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>. <span class="token string">"<span class="token variable">$NVM_DIR</span>/nvm.sh"</span>  <span class="token comment"># This loads nvm</span>
+<span class="token punctuation">[</span> -s <span class="token string">"<span class="token variable">$NVM_DIR</span>/bash_completion"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>. <span class="token string">"<span class="token variable">$NVM_DIR</span>/bash_completion"</span>  <span class="token comment"># This loads nvm bash_completion</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="寫入應用"><a href="#寫入應用" class="headerlink" title="寫入應用"></a>寫入應用</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.nvm/nvm.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>測試一下nvm是否有安裝成功：  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">❯ nvm --version
+<span class="token number">0.34</span>.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>⛔⛔⛔注意：</p>
+<p>使用 nvm 時，不需要<code>sudo</code>即可使用<code>npm -g</code>全域安裝模組，所以與其執行<code> sudo npm i -g</code>，不如執行<code> npm i -g</code><br>若你有 <code>~/.npmrc</code>，請確保裡面不包含任何<code>prefix</code>的設定 (因為與 nvm 不相容)<br>你可以 (但不應該) 保留以前在 “系統” 安裝的 Node.js，但 nvm 只對你的使用者帳戶 (用於安裝 nvm 的使用者帳戶) 可用。可能會導致版本不 match，因為其他使用者會使用 &#x2F;usr&#x2F;local&#x2F;lib&#x2F;node_modules&#x2F;*，而使用者帳戶會使用 <code>~/.nvm/versions/node/vX.X.X/lib/node_modules/*</code>  </p>
+<h2 id="察看可用的安裝版本"><a href="#察看可用的安裝版本" class="headerlink" title="察看可用的安裝版本"></a>察看可用的安裝版本</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvm ls-remote --lts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>綠色字表示有透過nvm安裝過</p>
+<h2 id="利用-NVM-安裝-Node-js"><a href="#利用-NVM-安裝-Node-js" class="headerlink" title="利用 NVM 安裝 Node.js"></a>利用 NVM 安裝 Node.js</h2><p>如果有指定版本，可以在後面加上版號。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvm <span class="token function">install</span> <span class="token function">node</span> 
+<span class="token comment"># 或</span>
+nvm <span class="token function">install</span> <span class="token number">8.9</span>.1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="查看目前安裝了哪些版本"><a href="#查看目前安裝了哪些版本" class="headerlink" title="查看目前安裝了哪些版本"></a>查看目前安裝了哪些版本</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvm <span class="token function">ls</span>
+
+❯ nvm <span class="token function">ls</span>
+-<span class="token operator">></span>     v14.19.3
+         system
+default -<span class="token operator">></span> v14 <span class="token punctuation">(</span>-<span class="token operator">></span> v14.19.3<span class="token punctuation">)</span>
+<span class="token function">node</span> -<span class="token operator">></span> stable <span class="token punctuation">(</span>-<span class="token operator">></span> v14.19.3<span class="token punctuation">)</span> <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+stable -<span class="token operator">></span> <span class="token number">14.19</span> <span class="token punctuation">(</span>-<span class="token operator">></span> v14.19.3<span class="token punctuation">)</span> <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+iojs -<span class="token operator">></span> N/A <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+unstable -<span class="token operator">></span> N/A <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+lts/* -<span class="token operator">></span> lts/gallium <span class="token punctuation">(</span>-<span class="token operator">></span> N/A<span class="token punctuation">)</span>
+lts/argon -<span class="token operator">></span> v4.9.1 <span class="token punctuation">(</span>-<span class="token operator">></span> N/A<span class="token punctuation">)</span>
+lts/boron -<span class="token operator">></span> v6.17.1 <span class="token punctuation">(</span>-<span class="token operator">></span> N/A<span class="token punctuation">)</span>
+lts/carbon -<span class="token operator">></span> v8.17.0 <span class="token punctuation">(</span>-<span class="token operator">></span> N/A<span class="token punctuation">)</span>
+lts/dubnium -<span class="token operator">></span> v10.24.1 <span class="token punctuation">(</span>-<span class="token operator">></span> N/A<span class="token punctuation">)</span>
+lts/erbium -<span class="token operator">></span> v12.22.12 <span class="token punctuation">(</span>-<span class="token operator">></span> N/A<span class="token punctuation">)</span>
+lts/fermium -<span class="token operator">></span> v14.20.0 <span class="token punctuation">(</span>-<span class="token operator">></span> N/A<span class="token punctuation">)</span>
+lts/gallium -<span class="token operator">></span> v16.16.0 <span class="token punctuation">(</span>-<span class="token operator">></span> N/A<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>有些版本的文字是紅色或是顯示 N&#x2F;A，就代表該版本未在電腦安裝。  </p>
+<h2 id="切換-Node-js-版本"><a href="#切換-Node-js-版本" class="headerlink" title="切換 Node.js 版本"></a>切換 Node.js 版本</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvm use v14.19.3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果切換的目標版本還沒安裝，nvm 會提醒你要安裝。  </p>
+<p>透過 nvm 安裝 Node.js 時，nvm 會將不同的 Node.js 版本儲存在 ~&#x2F;.nvm&#x2F;versions&#x2F;node&#x2F;vX.X.X，然後再修改 $PATH，將指定版本的 Node.js 路徑加入：  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvm current
+v10.16.3
+<span class="token builtin class-name">echo</span> <span class="token environment constant">$PATH</span>             
+/home/titan/.nvm/versions/node/v10.16.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+use v12.13.1
+nvm current
+v12.13.1
+<span class="token builtin class-name">echo</span> <span class="token environment constant">$PATH</span>             
+/home/titan/.nvm/versions/node/v12.13.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在 nvm 的各個 Node.js 版本安裝的全域套件都會在各自版本的目錄內安裝，所以在切換至新安裝的 Node.js 版本後需要重新安裝，也因為如此，不同版本間的套件就不會有衝突問題。</p>
+<h2 id="察看目前使用版本"><a href="#察看目前使用版本" class="headerlink" title="察看目前使用版本"></a>察看目前使用版本</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">❯ nvm current
+v14.19.3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="直接執行-Node-js"><a href="#直接執行-Node-js" class="headerlink" title="直接執行 Node.js"></a>直接執行 Node.js</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvm run <span class="token function">node</span>
+
+
+❯ nvm run <span class="token function">node</span>
+
+┌─────────────────────────────────────────────────────────────────┐
+│                     <span class="token function">npm</span> update check failed                     │
+│               Try running with <span class="token function">sudo</span> or get access               │
+│              to the <span class="token builtin class-name">local</span> update config store via               │
+│ <span class="token function">sudo</span> <span class="token function">chown</span> -R <span class="token environment constant">$USER</span><span class="token builtin class-name">:</span><span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -gn <span class="token environment constant">$USER</span><span class="token variable">)</span></span> /Users/huangxiaopei/.config │
+└─────────────────────────────────────────────────────────────────┘
+Running <span class="token function">node</span> v14.19.3 <span class="token punctuation">(</span>npm v6.14.17<span class="token punctuation">)</span>
+
+┌─────────────────────────────────────────────────────────────────┐
+│                     <span class="token function">npm</span> update check failed                     │
+│               Try running with <span class="token function">sudo</span> or get access               │
+│              to the <span class="token builtin class-name">local</span> update config store via               │
+│ <span class="token function">sudo</span> <span class="token function">chown</span> -R <span class="token environment constant">$USER</span><span class="token builtin class-name">:</span><span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -gn <span class="token environment constant">$USER</span><span class="token variable">)</span></span> /Users/huangxiaopei/.config │
+└─────────────────────────────────────────────────────────────────┘
+Welcome to Node.js v14.19.3.
+Type <span class="token string">".help"</span> <span class="token keyword">for</span> <span class="token function">more</span> information.
+<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果要跳出：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span> .exit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="指定要執行的-Node-js-版本"><a href="#指定要執行的-Node-js-版本" class="headerlink" title="指定要執行的 Node.js 版本"></a>指定要執行的 Node.js 版本</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvm <span class="token builtin class-name">exec</span> 版號 <span class="token function">node</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="察看-Node-js-的安裝路徑"><a href="#察看-Node-js-的安裝路徑" class="headerlink" title="察看 Node.js 的安裝路徑"></a>察看 Node.js 的安裝路徑</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvm <span class="token function">which</span> 版號<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/nvm/" rel="tag"># nvm</a>
+              <a href="/tags/nodejs/" rel="tag"># nodejs</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/09/Hexo-%E6%96%B0%E5%A2%9E%E5%88%86%E9%A1%9E%E9%A0%81%E9%9D%A2/" rel="prev" title="Hexo 新增分類頁面">
+                  <i class="fa fa-chevron-left"></i> Hexo 新增分類頁面
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"b43890848c3171778a92e9b35bd6dfb9"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
