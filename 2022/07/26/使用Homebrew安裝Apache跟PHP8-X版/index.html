@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="使用Homebrew安裝Apache跟PHP8.X版">
+<meta property="og:url" content="https://huang0429.github.io/2022/07/26/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%9DApache%E8%B7%9FPHP8-X%E7%89%88/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-07-26T11:30:10.000Z">
+<meta property="article:modified_time" content="2022-07-26T11:30:10.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="Apache">
+<meta property="article:tag" content="PHP8.X">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/07/26/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%9DApache%E8%B7%9FPHP8-X%E7%89%88/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/26/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%9DApache%E8%B7%9FPHP8-X%E7%89%88/","path":"2022/07/26/使用Homebrew安裝Apache跟PHP8-X版/","title":"使用Homebrew安裝Apache跟PHP8.X版"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>使用Homebrew安裝Apache跟PHP8.X版 | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">32</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%9DApache%E8%B7%9FPHP8-X%E7%89%88"><span class="nav-number">1.</span> <span class="nav-text">使用Homebrew安裝Apache跟PHP8.X版</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E7%B3%BB%E7%B5%B1"><span class="nav-number">1.1.</span> <span class="nav-text">我的系統</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%81%E7%94%A8-macOS-%E5%85%A7%E5%BB%BA-Apache"><span class="nav-number">1.2.</span> <span class="nav-text">禁用 macOS 內建 Apache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-Home-brew"><span class="nav-number">1.3.</span> <span class="nav-text">安裝 Home-brew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-HomeBrew-%E5%AE%89%E8%A3%9D-apache"><span class="nav-number">1.4.</span> <span class="nav-text">利用  HomeBrew 安裝 apache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E7%95%99%E5%8E%9F%E5%A7%8B%E9%85%8D%E7%BD%AE%E6%AA%94%E6%A1%88%E7%9A%84%E5%89%AF%E6%9C%AC-%E9%81%B8%E6%93%87%E6%80%A7"><span class="nav-number">1.5.</span> <span class="nav-text">保留原始配置檔案的副本(選擇性)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%9F%E7%94%A8%E6%A8%A1%E7%B5%84%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">1.6.</span> <span class="nav-text">啟用模組和配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-DocumentRoot"><span class="nav-number">1.7.</span> <span class="nav-text">修改 DocumentRoot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E7%9B%A3%E8%81%BD%E5%9F%A0"><span class="nav-number">1.8.</span> <span class="nav-text">修改監聽埠</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-Homebrew-%E5%AE%89%E8%A3%9D-PHP"><span class="nav-number">1.9.</span> <span class="nav-text">利用 Homebrew 安裝 PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hombrew-%E6%8C%87%E4%BB%A4"><span class="nav-number">1.9.1.</span> <span class="nav-text">Hombrew 指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D"><span class="nav-number">1.9.2.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E5%AE%89%E8%A3%9D%E7%9A%84%E7%89%88%E6%9C%AC%E6%98%AF-7-X-%E7%89%88%EF%BC%8C%E8%AB%8B%E5%8A%A0%E5%85%A5%E4%B8%8B%E9%9D%A2%E9%80%99%E8%A1%8C%EF%BC%9A"><span class="nav-number">1.9.3.</span> <span class="nav-text">如果安裝的版本是 7.X 版，請加入下面這行：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E5%AE%89%E8%A3%9D%E7%9A%84%E7%89%88%E6%9C%AC%E6%98%AF-8-X-%E7%89%88%EF%BC%8C%E8%AB%8B%E5%8A%A0%E5%85%A5%E4%B8%8B%E9%9D%A2%E9%80%99%E8%A1%8C%EF%BC%9A"><span class="nav-number">1.9.4.</span> <span class="nav-text">如果安裝的版本是 8.X 版，請加入下面這行：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B-phpinfo-php-%E6%AA%94%E6%A1%88"><span class="nav-number">1.10.</span> <span class="nav-text">建立 phpinfo.php 檔案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%9F%E5%8B%95Apache%E4%BC%BA%E6%9C%8D%E5%99%A8"><span class="nav-number">1.11.</span> <span class="nav-text">啟動Apache伺服器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AA%A2%E6%9F%A5-Apache-%E6%9C%8D%E5%8B%99%E6%98%AF%E5%90%A6%E6%AD%A3%E5%9C%A8%E5%9F%B7%E8%A1%8C"><span class="nav-number">1.11.1.</span> <span class="nav-text">檢查 Apache 服務是否正在執行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%9F%E5%8B%95Apache"><span class="nav-number">1.11.2.</span> <span class="nav-text">啟動Apache</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2"><span class="nav-number">1.11.3.</span> <span class="nav-text">停止</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E5%95%9F%E5%8B%95"><span class="nav-number">1.11.4.</span> <span class="nav-text">重新啟動</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%AF%E5%BE%91"><span class="nav-number">1.11.5.</span> <span class="nav-text">路徑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%99%E9%82%8A%E4%B9%9F%E8%A6%81%E6%94%B9-x3D-x3D-gt-httpd-conf"><span class="nav-number">1.12.</span> <span class="nav-text">這邊也要改 &#x3D;&#x3D;&gt; httpd.conf</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/26/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%9DApache%E8%B7%9FPHP8-X%E7%89%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="使用Homebrew安裝Apache跟PHP8.X版 | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用Homebrew安裝Apache跟PHP8.X版
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-26 19:30:10" itemprop="dateCreated datePublished" datetime="2022-07-26T19:30:10+08:00">2022-07-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Homebrew/" itemprop="url" rel="index"><span itemprop="name">Homebrew</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="使用Homebrew安裝Apache跟PHP8-X版"><a href="#使用Homebrew安裝Apache跟PHP8-X版" class="headerlink" title="使用Homebrew安裝Apache跟PHP8.X版"></a>使用Homebrew安裝Apache跟PHP8.X版</h1><h2 id="我的系統"><a href="#我的系統" class="headerlink" title="我的系統"></a>我的系統</h2><p>macOS Monterey 12.4</p>
+<p><a target="_blank" rel="noopener" href="https://hank7891.github.io/2019/11/29/Mac%E5%BB%BA%E7%BD%AE%E8%87%AA%E8%A3%BDApache%E6%95%99%E5%AD%B8/">參考網站1</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://getgrav.org/blog/macos-monterey-apache-multiple-php-versions">參考網站2</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://kanneg881.gitbook.io/workspace/zuo-ye-xi-tong/mac-os/jia-zhan-mamp/localhost-https">參考網站3</a>  </p>
+<hr>
+<p>自 2022 年 4 月 21 日起，Apple 已停止提供「macOS 伺服器」。<br>在 macOS 12 Monterey 上，系統內建了 Apache。但是，當您檢視 Apache 內建的 httpd.conf 時，您會注意到有一行說：<br><code>#PHP was deprecated in macOS 11 and removed from macOS 12 </code>從 macOS 12 Monterey 開始，由於沒有內建 PHP，如果您想設定 MAMP（macOS、Apache、Mysql、PHP）堆疊，我建議使用 Apache 的 Homebrew 版本以及 PHP。</p>
+<h2 id="禁用-macOS-內建-Apache"><a href="#禁用-macOS-內建-Apache" class="headerlink" title="禁用 macOS 內建 Apache"></a>禁用 macOS 內建 Apache</h2><p>關閉 Mac OS 原生的 Apache 並防止他自行啟動。</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">$ sudo apachectl stop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>禁止 apache httpd 自動啟動</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">$ sudo launchctl unload <span class="token operator">/</span>System<span class="token operator">/</span>Library<span class="token operator">/</span>LaunchDaemons<span class="token operator">/</span>org<span class="token operator">.</span>apache<span class="token operator">.</span>httpd<span class="token operator">.</span>plist <span class="token number">2</span><span class="token operator">></span><span class="token operator">/</span>dev<span class="token operator">/</span><span class="token constant">null</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="安裝-Home-brew"><a href="#安裝-Home-brew" class="headerlink" title="安裝 Home-brew"></a>安裝 Home-brew</h2><p>檢查您是否安裝了 Homebrew 或知道安裝的 Homebrew 版本開啟Terminal並輸入brew -v。<br>若沒安裝，轉到 <a target="_blank" rel="noopener" href="https://brew.sh/">https://brew.sh/</a>  </p>
+<p>安裝指令，第一次會有點久。  </p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">/bin/bash <span class="token punctuation">-</span>c "$(curl <span class="token punctuation">-</span>fsSL https<span class="token punctuation">:</span>//raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="利用-HomeBrew-安裝-apache"><a href="#利用-HomeBrew-安裝-apache" class="headerlink" title="利用  HomeBrew 安裝 apache"></a>利用  HomeBrew 安裝 apache</h2><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">
+$ brew install httpd<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>安裝後的路徑：&#x2F;opt&#x2F;homebrew&#x2F;etc&#x2F;httpd&#x2F;  </p>
+<h2 id="保留原始配置檔案的副本-選擇性"><a href="#保留原始配置檔案的副本-選擇性" class="headerlink" title="保留原始配置檔案的副本(選擇性)"></a>保留原始配置檔案的副本(選擇性)</h2><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">$ sudo cp httpd.conf httpd.conf.bak<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>   利用 nano 、 vi 或 其它文字編輯器打開<code>httpd.conf</code>進行編輯。<br>   <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">$ sudo nano httpd.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></p>
+<h2 id="啟用模組和配置"><a href="#啟用模組和配置" class="headerlink" title="啟用模組和配置"></a>啟用模組和配置</h2><p>   修改&#x2F;更新httpd.conf檔案中的配置。<br>   要啟用模組，首先，您需要找到要啟用的模組。<br>   用command + F 搜尋功能，查詢以下模組並確定取消註釋（刪除#每行前面的。）</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">LoadModule authn_core_module lib/httpd/modules/mod_authn_core.so
+LoadModule authz_host_module lib/httpd/modules/mod_authz_host.so
+LoadModule userdir_module lib/httpd/modules/mod_userdir.so
+LoadModule include_module lib/httpd/modules/mod_include.so
+LoadModule rewrite_module lib/httpd/modules/mod_rewrite.so
+Include /opt/homebrew/etc/httpd/extra/httpd<span class="token punctuation">-</span>userdir.conf
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="修改-DocumentRoot"><a href="#修改-DocumentRoot" class="headerlink" title="修改 DocumentRoot"></a>修改 DocumentRoot</h2><p>使用 command + F 搜尋 DocumentRoot<br>底下因為預設的資料夾路徑較深，所以改成較淺的路徑，記得要在 username 底下新增 Sites 的資料夾。</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">DocumentRoot "/Users/`username`/Sites/“
+&lt;Directory "/Users/`username`/Sites/“<span class="token punctuation">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="修改監聽埠"><a href="#修改監聽埠" class="headerlink" title="修改監聽埠"></a>修改監聽埠</h2><p>   預設情況下，是監聽埠8080，如果要監聽埠80，則修改Listen 8080為Listen 80。<br>   使用 command + F 搜尋Listen 8080然後替換為Listen 80</p>
+<h2 id="利用-Homebrew-安裝-PHP"><a href="#利用-Homebrew-安裝-PHP" class="headerlink" title="利用 Homebrew 安裝 PHP"></a>利用 Homebrew 安裝 PHP</h2><p>如果沒有指定安裝版本，將會安裝最新版本。  </p>
+<h3 id="Hombrew-指令"><a href="#Hombrew-指令" class="headerlink" title="Hombrew 指令"></a>Hombrew 指令</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">//先確保brew是最新版本的
+brew update
+
+//通常內建會有PHP，可以先確認版本號
+brew upgrade php
+
+
+//也可指定版本號進行安裝
+brew install php@7.4
+
+
+//最後確認版本號
+php <span class="token punctuation">-</span>v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">$ brew install php<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>7.修改 httpd.conf 以在 Apache 上啟用 PHP<br>   開啟終端<br>   輸入cd &#x2F;opt&#x2F;homebrew&#x2F;etc&#x2F;httpd&#x2F;<br>   輸入sudo nano httpd.conf 編輯<br>   新增以下幾行。</p>
+<h3 id="如果安裝的版本是-7-X-版，請加入下面這行："><a href="#如果安裝的版本是-7-X-版，請加入下面這行：" class="headerlink" title="如果安裝的版本是 7.X 版，請加入下面這行："></a>如果安裝的版本是 7.X 版，請加入下面這行：</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">LoadModule php7_module /usr/local/Cellar/php@7.1/7.1.33_4/lib/httpd/modules/libphp7.so <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="如果安裝的版本是-8-X-版，請加入下面這行："><a href="#如果安裝的版本是-8-X-版，請加入下面這行：" class="headerlink" title="如果安裝的版本是 8.X 版，請加入下面這行："></a>如果安裝的版本是 8.X 版，請加入下面這行：</h3><p>網路上很多的資料都是將前面的 php7_module 改成 php_module ，但是仔細去看路徑，既然是安裝 8.X 版，路徑應該也是要改成 8.X 版，所以要花點時間找到 libphp.so 檔在哪裡。<br>可以利用 <code>libphp.so</code> 來搜尋。  </p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">LoadModule php_module /opt/homebrew/Cellar/php/8.1.8/lib/httpd/modules/libphp.so
+
+<span class="token comment"># LoadModule php_module /usr/local/Cellar/php@7.1/7.1.33_4/lib/httpd/modules/libphp7.so </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>再個地方，將下列程式碼加到<code>httpd.conf</code>  </p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">&lt;FilesMatch \.php$<span class="token punctuation">></span> 
+    SetHandler application/x<span class="token punctuation">-</span>httpd<span class="token punctuation">-</span>php 
+&lt;/FilesMatch<span class="token punctuation">></span>
+  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>搜尋DirectoryIndex，然後新增  <code>index.php</code></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">&lt;IfModule dir_module<span class="token punctuation">></span>
+    DirectoryIndex index.html index.php
+&lt;/IfModule<span class="token punctuation">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="建立-phpinfo-php-檔案"><a href="#建立-phpinfo-php-檔案" class="headerlink" title="建立 phpinfo.php 檔案"></a>建立 phpinfo.php 檔案</h2><p>phpinfo.php 檔案將用於檢查 PHP 是否正常工作。<br>在 Sites 底下新增一個名為 <code>phpinfo.php</code> 的檔案，內容則輸入：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">phpinfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>記得要儲存。  </p>
+<h2 id="啟動Apache伺服器"><a href="#啟動Apache伺服器" class="headerlink" title="啟動Apache伺服器"></a>啟動Apache伺服器</h2><h3 id="檢查-Apache-服務是否正在執行"><a href="#檢查-Apache-服務是否正在執行" class="headerlink" title="檢查 Apache 服務是否正在執行"></a>檢查 Apache 服務是否正在執行</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">brew services list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="啟動Apache"><a href="#啟動Apache" class="headerlink" title="啟動Apache"></a>啟動Apache</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">brew services start httpd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">brew services stop httpd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="重新啟動"><a href="#重新啟動" class="headerlink" title="重新啟動"></a>重新啟動</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">brew services stop httpd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="路徑"><a href="#路徑" class="headerlink" title="路徑"></a>路徑</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">$ which apachectl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<h2 id="這邊也要改-x3D-x3D-gt-httpd-conf"><a href="#這邊也要改-x3D-x3D-gt-httpd-conf" class="headerlink" title="這邊也要改 &#x3D;&#x3D;&gt; httpd.conf"></a>這邊也要改 &#x3D;&#x3D;&gt; <code>httpd.conf</code></h2><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Possible values for the Options directive are "None", "All",</span>
+<span class="token comment"># or any combination of:</span>
+<span class="token comment">#   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews</span>
+<span class="token comment">#</span>
+<span class="token comment"># Note that "MultiViews" must be named *explicitly* --- "Options All"</span>
+<span class="token comment"># doesn't give it to you.</span>
+<span class="token comment">#</span>
+<span class="token comment"># The Options directive is both complicated and important.  Please see</span>
+<span class="token comment"># http://httpd.apache.org/docs/2.4/mod/core.html#options</span>
+<span class="token comment"># for more information.</span>
+<span class="token comment">#</span>
+Options Indexes FollowSymLinks Multiviews
+MultiviewsMatch Any
+
+<span class="token comment">#</span>
+<span class="token comment"># AllowOverride controls what directives may be placed in .htaccess files.</span>
+<span class="token comment"># It can be "All", "None", or any combination of the keywords:</span>
+<span class="token comment">#   AllowOverride FileInfo AuthConfig Limit</span>
+<span class="token comment">#</span>
+AllowOverride All
+
+<span class="token comment">#</span>
+<span class="token comment"># Controls who can get stuff from this server.</span>
+<span class="token comment">#</span>
+Require all granted
+&lt;/Directory<span class="token punctuation">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Apache/" rel="tag"># Apache</a>
+              <a href="/tags/PHP8-X/" rel="tag"># PHP8.X</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/26/%E8%A1%8C%E5%85%A7%E5%85%83%E7%B4%A0inline%E8%88%87%E5%8D%80%E5%A1%8A%E5%85%83%E7%B4%A0block/" rel="prev" title="行內元素inline與區塊元素block">
+                  <i class="fa fa-chevron-left"></i> 行內元素inline與區塊元素block
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/27/Swift%E7%B7%B4%E7%BF%921-eBook/" rel="next" title="Swift練習1_eBook">
+                  Swift練習1_eBook <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"aef349cffc62f0111c3dd45d8e8e2ec2"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

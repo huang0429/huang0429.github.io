@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="複合值 compound">
+<meta property="og:url" content="https://huang0429.github.io/2022/07/14/%E8%A4%87%E5%90%88%E5%80%BC-compound/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-07-14T09:58:34.000Z">
+<meta property="article:modified_time" content="2022-07-14T09:58:34.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="swift">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/07/14/%E8%A4%87%E5%90%88%E5%80%BC-compound/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/14/%E8%A4%87%E5%90%88%E5%80%BC-compound/","path":"2022/07/14/複合值-compound/","title":"複合值 compound"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>複合值 compound | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">32</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A4%87%E5%90%88%E5%80%BC-compound"><span class="nav-number">1.</span> <span class="nav-text">複合值 compound</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90%E9%9B%86%E5%90%88%E5%9E%8B%E5%88%A5%E3%80%91Collection-Types"><span class="nav-number">1.1.</span> <span class="nav-text">【集合型別】Collection Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A3%E5%91%8A%E4%B8%A6%E5%BB%BA%E7%AB%8B%E9%99%A3%E5%88%97"><span class="nav-number">1.1.1.</span> <span class="nav-text">宣告並建立陣列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E9%99%A3%E5%88%97%E7%9A%84%E7%B4%A2%E5%BC%95%E5%80%BC%E9%85%8D%E5%90%88-%E4%BE%86%E8%AE%80%E5%8F%96%E9%99%A3%E5%88%97%E4%B8%AD%E7%9A%84%E5%80%8B%E5%88%A5%E5%85%83%E7%B4%A0%E5%80%BC"><span class="nav-number">1.1.2.</span> <span class="nav-text">以陣列的索引值配合[  ]來讀取陣列中的個別元素值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E6%8C%87%E5%AE%9A%E7%9A%84%E7%B4%A2%E5%BC%95%E5%80%BC%E4%BE%86%E2%80%9D%E4%BF%AE%E6%94%B9%E2%80%9D%E7%89%B9%E5%AE%9A%E5%85%83%E7%B4%A0%E7%9A%84%E5%80%BC"><span class="nav-number">1.1.3.</span> <span class="nav-text">以指定的索引值來”修改”特定元素的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E5%8D%B0%E9%99%A3%E5%88%97%E7%9A%84%E5%85%A8%E9%83%A8%E5%85%A7%E5%AE%B9%EF%BC%88%E5%83%85%E9%99%90debug%E4%BD%BF%E7%94%A8%EF%BC%89"><span class="nav-number">1.1.4.</span> <span class="nav-text">列印陣列的全部內容（僅限debug使用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E5%BE%97%E9%99%A3%E5%88%97%E4%B8%AD%E5%85%83%E7%B4%A0%E7%9A%84%E7%B8%BD%E5%80%8B%E6%95%B8"><span class="nav-number">1.1.5.</span> <span class="nav-text">取得陣列中元素的總個數</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%8C%87%E5%AE%9A%E7%9A%84%E7%B4%A2%E5%BC%95%E5%80%BC%E4%BD%8D%E7%BD%AE%EF%BC%88%E5%8F%83%E6%95%B8%E4%BA%8C%EF%BC%89%E6%8F%92%E5%85%A5%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%99%A3%E5%88%97%E5%85%83%E7%B4%A0"><span class="nav-number">1.1.6.</span> <span class="nav-text">在指定的索引值位置（參數二）插入一個新的陣列元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%8C%87%E5%AE%9A%E7%9A%84%E7%B4%A2%E5%BC%95%E5%80%BC%E4%BD%8D%E7%BD%AE%EF%BC%88%E5%8F%83%E6%95%B8%E4%BA%8C%EF%BC%89%E6%8F%92%E5%85%A5%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%99%A3%E5%88%97-%E6%9C%89%E5%BA%8F%E7%9A%84%E9%9B%86%E5%90%88sequence"><span class="nav-number">1.1.7.</span> <span class="nav-text">在指定的索引值位置（參數二）插入一個新的陣列(有序的集合sequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E9%99%A3%E5%88%97%E7%9A%84%E2%80%9D%E6%9C%80%E5%BE%8C%E4%BD%8D%E7%BD%AE%E2%80%9D%E5%8A%A0%E4%B8%8A%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%99%A3%E5%88%97%E5%85%83%E7%B4%A0"><span class="nav-number">1.1.8.</span> <span class="nav-text">在陣列的”最後位置”加上一個新的陣列元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E9%99%A3%E5%88%97%E7%9A%84%E6%9C%80%E5%BE%8C%E4%BD%8D%E7%BD%AE%E5%8A%A0%E4%B8%8A%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E9%99%A3%E5%88%97-%E6%9C%89%E5%BA%8F%E7%9A%84%E9%9B%86%E5%90%88sequence"><span class="nav-number">1.1.9.</span> <span class="nav-text">在陣列的最後位置加上一個新的陣列(有序的集合sequence)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E9%99%A3%E5%88%97%E4%B8%AD%E6%8C%87%E5%AE%9A%E7%B4%A2%E5%BC%95%E5%80%BC%E7%9A%84%E5%85%83%E7%B4%A0"><span class="nav-number">1.1.10.</span> <span class="nav-text">刪除陣列中指定索引值的元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E9%99%A3%E5%88%97%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E5%80%8B%E5%85%83%E7%B4%A0"><span class="nav-number">1.1.11.</span> <span class="nav-text">移除陣列中的第一個元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E9%99%A3%E5%88%97%E4%B8%AD%E7%9A%84%E6%9C%80%E5%BE%8C%E4%B8%80%E5%80%8B%E5%85%83%E7%B4%A0"><span class="nav-number">1.1.12.</span> <span class="nav-text">移除陣列中的最後一個元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E4%B8%8B%E5%85%A9%E5%80%8B%E8%AA%9E%E6%B3%95%E9%83%BD%E5%8F%AF%E4%BB%A5%E5%B0%87%E6%95%B4%E5%80%8B%E9%99%A3%E5%88%97%E6%B8%85%E7%A9%BA"><span class="nav-number">1.1.13.</span> <span class="nav-text">以下兩個語法都可以將整個陣列清空</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A3%E5%91%8A%E4%B8%A6%E5%BB%BA%E7%AB%8B%E5%AD%97%E5%85%B8%EF%BC%8C%E6%AD%A4%E5%AD%97%E5%85%B8%E5%9E%8B%E5%88%A5%E7%82%BA-String-String"><span class="nav-number">1.1.14.</span> <span class="nav-text">宣告並建立字典，此字典型別為[String:String]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E5%AD%97%E5%85%B8%E7%9A%84key-%E9%8D%B5-%E4%BE%86%E6%9F%A5%E8%A9%A2value-%E5%80%BC"><span class="nav-number">1.1.15.</span> <span class="nav-text">以字典的key(鍵)來查詢value(值)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%9F%A5%E8%A9%A2%E7%9A%84key%E4%B8%8D%E5%AD%98%E5%9C%A8%E6%9C%83%E5%9B%9E%E5%A0%B1%E7%A9%BA%E5%80%BC-nil-x2F-null"><span class="nav-number">1.1.16.</span> <span class="nav-text">如果查詢的key不存在會回報空值(nil&#x2F;null)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E5%AD%97%E5%85%B8%E6%9C%83%E6%8B%BF%E5%88%B0%E9%81%B8%E6%93%87%E5%80%BC%EF%BC%8C%E4%B8%8D%E8%AB%96%E6%98%AF%E5%90%A6%E6%9C%89%E6%9F%A5%E5%88%B0%E8%B3%87%E6%96%99"><span class="nav-number">1.1.17.</span> <span class="nav-text">查詢字典會拿到選擇值，不論是否有查到資料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%95%B6key%E6%9F%A5%E4%B8%8D%E5%88%B0%E5%80%BC%E6%99%82%EF%BC%8C%E4%BB%A5%E4%B8%8B%E7%9A%84%E4%B8%B2%E9%80%A3%E5%91%BC%E5%8F%AB%E5%9F%B7%E8%A1%8C%E5%8B%95%E4%BD%9C%E6%9C%83%E7%9B%B4%E6%8E%A5%E8%A2%AB%E5%BF%BD%E7%95%A5"><span class="nav-number">1.1.18.</span> <span class="nav-text">當key查不到值時，以下的串連呼叫執行動作會直接被忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%96%E5%BE%97%E5%AD%97%E5%85%B8%E4%B8%AD%E5%85%83%E7%B4%A0%E7%9A%84%E7%B8%BD%E5%80%8B%E6%95%B8"><span class="nav-number">1.1.19.</span> <span class="nav-text">取得字典中元素的總個數</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%95%B6key%E5%AD%98%E5%9C%A8%E6%99%82%EF%BC%8C%E8%A8%AD%E5%AE%9A%E5%85%B6%E5%80%BC%E6%9C%83%E5%9C%A8%E5%AD%97%E5%85%B8%E4%B8%AD%E2%80%9D%E4%BF%AE%E6%94%B9%E2%80%9D%E4%B8%80%E7%B5%84%E3%80%8E%E9%8D%B5%E5%80%BC%E9%85%8D%E5%B0%8D%E3%80%8F%E7%9A%84%E5%80%BC"><span class="nav-number">1.1.20.</span> <span class="nav-text">當key存在時，設定其值會在字典中”修改”一組『鍵值配對』的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E4%B8%80%E7%B5%84%E9%8D%B5%E5%80%BC%E9%85%8D%E5%B0%8D%EF%BC%88key-value-pair%EF%BC%89"><span class="nav-number">1.1.21.</span> <span class="nav-text">刪除字典中的一組鍵值配對（key-value pair）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E4%B8%8B%E5%85%A9%E5%80%8B%E8%AA%9E%E6%B3%95%E9%83%BD%E5%8F%AF%E4%BB%A5%E5%B0%87%E6%95%B4%E5%80%8B%E5%AD%97%E5%85%B8%E6%B8%85%E7%A9%BA"><span class="nav-number">1.1.22.</span> <span class="nav-text">以下兩個語法都可以將整個字典清空</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/14/%E8%A4%87%E5%90%88%E5%80%BC-compound/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="複合值 compound | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          複合值 compound
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-14 17:58:34" itemprop="dateCreated datePublished" datetime="2022-07-14T17:58:34+08:00">2022-07-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="複合值-compound"><a href="#複合值-compound" class="headerlink" title="複合值 compound"></a>複合值 compound</h1><p>使用[]建立陣列（array）和字典（dictionary）</p>
+<h2 id="【集合型別】Collection-Types"><a href="#【集合型別】Collection-Types" class="headerlink" title="【集合型別】Collection Types"></a>【集合型別】Collection Types</h2><p>Swift 提供了三種主要的集合型別，稱為<strong>陣列（array）</strong>、<strong>集合（set）</strong>和<strong>字典（dictionary）</strong>，用於儲存值的集合。  </p>
+<ul>
+<li>陣列是值的 “有序集合” 。</li>
+<li>集合（set）是唯一值的 “無序集合” 《unordered collections》（單一的集合中，值不會重複）。</li>
+<li>字典是 “鍵值關聯”（key-value associations）的無序集合。</li>
+</ul>
+<h3 id="宣告並建立陣列"><a href="#宣告並建立陣列" class="headerlink" title="宣告並建立陣列"></a>宣告並建立陣列</h3><p>此陣列型別為[String]</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> shoppingList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"catfish"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"water"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"tulips"</span></span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="以陣列的索引值配合-來讀取陣列中的個別元素值"><a href="#以陣列的索引值配合-來讀取陣列中的個別元素值" class="headerlink" title="以陣列的索引值配合[  ]來讀取陣列中的個別元素值"></a>以陣列的索引值配合[  ]來讀取陣列中的個別元素值</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token function">print</span><span class="token punctuation">(</span>shoppingList<span class="token punctuation">)</span>		<span class="token comment">// "["catfish", "water", "tulips"]\n"</span>
+shoppingList<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>		<span class="token comment">// "catfish"</span>
+shoppingList<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>		<span class="token comment">// "water"</span>
+shoppingList<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>		<span class="token comment">// "tulips"</span>
+shoppingList<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">+</span>shoppingList<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>		<span class="token comment">// "tulipswater"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="以指定的索引值來”修改”特定元素的值"><a href="#以指定的索引值來”修改”特定元素的值" class="headerlink" title="以指定的索引值來”修改”特定元素的值"></a>以指定的索引值來”修改”特定元素的值</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">shoppingList<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> "bottle of water
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="列印陣列的全部內容（僅限debug使用）"><a href="#列印陣列的全部內容（僅限debug使用）" class="headerlink" title="列印陣列的全部內容（僅限debug使用）"></a>列印陣列的全部內容（僅限debug使用）</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token function">print</span><span class="token punctuation">(</span>shoppingList<span class="token punctuation">)</span>		<span class="token comment">// ["catfish", "bottle of water", "tulips"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="取得陣列中元素的總個數"><a href="#取得陣列中元素的總個數" class="headerlink" title="取得陣列中元素的總個數"></a>取得陣列中元素的總個數</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">shoppingList<span class="token punctuation">.</span>count<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="在指定的索引值位置（參數二）插入一個新的陣列元素"><a href="#在指定的索引值位置（參數二）插入一個新的陣列元素" class="headerlink" title="在指定的索引值位置（參數二）插入一個新的陣列元素"></a>在指定的索引值位置（參數二）插入一個新的陣列元素</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">shoppingList<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Test"</span></span><span class="token punctuation">,</span> at<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>		
+<span class="token comment">// ["catfish", "Test", "bottle of water", "tulips"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="在指定的索引值位置（參數二）插入一個新的陣列-有序的集合sequence"><a href="#在指定的索引值位置（參數二）插入一個新的陣列-有序的集合sequence" class="headerlink" title="在指定的索引值位置（參數二）插入一個新的陣列(有序的集合sequence"></a>在指定的索引值位置（參數二）插入一個新的陣列(有序的集合sequence</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">shoppingList<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>contentsOf<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"xzy"</span></span><span class="token punctuation">,</span><span class="token string-literal"><span class="token string">"qqq"</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span> at<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">)</span>		
+<span class="token comment">// ["catfish", "Test", "xzy", "qqq", "bottle of water", "tulips"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="在陣列的”最後位置”加上一個新的陣列元素"><a href="#在陣列的”最後位置”加上一個新的陣列元素" class="headerlink" title="在陣列的”最後位置”加上一個新的陣列元素"></a>在陣列的”最後位置”加上一個新的陣列元素</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">shoppingList<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"123"</span></span><span class="token punctuation">)</span>		
+<span class="token comment">// ["catfish", "Test", "xzy", "qqq", "bottle of water", "tulips", "123"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="在陣列的最後位置加上一個新的陣列-有序的集合sequence"><a href="#在陣列的最後位置加上一個新的陣列-有序的集合sequence" class="headerlink" title="在陣列的最後位置加上一個新的陣列(有序的集合sequence)"></a>在陣列的最後位置加上一個新的陣列(有序的集合sequence)</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">shoppingList<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>contentsOf<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"abc"</span></span><span class="token punctuation">,</span><span class="token string-literal"><span class="token string">"def"</span></span><span class="token punctuation">]</span><span class="token punctuation">)</span>		
+<span class="token comment">// ["catfish", "Test", "xzy", "qqq", "bottle of water", "tulips", "123", "abc", "def"]</span>
+
+shoppingList<span class="token punctuation">.</span>count		<span class="token comment">// 9</span>
+
+shoppingList<span class="token punctuation">.</span>count
+shoppingList<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="刪除陣列中指定索引值的元素"><a href="#刪除陣列中指定索引值的元素" class="headerlink" title="刪除陣列中指定索引值的元素"></a>刪除陣列中指定索引值的元素</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">shoppingList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>at<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">)</span>		<span class="token comment">// "qqq"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="移除陣列中的第一個元素"><a href="#移除陣列中的第一個元素" class="headerlink" title="移除陣列中的第一個元素"></a>移除陣列中的第一個元素</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">shoppingList<span class="token punctuation">.</span><span class="token function">removeFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span>		<span class="token comment">// "catfish"</span>
+shoppingList		<span class="token comment">// ["Test", "xzy", "bottle of water", "tulips", "123", "abc", "def"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="移除陣列中的最後一個元素"><a href="#移除陣列中的最後一個元素" class="headerlink" title="移除陣列中的最後一個元素"></a>移除陣列中的最後一個元素</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">shoppingList<span class="token punctuation">.</span><span class="token function">removeLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment">// "def"</span>
+shoppingList		<span class="token comment">// ["Test", "xzy", "bottle of water", "tulips", "123", "abc"]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="以下兩個語法都可以將整個陣列清空"><a href="#以下兩個語法都可以將整個陣列清空" class="headerlink" title="以下兩個語法都可以將整個陣列清空"></a>以下兩個語法都可以將整個陣列清空</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">shoppingList<span class="token punctuation">.</span><span class="token function">removeAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>		<span class="token comment">//[]</span>
+shoppingList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>		<span class="token comment">// []</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="宣告並建立字典，此字典型別為-String-String"><a href="#宣告並建立字典，此字典型別為-String-String" class="headerlink" title="宣告並建立字典，此字典型別為[String:String]"></a>宣告並建立字典，此字典型別為[String:String]</h3><p>“key” : “value”</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> occupations <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string-literal"><span class="token string">"Malcolm"</span></span><span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Captain"</span></span><span class="token punctuation">,</span>
+    <span class="token string-literal"><span class="token string">"Kaylee"</span></span><span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Mechanic"</span></span><span class="token punctuation">,</span>       
+<span class="token punctuation">]</span>
+<span class="token comment">//最後一筆資料的逗點可以保留（包含陣列）</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="以字典的key-鍵-來查詢value-值"><a href="#以字典的key-鍵-來查詢value-值" class="headerlink" title="以字典的key(鍵)來查詢value(值)"></a>以字典的key(鍵)來查詢value(值)</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">occupations<span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"Malcolm"</span></span><span class="token punctuation">]</span>		<span class="token comment">// "Captain"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="如果查詢的key不存在會回報空值-nil-x2F-null"><a href="#如果查詢的key不存在會回報空值-nil-x2F-null" class="headerlink" title="如果查詢的key不存在會回報空值(nil&#x2F;null)"></a>如果查詢的key不存在會回報空值(nil&#x2F;null)</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">occupations<span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"abc"</span></span><span class="token punctuation">]</span>		<span class="token comment">// nil</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="查詢字典會拿到選擇值，不論是否有查到資料"><a href="#查詢字典會拿到選擇值，不論是否有查到資料" class="headerlink" title="查詢字典會拿到選擇值，不論是否有查到資料"></a>查詢字典會拿到選擇值，不論是否有查到資料</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">let</span> oc1 <span class="token operator">=</span> occupations<span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"Malcolm"</span></span><span class="token punctuation">]</span>		<span class="token comment">// "Captain"</span>
+oc1<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">hasPrefix</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Ma"</span></span><span class="token punctuation">)</span>		<span class="token comment">// Optional(false)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="當key查不到值時，以下的串連呼叫執行動作會直接被忽略"><a href="#當key查不到值時，以下的串連呼叫執行動作會直接被忽略" class="headerlink" title="當key查不到值時，以下的串連呼叫執行動作會直接被忽略"></a>當key查不到值時，以下的串連呼叫執行動作會直接被忽略</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">occupations<span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"abc"</span></span><span class="token punctuation">]</span><span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">hasSuffix</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"xy"</span></span><span class="token punctuation">)</span>		<span class="token comment">// nil</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="取得字典中元素的總個數"><a href="#取得字典中元素的總個數" class="headerlink" title="取得字典中元素的總個數"></a>取得字典中元素的總個數</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">occupations<span class="token punctuation">.</span>count		<span class="token comment">// 3</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="當key存在時，設定其值會在字典中”修改”一組『鍵值配對』的值"><a href="#當key存在時，設定其值會在字典中”修改”一組『鍵值配對』的值" class="headerlink" title="當key存在時，設定其值會在字典中”修改”一組『鍵值配對』的值"></a>當key存在時，設定其值會在字典中”修改”一組『鍵值配對』的值</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">occupations		<span class="token comment">// ["Kaylee": "Mechanic", "Jayne": "Public Relations", "Malcolm": "Captain"]</span>
+occupations<span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"Kaylee"</span></span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Engineer"</span></span>		<span class="token comment">// "Engineer"</span>
+occupations		<span class="token comment">// ["Kaylee": "Engineer", "Jayne": "Public Relations", "Malcolm": "Captain"]</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="刪除字典中的一組鍵值配對（key-value-pair）"><a href="#刪除字典中的一組鍵值配對（key-value-pair）" class="headerlink" title="刪除字典中的一組鍵值配對（key-value pair）"></a>刪除字典中的一組鍵值配對（key-value pair）</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">occupations<span class="token punctuation">.</span><span class="token function">removeValue</span><span class="token punctuation">(</span>forKey<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Jayne"</span></span><span class="token punctuation">)</span>  <span class="token comment">// "Public Relations"</span>
+occupations<span class="token punctuation">.</span> <span class="token comment">// ["Kaylee": "Engineer", "Malcolm": "Captain"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="以下兩個語法都可以將整個字典清空"><a href="#以下兩個語法都可以將整個字典清空" class="headerlink" title="以下兩個語法都可以將整個字典清空"></a>以下兩個語法都可以將整個字典清空</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">occupations<span class="token punctuation">.</span><span class="token function">removeAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+occupations <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>集合型別的雜湊值（Hash Values for Set Types）一個型別必須是可以雜湊的，才能夠儲存在集合（set）當中。  </p>
+</li>
+<li><p>A type must be hashable in order to be stored in a set  </p>
+</li>
+<li><p>Swift 的所有基礎型別（例如String、Int、Double和Bool）預設情況下都是可以雜湊的，可以用來作為集合型別的值（set value types）或字典key的型別（dictionary key types）。  </p>
+</li>
+<li><p>All of Swift’s basic types (such as String, Int, Double, and Bool) are hashable by default, and can be used as set value types or dictionary key types.</p>
+</li>
+<li><p>雜湊（英語：Hashing）是電腦科學中一種對資料的處理方法，通過某種特定的函式&#x2F;演算法（稱為雜湊函式&#x2F;演算法）將要檢索的項目與用來檢索的索引（稱為雜湊，或者雜湊值）關聯起來，生成一種便於搜尋的資料結構（稱為雜湊表）。</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/swift/" rel="tag"># swift</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/14/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-Control-Flow-for-in/" rel="prev" title="流程控制 Control Flow - for-in">
+                  <i class="fa fa-chevron-left"></i> 流程控制 Control Flow - for-in
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/15/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-If-else/" rel="next" title="流程控制 If- else">
+                  流程控制 If- else <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"164b7cf9e69f21b51e1843e5ca87bdbe"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

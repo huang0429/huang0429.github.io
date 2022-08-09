@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="使用Homebrew安装PHP、MySql、nginx-Mac">
+<meta property="og:url" content="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220709_172920.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_092557.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_160131.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_161236.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_161741.jpeg">
+<meta property="article:published_time" content="2022-07-09T12:16:51.000Z">
+<meta property="article:modified_time" content="2022-07-09T12:16:51.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="homebrew">
+<meta property="article:tag" content="PHP">
+<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="nginx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220709_172920.jpeg">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/","path":"2022/07/09/使用Homebrew安装PHP、MySql、nginx-Mac/","title":"使用Homebrew安装PHP、MySql、nginx-Mac"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>使用Homebrew安装PHP、MySql、nginx-Mac | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">32</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A0%E7%82%BA%E5%BE%8C%E5%A4%A9%E8%A6%81%E4%B8%8APHP%EF%BC%8C%E6%89%80%E4%BB%A5%E6%88%91%E5%B0%B1%E5%85%88%E8%87%AA%E5%B7%B1%E8%A9%A6%E8%91%97%E5%AE%89%E8%A3%9D%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">因為後天要上PHP，所以我就先自己試著安裝。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">注意：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx"><span class="nav-number">2.</span> <span class="nav-text">nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%84%AA%E9%BB%9E"><span class="nav-number">2.1.</span> <span class="nav-text">優點</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-HomeBrew"><span class="nav-number">3.</span> <span class="nav-text">使用 HomeBrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-Homebrew"><span class="nav-number">4.</span> <span class="nav-text">安裝 Homebrew</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4"><span class="nav-number">4.1.</span> <span class="nav-text">基本指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Nginx"><span class="nav-number">5.</span> <span class="nav-text">安装Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8C%87%E4%BB%A4"><span class="nav-number">5.1.</span> <span class="nav-text">安装指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%EF%BC%89%E4%BF%AE%E6%94%B9%E9%A0%90%E8%A8%AD8080-%E7%AB%AF%E5%8F%A3%E7%82%BA-80"><span class="nav-number">5.2.</span> <span class="nav-text">（如果需要）修改預設8080 端口為 80</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-%E6%8C%87%E4%BB%A4"><span class="nav-number">6.</span> <span class="nav-text">Nginx 指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2-Nginx-%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE%EF%BC%88%E6%B8%AC%E8%A9%A6nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E8%AA%9E%E6%B3%95%E9%8C%AF%E8%AA%A4"><span class="nav-number">7.</span> <span class="nav-text">查詢 Nginx 文件位置（測試nginx配置文件是否存在語法錯誤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DMysq"><span class="nav-number">8.</span> <span class="nav-text">安裝Mysq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D"><span class="nav-number">9.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%9F%E5%8B%95"><span class="nav-number">10.</span> <span class="nav-text">啟動</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%85%A5mysql"><span class="nav-number">11.</span> <span class="nav-text">登入mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql%E5%AF%86%E7%A2%BC%E4%BF%AE%E6%94%B9"><span class="nav-number">12.</span> <span class="nav-text">mysql密碼修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%80%E5%87%BAmysql"><span class="nav-number">13.</span> <span class="nav-text">退出mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DPHP"><span class="nav-number">14.</span> <span class="nav-text">安裝PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E5%8F%AF%E5%AE%89%E8%A3%9D%E7%89%88%E6%9C%AC"><span class="nav-number">15.</span> <span class="nav-text">查詢可安裝版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-1"><span class="nav-number">16.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%9F%E5%8B%95php-fpm"><span class="nav-number">17.</span> <span class="nav-text">啟動php-fpm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B0%E7%9B%AE%E5%89%8D%E7%82%BA%E6%AD%A2%EF%BC%8C%E5%AE%89%E8%A3%9D%E7%9A%84%E5%BE%88%E9%A0%86%E5%88%A9%EF%BC%8C%E6%B2%92%E6%9C%89%E4%BB%80%E9%BA%BC%E5%95%8F%E9%A1%8C%EF%BC%8C%E4%BD%86%E6%98%AF%E4%B8%AD%E9%96%93%E6%9C%89%E5%80%8B%E6%B5%81%E7%A8%8B%E6%88%91%E7%9C%81%E7%95%A5%E6%8E%89%E4%BA%86%EF%BC%8C%E5%B0%B1%E6%98%AF%E8%A6%81%E8%A8%AD%E5%AE%9A-%E2%80%9C-%E5%B0%87-php-%E8%B7%9F-mysql-%E5%8A%A0%E5%85%A5launchctl%E5%95%9F%E5%8B%95%E6%8E%A7%E5%88%B6-%E2%80%9C-%E5%9B%A0%E7%82%BA%E4%B8%8D%E7%9F%A5%E9%81%93%E9%80%99%E5%80%8B%E8%A8%AD%E5%AE%9A%E8%88%87%E5%90%A6%E6%9C%83%E6%9C%89%E4%BB%80%E9%BA%BC%E5%BD%B1%E9%9F%BF%E6%89%80%E4%BB%A5%E5%B0%B1%E6%9A%AB%E6%99%82%E6%B2%92%E6%9C%89%E8%A8%AD%E5%AE%9A%EF%BC%8C%E4%B9%8B%E5%BE%8C%E5%AD%B8%E4%B8%80%E6%AE%B5%E6%99%82%E9%96%93%E5%BE%8C%E5%86%8D%E7%9C%8B%E7%9C%8B%E3%80%82"><span class="nav-number">18.</span> <span class="nav-text">到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定 “ 將 php 跟 mysql 加入launchctl啟動控制 “ 因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6-nginx"><span class="nav-number">19.</span> <span class="nav-text">測試 nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6-PHP-%E7%A8%8B%E5%BC%8F%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E8%A2%AB%E8%A7%A3%E6%9E%90"><span class="nav-number">20.</span> <span class="nav-text">測試 PHP 程式是否可以被解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B1%E6%95%97%E4%BA%86%EF%BC%81%EF%BC%81%EF%BC%81-%E5%87%BA%E7%8F%BE%E4%BA%86-%E2%80%9C-File-not-found-%E2%80%9C-%E7%9A%84%E6%96%87%E5%AD%97"><span class="nav-number">20.1.</span> <span class="nav-text">失敗了！！！  出現了  “ File not found “ 的文字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E9%96%8B-nginx-conf-%E6%AA%94%E6%A1%88"><span class="nav-number">21.</span> <span class="nav-text">打開 nginx.conf 檔案</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="使用Homebrew安装PHP、MySql、nginx-Mac | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用Homebrew安装PHP、MySql、nginx-Mac
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-09 20:16:51" itemprop="dateCreated datePublished" datetime="2022-07-09T20:16:51+08:00">2022-07-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="因為後天要上PHP，所以我就先自己試著安裝。"><a href="#因為後天要上PHP，所以我就先自己試著安裝。" class="headerlink" title="因為後天要上PHP，所以我就先自己試著安裝。"></a>因為後天要上PHP，所以我就先自己試著安裝。</h2><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><ul>
+<li>以下的操作都是實際操作的結果，不是網路文章 copy 來的。</li>
+<li>有些檔案路徑有可能因為版本的不同而有所不同。</li>
+</ul>
+<p>過去比較典型的安裝是 PHP＋MySql＋Apache，最近上網看了一些文章，有人使用 nginx ，就想試看看。</p>
+<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a><a target="_blank" rel="noopener" href="https://www.nginx.com/">nginx</a></h2><p>是一個免費的開源軟體，一個非同步框架的 web server，不過它的功用遠不僅止於 web server，它更多的用途是作為反向代理、Http Cache、負載平衡器。另外還有一個 web server就是 Apache。</p>
+<h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<li>設置簡易</li>
+<li>記憶體消耗低</li>
+<li>反向代理＆負載平衡</li>
+</ul>
+<h2 id="使用-HomeBrew"><a href="#使用-HomeBrew" class="headerlink" title="使用 HomeBrew"></a>使用 <a target="_blank" rel="noopener" href="https://brew.sh/index_zh-tw">HomeBrew</a></h2><p>Homebrew是一種套件管理工具，應用程式的安裝方式不見得簡單，管理起來十分麻煩，通過 Homebrew 可以將應用程式集中管理，不管是要更新還是解安裝，統一使用 Homebrew 提供的指令即可輕易的處理。</p>
+<h2 id="安裝-Homebrew"><a href="#安裝-Homebrew" class="headerlink" title="安裝 Homebrew"></a>安裝 Homebrew</h2><p>打開終端機，輸入<code>brew -v</code> 看看電腦裡有沒有安裝，如果沒有就輸入下面的指令安裝：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token operator">/</span>bin<span class="token operator">/</span>bash <span class="token operator">-</span>c <span class="token string-literal"><span class="token string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h3><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">#查看homebrew版本</span>
+$ brew <span class="token operator">-</span>v
+<span class="token comment">#帮助</span>
+$ brew <span class="token operator">-</span>h
+<span class="token comment">#更新版本</span>
+$ brew <span class="token keyword">update</span>
+<span class="token comment">#查看已安装列表</span>
+$ brew list
+<span class="token comment">#查看 package 訊息</span>
+$ brew info <span class="token operator">&lt;</span>packageName<span class="token operator">></span>
+<span class="token comment">#查看可用套件</span>
+$ brew search <span class="token operator">&lt;</span>packageName<span class="token operator">></span>
+<span class="token comment">#安装套件</span>
+$ brew install <span class="token operator">&lt;</span>packageName<span class="token operator">></span>
+	eg: brew install php<span class="token variable">@7.2</span>
+<span class="token comment">#卸载套件</span>
+$ brew uninstall <span class="token operator">&lt;</span>packageName<span class="token operator">></span>
+	eg: brew uninstall php<span class="token variable">@7.2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><h3 id="安装指令"><a href="#安装指令" class="headerlink" title="安装指令"></a>安装指令</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">$ brew install nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220709_172920.jpeg" alt="HuangSP_20220709_172920.jpeg"></p>
+<h3 id="（如果需要）修改預設8080-端口為-80"><a href="#（如果需要）修改預設8080-端口為-80" class="headerlink" title="（如果需要）修改預設8080 端口為 80"></a>（如果需要）修改預設8080 端口為 80</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">$ sudo vim <span class="token operator">/</span>opt<span class="token operator">/</span>homebrew<span class="token operator">/</span>etc<span class="token operator">/</span>nginx<span class="token operator">/</span>nginx<span class="token punctuation">.</span>conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Nginx-指令"><a href="#Nginx-指令" class="headerlink" title="Nginx 指令"></a>Nginx 指令</h2><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token comment">// 啟動 Nginx</span>
+$ nginx
+
+<span class="token comment">// 關閉 Nginx</span>
+$ nginx <span class="token operator">-</span>s stop
+
+<span class="token comment">// 重啟 Nginx (這個是用在 Nginx 正在運行時重啟）</span>
+$ nginx <span class="token operator">-</span>s reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果在 Nginx 未運行時執行 <code>nginx -s reload</code> 會出現錯誤訊息：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">nginx<span class="token punctuation">:</span> <span class="token punctuation">[</span>error<span class="token punctuation">]</span> invalid <span class="token constant">PID</span> number <span class="token string-literal"><span class="token string">""</span></span> <span class="token keyword">in</span> <span class="token string-literal"><span class="token string">"/opt/homebrew/var/run/nginx.pid"</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="查詢-Nginx-文件位置（測試nginx配置文件是否存在語法錯誤"><a href="#查詢-Nginx-文件位置（測試nginx配置文件是否存在語法錯誤" class="headerlink" title="查詢 Nginx 文件位置（測試nginx配置文件是否存在語法錯誤"></a>查詢 Nginx 文件位置（測試nginx配置文件是否存在語法錯誤</h2><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">$ nginx <span class="token operator">-</span>t<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="安裝Mysq"><a href="#安裝Mysq" class="headerlink" title="安裝Mysq"></a>安裝Mysq</h2><h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">$ brew install mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="啟動"><a href="#啟動" class="headerlink" title="啟動"></a>啟動</h2><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">$ mysql<span class="token punctuation">.</span>server start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="登入mysql"><a href="#登入mysql" class="headerlink" title="登入mysql"></a>登入mysql</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment"># 首次登入不需要輸入密碼</span>
+$ mysql <span class="token operator">-</span>uroot <span class="token operator">-</span>p<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>登入成功會出現 <code>mysql&gt;</code></p>
+<h2 id="mysql密碼修改"><a href="#mysql密碼修改" class="headerlink" title="mysql密碼修改"></a>mysql密碼修改</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">$ <span class="token keyword">ALTER</span> <span class="token keyword">USER</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword">WITH</span> mysql_native_password <span class="token keyword">BY</span> <span class="token string">'root'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>修改成功會出現 </p>
+<pre class="line-numbers language-none"><code class="language-none">Query OK, 0 rows affected (0.00 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="退出mysql"><a href="#退出mysql" class="headerlink" title="退出mysql"></a>退出mysql</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">$ mysql<span class="token operator">></span> <span class="token keyword">exit</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="安裝PHP"><a href="#安裝PHP" class="headerlink" title="安裝PHP"></a>安裝PHP</h2><h2 id="查詢可安裝版本"><a href="#查詢可安裝版本" class="headerlink" title="查詢可安裝版本"></a>查詢可安裝版本</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">#查询需要的php版本</span>
+$ brew search php<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="安裝-1"><a href="#安裝-1" class="headerlink" title="安裝"></a>安裝</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">$ brew install php
+
+<span class="token comment"># 如果有要安裝指定的版本，例如7.2版</span>
+$ brew install php<span class="token variable">@7.2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="啟動php-fpm"><a href="#啟動php-fpm" class="headerlink" title="啟動php-fpm"></a>啟動php-fpm</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">$ brew services <span class="token keyword">start</span> php<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定-“-將-php-跟-mysql-加入launchctl啟動控制-“-因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。"><a href="#到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定-“-將-php-跟-mysql-加入launchctl啟動控制-“-因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。" class="headerlink" title="到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定 “ 將 php 跟 mysql 加入launchctl啟動控制 “ 因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。"></a>到目前為止，安裝的很順利，沒有什麼問題，但是中間有個流程我省略掉了，就是要設定 “ 將 php 跟 mysql 加入launchctl啟動控制 “ 因為不知道這個設定與否會有什麼影響所以就暫時沒有設定，之後學一段時間後再看看。</h2><h2 id="測試-nginx"><a href="#測試-nginx" class="headerlink" title="測試 nginx"></a>測試 nginx</h2><p>啟動 nginx ：</p>
+<pre class="line-numbers language-none"><code class="language-none">$ nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>打開瀏覽器，輸入 <code>http://localhost/</code>  </p>
+<p><img src="/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_092557.jpeg">  </p>
+<h2 id="測試-PHP-程式是否可以被解析"><a href="#測試-PHP-程式是否可以被解析" class="headerlink" title="測試 PHP 程式是否可以被解析"></a>測試 PHP 程式是否可以被解析</h2><p>新增一個 php 的檔案到 www 資料夾內，因為我是用 homebrew 安裝的，所以我的路徑會是在 homebrew 底下。  </p>
+<p>打開 www 資料夾會看到還有其他兩個 html 檔案，一個是首頁，一個是錯誤頁面。  </p>
+<p>我的路徑：<code>/opt/homebrew/var/www</code>  </p>
+<p>我寫一個簡單的 php 程式碼：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>ch02<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+    <span class="token function">phpinfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token delimiter important">?></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>打開瀏覽器，輸入 <code>localhost</code>  </p>
+<p><img src="/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_160131.jpeg">  </p>
+<p>成功！！  </p>
+<p>在輸入新增的 php 檔名：</p>
+<h3 id="失敗了！！！-出現了-“-File-not-found-“-的文字"><a href="#失敗了！！！-出現了-“-File-not-found-“-的文字" class="headerlink" title="失敗了！！！  出現了  “ File not found “ 的文字"></a>失敗了！！！  出現了  “ File not found “ 的文字</h3><p>上網搜了一輸～  </p>
+<p>有個地方要改：  </p>
+<h2 id="打開-nginx-conf-檔案"><a href="#打開-nginx-conf-檔案" class="headerlink" title="打開 nginx.conf 檔案"></a>打開 nginx.conf 檔案</h2><p>找到下面這一段：  </p>
+<p><img src="/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_161236.jpeg">  </p>
+<p>改完後存檔  </p>
+<p>重啟 php-fpm 跟 nginx  </p>
+<p>瀏覽器再更新一次就可以了  </p>
+<p><img src="/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/HuangSP_20220710_161741.jpeg"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/homebrew/" rel="tag"># homebrew</a>
+              <a href="/tags/PHP/" rel="tag"># PHP</a>
+              <a href="/tags/mysql/" rel="tag"># mysql</a>
+              <a href="/tags/nginx/" rel="tag"># nginx</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/08/Swift-%E9%9B%86%E5%90%882-%E5%AD%97%E5%85%B8Dictionary/" rel="prev" title="Swift-集合2_字典Dictionary">
+                  <i class="fa fa-chevron-left"></i> Swift-集合2_字典Dictionary
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/12/%E6%9B%B4%E6%94%B9%E8%B3%87%E6%96%99%E5%A4%BE%E9%A1%8F%E8%89%B2/" rel="next" title="更改資料夾顏色">
+                  更改資料夾顏色 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"2e933f4b95e0d03641d27782de2e3a09"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

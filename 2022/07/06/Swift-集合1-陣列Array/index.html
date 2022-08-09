@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="Swift-集合1_陣列Array">
+<meta property="og:url" content="https://huang0429.github.io/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://github.com/oli2022/pic/blob/main/%E6%88%AA%E5%9C%96%202022-07-06%20%E4%B8%8B%E5%8D%882.07.29.png?raw=true">
+<meta property="article:published_time" content="2022-07-06T09:44:50.000Z">
+<meta property="article:modified_time" content="2022-07-06T09:44:50.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="Swift">
+<meta property="article:tag" content="集合">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/oli2022/pic/blob/main/%E6%88%AA%E5%9C%96%202022-07-06%20%E4%B8%8B%E5%8D%882.07.29.png?raw=true">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/","path":"2022/07/06/Swift-集合1-陣列Array/","title":"Swift-集合1_陣列Array"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Swift-集合1_陣列Array | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">32</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%9E%8B%E5%88%A5"><span class="nav-number">1.</span> <span class="nav-text">集合型別</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%A3%E5%88%97-Array"><span class="nav-number">2.</span> <span class="nav-text">陣列 Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%8C-%E9%9B%86%E5%90%88%E7%9A%84%E5%88%97%E8%88%89%E5%8C%96-enumerationize-the-elements-in-Collection"><span class="nav-number">2.1.</span> <span class="nav-text">📌 集合的列舉化 enumerationize the elements in Collection</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Swift-集合1_陣列Array | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Swift-集合1_陣列Array
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-06 17:44:50" itemprop="dateCreated datePublished" datetime="2022-07-06T17:44:50+08:00">2022-07-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="https://github.com/oli2022/pic/blob/main/%E6%88%AA%E5%9C%96%202022-07-06%20%E4%B8%8B%E5%8D%882.07.29.png?raw=true" alt="https://github.com/oli2022/pic/blob/main/%E6%88%AA%E5%9C%96%202022-07-06%20%E4%B8%8B%E5%8D%882.07.29.png?raw=true"></p>
+<h1 id="集合型別"><a href="#集合型別" class="headerlink" title="集合型別"></a>集合型別</h1><ul>
+<li>陣列（ Array ）<ul>
+<li>是有序的集合</li>
+<li>索引從0開始</li>
+<li>元素要同一型態</li>
+</ul>
+</li>
+<li>字典（Dictionary）<ul>
+<li>元素以：key ⇒ value 的形式構成 ( 鍵 ⇒ 值 )</li>
+<li>通常是用 key 來進行存取</li>
+<li>key 不能重覆</li>
+<li>無序的集合</li>
+<li>元素型態可不一樣</li>
+</ul>
+</li>
+<li>集合（ Set ）<ul>
+<li>與陣列類似</li>
+<li>無序的集合</li>
+<li>集合內的值不可重複</li>
+<li>元素要同一型態</li>
+</ul>
+</li>
+<li>元組（ 雜堆 ）（ Tuple ）<ul>
+<li>元素有順序（可用 index 或 key）</li>
+<li>一旦決𤴓元素內容，就不能再更動</li>
+<li>元素、index 、key 不限型態，可以混用</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="陣列-Array"><a href="#陣列-Array" class="headerlink" title="陣列 Array"></a>陣列 Array</h1><p>宣告方式是使用中括號</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> score<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">88</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>陣列也支援型別推斷，所以程式碼也可以簡化如下：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">88</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>建立空陣列：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> score<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">Int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>使用索引取值：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">88</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">]</span>
+<span class="token function">print</span><span class="token punctuation">(</span>score<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 80</span>
+<span class="token function">print</span><span class="token punctuation">(</span>score<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 88</span>
+<span class="token function">print</span><span class="token punctuation">(</span>score<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 90</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>🔎 <strong>【 陣列操作 】新增</strong></p>
+<p>使用  <code>append</code> 函式來進行新增，新增的資料會放在最尾端：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">88</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">]</span>
+score<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span>
+
+<span class="token comment">// [80, 88, 90, 100]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>🔎 <strong>【</strong> 陣列操作 <strong>】刪除</strong></p>
+<p>使用 <code>remove(at: )</code>函式來進行刪除，是根劇索引來刪除資料。</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">]</span>
+score<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>at<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span>
+
+<span class="token comment">// [78, 90]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>🔎 <strong>【</strong> 陣列操作 <strong>】修改</strong></p>
+<p>透過索引值來更改更改</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">]</span>
+score<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">666</span>
+<span class="token function">print</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span>
+
+<span class="token comment">// [666, 78, 90]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>🔎 <strong>【</strong> 陣列操作 <strong>】合併</strong></p>
+<p>可以用加法運算子 ＋ 來合併：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> scoreA <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">]</span>
+<span class="token keyword">var</span> scoreB <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">]</span>
+<span class="token keyword">let</span> score <span class="token operator">=</span> scoreA <span class="token operator">+</span> scoreB
+<span class="token function">print</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span>
+
+<span class="token comment">// [60, 78, 90, 59, 90, 85]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>🔎 <strong>【</strong> 陣列操作 <strong>】排序</strong></p>
+<p>使用 <code>sorted(by: )</code>函式來排序：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span>
+<span class="token keyword">let</span> scoreA <span class="token operator">=</span> score<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span>by<span class="token punctuation">:</span> <span class="token operator">></span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> scoreB <span class="token operator">=</span> score<span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span>by<span class="token punctuation">:</span> <span class="token operator">&lt;</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>scoreA<span class="token punctuation">)</span> <span class="token comment">// [100, 90, 78, 60]</span>
+<span class="token function">print</span><span class="token punctuation">(</span>scoreB<span class="token punctuation">)</span> <span class="token comment">// [60, 78, 90, 100]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>🔎 <strong>【</strong> 陣列操作 <strong>】insert(_:at:)</strong></p>
+<p>將資料插入指定索引處</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span>
+score<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">666</span><span class="token punctuation">,</span> at<span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span> <span class="token comment">// [60, 78, 666, 90, 100]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="📌-集合的列舉化-enumerationize-the-elements-in-Collection"><a href="#📌-集合的列舉化-enumerationize-the-elements-in-Collection" class="headerlink" title="📌 集合的列舉化 enumerationize the elements in Collection"></a>📌 集合的列舉化 enumerationize the elements in Collection</h2><p>絕大部份的集合物件都有一個 <code>enumerated()</code> 函數。</p>
+<p>把一個集合物件數字化其實就是為集合的每一個元素依序配一個整數號碼。</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">import</span> <span class="token class-name">Foundation</span>
+
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"John"</span></span><span class="token punctuation">,</span><span class="token string-literal"><span class="token string">"Mary"</span></span><span class="token punctuation">,</span><span class="token string-literal"><span class="token string">"Tom"</span></span><span class="token punctuation">,</span><span class="token string-literal"><span class="token string">"Peter"</span></span><span class="token punctuation">,</span><span class="token string-literal"><span class="token string">"Ares"</span></span><span class="token punctuation">]</span>
+
+<span class="token keyword">var</span> es<span class="token punctuation">:</span><span class="token class-name">EnumeratedSequence</span><span class="token operator">&lt;</span><span class="token punctuation">[</span><span class="token class-name">String</span><span class="token punctuation">]</span><span class="token operator">></span>
+es <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">enumerated</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>index<span class="token punctuation">,</span>value<span class="token punctuation">)</span> <span class="token keyword">in</span> es <span class="token punctuation">&#123;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"數列化： </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">index</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">： </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">value</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 結果：</span>
+數列化： <span class="token number">0</span>： <span class="token class-name">John</span>
+數列化： <span class="token number">1</span>： <span class="token class-name">Mary</span>
+數列化： <span class="token number">2</span>： <span class="token class-name">Tom</span>
+數列化： <span class="token number">3</span>： <span class="token class-name">Peter</span>
+數列化： <span class="token number">4</span>： <span class="token class-name">Ares</span>
+<span class="token class-name">Program</span> ended with exit code<span class="token punctuation">:</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>enumeration數列化就是把集合的元素編號之後（從0開始），重新裝成一種叫做EnumeratedSequence&lt;要數列化的集合&gt;的新集合<br>只要是集合就可以被迭代，因為EnumeratedSequence每個元素都有兩個值（編號，原來的元素）。  </p>
+<p>這種元素有一個以上內容的集合要迭代的話，for 後面必須提供足夠的變數去承接，這時就是”雜堆”登場的場合之一。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Swift/" rel="tag"># Swift</a>
+              <a href="/tags/%E9%9B%86%E5%90%88/" rel="tag"># 集合</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/05/%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/" rel="prev" title="網頁設計-環境建置">
+                  <i class="fa fa-chevron-left"></i> 網頁設計-環境建置
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/" rel="next" title="【 Hexo網誌架設 2 】<br>新增網誌">
+                  【 Hexo網誌架設 2 】<br>新增網誌 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"d5d5cc53a87de569e0a98f8669222547"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

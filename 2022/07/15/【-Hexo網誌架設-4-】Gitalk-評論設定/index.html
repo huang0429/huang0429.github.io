@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="【 Hexo網誌架設 4 】&lt;br&gt; Gitalk 評論設定">
+<meta property="og:url" content="https://huang0429.github.io/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/HuangSP_20220715_190934.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/HuangSP_20220715_191529.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/HuangSP_20220715_191821.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/HuangSP_20220715_192133.jpeg">
+<meta property="article:published_time" content="2022-07-15T15:07:16.000Z">
+<meta property="article:modified_time" content="2022-07-15T15:07:16.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huang0429.github.io/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/HuangSP_20220715_190934.jpeg">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/","path":"2022/07/15/【-Hexo網誌架設-4-】Gitalk-評論設定/","title":"【 Hexo網誌架設 4 】\u003cbr> Gitalk 評論設定"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【 Hexo網誌架設 4 】<br> Gitalk 評論設定 | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">32</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A"><span class="nav-number">1.</span> <span class="nav-text">【 Hexo網誌架設 4 】Gitalk 評論設定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E7%B3%BB%E7%B5%B1%E7%89%88%E6%9C%AC"><span class="nav-number">1.1.</span> <span class="nav-text">我的系統版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B-GitHub-OAuth-APP"><span class="nav-number">1.2.</span> <span class="nav-text">建立 GitHub OAuth APP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%9F%E7%94%A8%E8%A9%95%E8%AB%96%E5%8D%80"><span class="nav-number">1.3.</span> <span class="nav-text">啟用評論區</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-NexT-%E5%BA%95%E4%B8%8B%E7%9A%84-config-yml-%E8%A3%A1%EF%BC%8C%E6%90%9C%E5%B0%8B-comments%EF%BC%8C%E5%81%9A%E4%B8%80%E4%BA%9B%E6%9B%B4%E5%8B%95%E3%80%82"><span class="nav-number">1.3.1.</span> <span class="nav-text">在 NexT 底下的 _config.yml 裡，搜尋 comments，做一些更動。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%95%9F-Next-%E4%BD%88%E6%99%AF%E4%B8%BB%E9%A1%8C%E7%9A%84-config-yml%EF%BC%8C%E7%84%B6%E5%BE%8C%E6%90%9C%E5%B0%8B%E3%80%8CGitalk%E3%80%8D"><span class="nav-number">1.4.</span> <span class="nav-text">開啟 Next 佈景主題的 _config.yml，然後搜尋「Gitalk」</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【 Hexo網誌架設 4 】<br> Gitalk 評論設定 | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【 Hexo網誌架設 4 】<br> Gitalk 評論設定
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-15 23:07:16" itemprop="dateCreated datePublished" datetime="2022-07-15T23:07:16+08:00">2022-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD/" itemprop="url" rel="index"><span itemprop="name">Hexo網誌架設</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="【-Hexo網誌架設-4-】Gitalk-評論設定"><a href="#【-Hexo網誌架設-4-】Gitalk-評論設定" class="headerlink" title="【 Hexo網誌架設 4 】Gitalk 評論設定"></a>【 Hexo網誌架設 4 】Gitalk 評論設定</h1><h2 id="我的系統版本"><a href="#我的系統版本" class="headerlink" title="我的系統版本"></a>我的系統版本</h2><p>macOS Monterey 12.4<br>hexo-cli: 4.3.0<br>Next：8.12.1  </p>
+<h2 id="建立-GitHub-OAuth-APP"><a href="#建立-GitHub-OAuth-APP" class="headerlink" title="建立 GitHub OAuth APP"></a>建立 GitHub <code>OAuth APP</code></h2><p>使用 Gitalk 必須有 GitHub OAuth，所以首先先開啟 GitHub → <code>Setting</code> -&gt; <code>Developer settings</code> -&gt; 點 <code>OAuth Apps</code>  </p>
+<p>如果沒有新增過，會像下方一樣：  </p>
+<p><img src="/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/HuangSP_20220715_190934.jpeg"></p>
+<p>然後點 <code>Register a new application</code>    </p>
+<p>填寫以下資料：</p>
+<ul>
+<li>Application name - 應用程式名稱</li>
+<li>Homepage URL - 應用程式網域 → 填你部落格網址</li>
+<li>Application description - 應用程式描述</li>
+<li>Authorization callback URL - 授權回應網址 → 填你部落格網址</li>
+</ul>
+<p><img src="/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/HuangSP_20220715_191529.jpeg">  </p>
+<p>然後你會得到一組 Client ID ，等一下會需要</p>
+<p><img src="/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/HuangSP_20220715_191821.jpeg">  </p>
+<p>不過還缺一個 Client secrets </p>
+<p>點右邊按鍵來新增一個  </p>
+<p><img src="/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/HuangSP_20220715_192133.jpeg">  </p>
+<p><code>Make sure to copy your new client secret now. You won’t be able to see it again.</code>  </p>
+<p>這只會出現一次，要保存好。  </p>
+<p>然後到網頁最底下，按一下 <code>update application</code>  </p>
+<p>更新一下剛剛申請到的 Client secrets。  </p>
+<h2 id="啟用評論區"><a href="#啟用評論區" class="headerlink" title="啟用評論區"></a>啟用評論區</h2><h3 id="在-NexT-底下的-config-yml-裡，搜尋-comments，做一些更動。"><a href="#在-NexT-底下的-config-yml-裡，搜尋-comments，做一些更動。" class="headerlink" title="在 NexT 底下的 _config.yml 裡，搜尋 comments，做一些更動。"></a>在 NexT 底下的 _config.yml 裡，搜尋 <code>comments</code>，做一些更動。</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">
+<span class="token comment"># ---------------------------------------------------------------</span>
+<span class="token comment"># Comments Settings</span>
+<span class="token comment"># See: https://theme-next.js.org/docs/third-party-services/comments</span>
+<span class="token comment"># ---------------------------------------------------------------</span>
+
+<span class="token comment"># Multiple Comment System Support</span>
+<span class="token key atrule">comments</span><span class="token punctuation">:</span>
+  <span class="token comment"># Available values: tabs | buttons</span>
+  <span class="token key atrule">style</span><span class="token punctuation">:</span> tabs
+  <span class="token comment"># Choose a comment system to be displayed by default.</span>
+  <span class="token comment"># Available values: disqus | disqusjs | changyan | livere | gitalk | utterances</span>
+  <span class="token key atrule">active</span><span class="token punctuation">:</span> gitalk
+  <span class="token comment"># Setting `true` means remembering the comment system selected by the visitor.</span>
+  <span class="token key atrule">storage</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token comment"># Lazyload all comment systems.</span>
+  <span class="token key atrule">lazyload</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token comment"># Modify texts or order for any naves, here are some examples.</span>
+  <span class="token key atrule">nav</span><span class="token punctuation">:</span>
+    <span class="token comment">#disqus:</span>
+    <span class="token comment">#  text: Load Disqus</span>
+    <span class="token comment">#  order: -1</span>
+    <span class="token key atrule">gitalk</span><span class="token punctuation">:</span>
+      <span class="token key atrule">order</span><span class="token punctuation">:</span> <span class="token number">-1</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="開啟-Next-佈景主題的-config-yml，然後搜尋「Gitalk」"><a href="#開啟-Next-佈景主題的-config-yml，然後搜尋「Gitalk」" class="headerlink" title="開啟 Next 佈景主題的 _config.yml，然後搜尋「Gitalk」"></a>開啟 Next 佈景主題的 _config.yml，然後搜尋「Gitalk」</h2><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">
+<span class="token comment"># Gitalk</span>
+<span class="token comment"># For more information: https://gitalk.github.io</span>
+<span class="token key atrule">gitalk</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">github_id</span><span class="token punctuation">:</span> huang0429 <span class="token comment"># GitHub 作者名稱</span>
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> huang0429.github.io
+  <span class="token key atrule">client_id</span><span class="token punctuation">:</span> <span class="token comment"># 剛剛申請的 Client ID</span>
+  <span class="token key atrule">client_secret</span><span class="token punctuation">:</span> <span class="token comment"># 剛剛申請的 Client Secret</span>
+  <span class="token key atrule">admin_user</span><span class="token punctuation">:</span> huang0429 <span class="token comment"># 管理者的帳號</span>
+  <span class="token key atrule">distraction_free_mode</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># Facebook-like distraction free mode</span>
+  <span class="token comment"># 無干擾模式，簡單來講就是當有人留言時不去吵你。</span>
+
+  <span class="token comment"># When the official proxy is not available, you can change it to your own proxy address</span>
+  <span class="token key atrule">proxy</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cors<span class="token punctuation">-</span>anywhere.azm.workers.dev/https<span class="token punctuation">:</span>//github.com/login/oauth/access_token <span class="token comment"># This is official proxy address</span>
+  <span class="token comment"># Gitalk's display language depends on user's browser or system environment</span>
+  <span class="token comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span>
+  <span class="token comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span>
+  <span class="token key atrule">language</span><span class="token punctuation">:</span> zh<span class="token punctuation">-</span>TW
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span> Gitalk
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>以上都個好了之後，就更一下 Hexo ，然後等個幾分鐘，再做測試，去上個廁所吧！！  </p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/15/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-If-else/" rel="prev" title="流程控制 If- else">
+                  <i class="fa fa-chevron-left"></i> 流程控制 If- else
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/16/%E6%96%B0%E5%A2%9E%E8%99%9B%E6%93%AC%E6%89%8B%E6%A9%9F/" rel="next" title="新增虛擬手機">
+                  新增虛擬手機 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"92c587fc630af38d8958e5d91f03ec09"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

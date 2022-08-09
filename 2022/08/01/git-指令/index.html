@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="git 指令">
+<meta property="og:url" content="https://huang0429.github.io/2022/08/01/git-%E6%8C%87%E4%BB%A4/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-08-01T06:42:15.000Z">
+<meta property="article:modified_time" content="2022-08-01T06:42:15.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/08/01/git-%E6%8C%87%E4%BB%A4/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/08/01/git-%E6%8C%87%E4%BB%A4/","path":"2022/08/01/git-指令/","title":"git 指令"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>git 指令 | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">32</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E6%8C%87%E4%BB%A4%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">Git 指令表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#config"><span class="nav-number">1.1.</span> <span class="nav-text">config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#init-x2F-clone"><span class="nav-number">1.2.</span> <span class="nav-text">init &#x2F; clone</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remote"><span class="nav-number">1.3.</span> <span class="nav-text">remote</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%8E%A7%EF%BC%88-pull-x2F-push-x2F-add-x2F-commit-x2F-status%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">版控（ pull &#x2F; push &#x2F; add &#x2F; commit &#x2F; status）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AA%94%E6%A1%88%E8%AE%8A%E6%93%8D%E4%BD%9C"><span class="nav-number">1.5.</span> <span class="nav-text">檔案變操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Branch-%E5%88%86%E6%94%AF%E6%87%89%E7%94%A8"><span class="nav-number">1.6.</span> <span class="nav-text">Branch 分支應用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reset-%E5%88%87%E5%88%B0%E6%9F%90%E7%89%88%E6%9C%AC"><span class="nav-number">1.7.</span> <span class="nav-text">Reset 切到某版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rebase-amp-Merge-%E5%90%88%E4%BD%B5%E6%87%89%E7%94%A8"><span class="nav-number">1.8.</span> <span class="nav-text">Rebase &amp; Merge 合併應用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2"><span class="nav-number">1.9.</span> <span class="nav-text">查詢</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/08/01/git-%E6%8C%87%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="git 指令 | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          git 指令
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-08-01 14:42:15" itemprop="dateCreated datePublished" datetime="2022-08-01T14:42:15+08:00">2022-08-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>( ) 是自己定義的字</p>
+<h2 id="Git-指令表"><a href="#Git-指令表" class="headerlink" title="Git 指令表"></a>Git 指令表</h2><h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">git config <span class="token punctuation">-</span><span class="token punctuation">-</span>list		//查看設定	
+git config <span class="token punctuation">-</span><span class="token punctuation">-</span>local user.name "(userName)"		//設定帳號	
+git config <span class="token punctuation">-</span><span class="token punctuation">-</span>local user.email "(e<span class="token punctuation">-</span>mail)"		//設定E<span class="token punctuation">-</span>mail =<span class="token punctuation">></span>全域
+git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.name "(userName)"		//設定帳號 =<span class="token punctuation">></span>單專案
+git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.email "(e<span class="token punctuation">-</span>mail)"		//設定E<span class="token punctuation">-</span>mail =<span class="token punctuation">></span>單專案<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="init-x2F-clone"><a href="#init-x2F-clone" class="headerlink" title="init &#x2F; clone"></a>init &#x2F; clone</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">git clone		//抓遠端儲存庫下來	
+git init		//Git 初始化	
+rm <span class="token punctuation">-</span>rf .git		//移除 Git	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="remote"><a href="#remote" class="headerlink" title="remote"></a>remote</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">git remote add (origin) (git@~.git)		//遠端連結	
+git remote set<span class="token punctuation">-</span>url (origin) (git@~.git)		//修改遠端連結	
+git remote remove (origin)		//移除遠端連結	
+git remote <span class="token punctuation">-</span>v		//查詢遠端連結(URL)	
+git push <span class="token punctuation">-</span>u (origin) (master)		//推上遠端並綁定	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="版控（-pull-x2F-push-x2F-add-x2F-commit-x2F-status）"><a href="#版控（-pull-x2F-push-x2F-add-x2F-commit-x2F-status）" class="headerlink" title="版控（ pull &#x2F; push &#x2F; add &#x2F; commit &#x2F; status）"></a>版控（ pull &#x2F; push &#x2F; add &#x2F; commit &#x2F; status）</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">git status		//查詢git狀況
+git add (file) //新增指定檔案到本地端
+git add .	//新增所有檔案到本地端
+git commit <span class="token punctuation">-</span>m'message'	 //新增訊息
+git pull	//推到遠端倉庫（第一次推不能用）
+git push (remote) (branch)		//推到遠端倉庫
+git push <span class="token punctuation">-</span>u (remote) (branch)	//推到遠端倉庫
+git restore <span class="token punctuation">-</span><span class="token punctuation">-</span>staged (file)		//取消git add
+git pull <span class="token punctuation">-</span><span class="token punctuation">-</span>rebase (remote) (branch)	    //遠端倉庫拉回<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="檔案變操作"><a href="#檔案變操作" class="headerlink" title="檔案變操作"></a>檔案變操作</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">git clean <span class="token punctuation">-</span>fd		    //清除未被追蹤的所有檔案	已編輯的會恢復<span class="token punctuation">,</span>新增的不會變動
+git checkout (file)		//當前目錄回復前次存檔	(已編輯的會恢復<span class="token punctuation">,</span>新增的不會變動)
+git restore (file)		//當前目錄回復前次存檔	(含被刪除的檔)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Branch-分支應用"><a href="#Branch-分支應用" class="headerlink" title="Branch 分支應用"></a>Branch 分支應用</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">git branch		            //查詢所有本地分支	
+git branch <span class="token punctuation">-</span>a		        //查詢所有遠端分支	
+git branch (newBranch)		//當前 commit 新建分支	
+git branch (newBranch) (commitID)		//特定 commit 上新建分支	
+git checkout (branch)		//切換到某分支	
+git checkout <span class="token punctuation">-</span>b (newBranch)		//新建分支並切換過去	
+git branch <span class="token punctuation">-</span>d (branch)		//刪除某分支	
+git branch <span class="token punctuation">-</span>D (branch)		//強制刪除某分支	
+git branch <span class="token punctuation">-</span>m (branch) (newName)		//將某 branch 更名	必須先切到不同分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h3 id="Reset-切到某版本"><a href="#Reset-切到某版本" class="headerlink" title="Reset 切到某版本"></a>Reset 切到某版本</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">git reset (commit)			    //預設為'mixed'
+git reset (commit) <span class="token punctuation">-</span><span class="token punctuation">-</span>mixed		//放回"1<span class="token punctuation">-</span>工作目錄"
+git reset (commit) <span class="token punctuation">-</span><span class="token punctuation">-</span>soft		//放回"2<span class="token punctuation">-</span>暫存區"
+git reset (commit) <span class="token punctuation">-</span><span class="token punctuation">-</span>hard		//都不留(直接被隱藏)
+git reset (commit)^		        //退回前1次的commit	^^ 退回前2版…
+git reset (commit)~5		    //退回前5次的commit	~N 退至前N版<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>(commit)可以是 branch &#x2F; commit ID &#x2F; HEAD</p>
+<h3 id="Rebase-amp-Merge-合併應用"><a href="#Rebase-amp-Merge-合併應用" class="headerlink" title="Rebase &amp; Merge 合併應用"></a>Rebase &amp; Merge 合併應用</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">git rebase (branch)		//重接分支基底	
+git merge (branch)		//合併分支(平行)	
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="查詢"><a href="#查詢" class="headerlink" title="查詢"></a>查詢</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">git config <span class="token punctuation">-</span><span class="token punctuation">-</span>list		//查詢目前設定	
+which git		        //查詢 Git 位置	
+git <span class="token punctuation">-</span><span class="token punctuation">-</span>version		    //查詢Git版本	
+git status		        //查詢狀態	
+git log		            //查詢 Log	
+git log <span class="token punctuation">-</span><span class="token punctuation">-</span>oneline		//查詢 Log(單行顯示)	
+git log <span class="token punctuation">-</span><span class="token punctuation">-</span>oneline <span class="token punctuation">-</span><span class="token punctuation">-</span>all <span class="token punctuation">-</span><span class="token punctuation">-</span>graph		//樹狀顯示 Log	
+git log <span class="token punctuation">-</span>p FileName		//查詢檔案 Log	
+git blame FileName		//查詢該檔案每行編輯資訊	(上傳者<span class="token important">&amp;時間)</span>
+git reflog		        //查詢 reflog	
+git help		        //查詢指令	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>reflog：reflog　保留HEAD移動的軌跡，可以查詢到commit ID(用於尋找被隱藏的　commit　)</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/31/RWD%E4%BB%8B%E7%B4%B9/" rel="prev" title="RWD介紹">
+                  <i class="fa fa-chevron-left"></i> RWD介紹
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/01/%E4%B8%80%E5%8F%B0%E9%9B%BB%E8%85%A6%E5%85%A9%E5%80%8BGitHub%E5%B8%B3%E6%88%B6/" rel="next" title="一台電腦兩個GitHub帳戶">
+                  一台電腦兩個GitHub帳戶 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"aa1e711a6f77d8e5033febc6d84009a2"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

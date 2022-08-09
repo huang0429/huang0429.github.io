@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="Swift-型別轉換TypeCasting">
+<meta property="og:url" content="https://huang0429.github.io/2022/08/04/Swift-%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9BTypeCasting/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-08-04T02:39:51.000Z">
+<meta property="article:modified_time" content="2022-08-04T02:39:51.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="swift">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/08/04/Swift-%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9BTypeCasting/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/08/04/Swift-%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9BTypeCasting/","path":"2022/08/04/Swift-型別轉換TypeCasting/","title":"Swift-型別轉換TypeCasting"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Swift-型別轉換TypeCasting | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">32</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift-%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9BTypeCasting"><span class="nav-number">1.</span> <span class="nav-text">Swift-型別轉換TypeCasting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%BF%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B%E5%AE%9A%E7%BE%A9%E9%A1%9E%E5%88%A5%E7%9A%84%E5%B1%A4%E6%AC%A1%E7%B5%90%E6%A7%8B-Defining-a-Class-Hierarchy-for-Type-Casting"><span class="nav-number">1.1.</span> <span class="nav-text">替型別轉換定義類別的層次結構  Defining a Class Hierarchy for Type Casting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AA%A2%E6%9F%A5%E5%9E%8B%E5%88%A5-Checking-Type"><span class="nav-number">1.2.</span> <span class="nav-text">檢查型別 Checking Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E4%B8%8B%E8%BD%89%E5%9E%8B-Downcasting"><span class="nav-number">1.3.</span> <span class="nav-text">向下轉型 Downcasting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E4%B8%8A%E8%BD%89%E5%9E%8B%EF%BC%88%E8%BD%89%E5%9B%9E%E5%85%B6%E6%89%80%E5%B1%AC%E7%88%B6%E9%A1%9E%E5%88%A5%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">向上轉型（轉回其所屬父類別）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Any-%E5%92%8C-AnyObject-%E7%9A%84%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9B-Type-Casting-for-Any-and-AnyObject"><span class="nav-number">1.5.</span> <span class="nav-text">Any 和 AnyObject 的型別轉換 Type Casting for Any and AnyObject</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/08/04/Swift-%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9BTypeCasting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Swift-型別轉換TypeCasting | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Swift-型別轉換TypeCasting
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-08-04 10:39:51" itemprop="dateCreated datePublished" datetime="2022-08-04T10:39:51+08:00">2022-08-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Swift-型別轉換TypeCasting"><a href="#Swift-型別轉換TypeCasting" class="headerlink" title="Swift-型別轉換TypeCasting"></a>Swift-型別轉換TypeCasting</h1><p>1⃣ 型別轉換是一種檢查實體型別的方法，或者將該實體視為與其自身類別在階層架構中其他位置不同的父類別或子類別。  </p>
+<p>2⃣ Swift 中的型別轉換是通過is 和 as運算符實做的。這兩個運算符提供了一種簡單而富有表現力的方式來檢查值的型別或將值強制轉換成不同的型別。  </p>
+<p>3⃣ 還可以使用型別轉換來檢查型別是否符合協定  </p>
+<h2 id="替型別轉換定義類別的層次結構-Defining-a-Class-Hierarchy-for-Type-Casting"><a href="#替型別轉換定義類別的層次結構-Defining-a-Class-Hierarchy-for-Type-Casting" class="headerlink" title="替型別轉換定義類別的層次結構  Defining a Class Hierarchy for Type Casting"></a>替型別轉換定義類別的層次結構  Defining a Class Hierarchy for Type Casting</h2><p>🔴 範列：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token comment">// 定義媒體項目類別</span>
+<span class="token keyword">class</span> <span class="token class-name">MediaItem</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 媒體名稱</span>
+    <span class="token keyword">var</span> name<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 電影類別</span>
+<span class="token keyword">class</span> <span class="token class-name">Movie</span><span class="token punctuation">:</span> <span class="token class-name">MediaItem</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> director<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token comment">// 導演</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> director<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>director <span class="token operator">=</span> director
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> name<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 歌曲類別</span>
+<span class="token keyword">class</span> <span class="token class-name">Song</span><span class="token punctuation">:</span> <span class="token class-name">MediaItem</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> artist<span class="token punctuation">:</span> <span class="token class-name">String</span>  <span class="token comment">//作曲者</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> artist<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>artist <span class="token operator">=</span> artist
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> name<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 餵資料</span>
+<span class="token keyword">let</span> library <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token class-name">Movie</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Casablanca"</span></span><span class="token punctuation">,</span> director<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Michael Curtiz"</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">Song</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Blue Suede Shoes"</span></span><span class="token punctuation">,</span> artist<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Elvis Presley"</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">Movie</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Citizen Kane"</span></span><span class="token punctuation">,</span> director<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Orson Welles"</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">Song</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"The One And Only"</span></span><span class="token punctuation">,</span> artist<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Chesney Hawkes"</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token class-name">Song</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Never Gonna Give You Up"</span></span><span class="token punctuation">,</span> artist<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Rick Astley"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+<span class="token comment">// “library”的型別被推斷為 [MediaItem]</span>
+
+library<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name
+<span class="token comment">// Citizen Kane</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="檢查型別-Checking-Type"><a href="#檢查型別-Checking-Type" class="headerlink" title="檢查型別 Checking Type"></a>檢查型別 Checking Type</h2><p>🔴 範例：   </p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> movieCount <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">var</span> songCount <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token keyword">for</span> item <span class="token keyword">in</span> library <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 檢查item是否為由Movie類別初始化的實體</span>
+    <span class="token keyword">if</span> item <span class="token keyword">is</span> <span class="token class-name">Movie</span> <span class="token punctuation">&#123;</span>
+        movieCount <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token comment">// 檢查item是否為由Song類別初始化的實體</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> item <span class="token keyword">is</span> <span class="token class-name">Song</span> <span class="token punctuation">&#123;</span>
+        songCount <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Media library contains </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">movieCount</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> movies and </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">songCount</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> songs"</span></span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="向下轉型-Downcasting"><a href="#向下轉型-Downcasting" class="headerlink" title="向下轉型 Downcasting"></a>向下轉型 Downcasting</h2><p>💦 當常數或變數的某個類別的型別時，實際上可能在幕後引用（實際的記憶體配置）的是某一個特定子類別的實體。<br>💦 以嘗試使用型別轉換的運算符號（向下轉換 as? 或 as! ）為子類類型。<br>💦 因為向下轉換可能會失敗，所以型別轉換運算符號有兩種不同的形式。<br>💦 條件形式 ,as?回傳嘗試向下轉型的型別的選擇值。<br>💦 強制形式 ,as!嘗試向下轉型並強制拆封合併為單一複合作業。（有當掉的可能）  </p>
+<p>🔴 範例：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+<span class="token keyword">for</span> item <span class="token keyword">in</span> library <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token keyword">let</span> movie <span class="token operator">=</span> item <span class="token keyword">as</span><span class="token operator">?</span> <span class="token class-name">Movie</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Movie: </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">movie<span class="token punctuation">.</span>name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">, dir. </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">movie<span class="token punctuation">.</span>director</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token keyword">let</span> song <span class="token operator">=</span> item <span class="token keyword">as</span><span class="token operator">?</span> <span class="token class-name">Song</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Song: </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">song<span class="token punctuation">.</span>name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">, by </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">song<span class="token punctuation">.</span>artist</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// Movie: Casablanca, dir. Michael Curtiz</span>
+<span class="token comment">// Song: Blue Suede Shoes, by Elvis Presley</span>
+<span class="token comment">// Movie: Citizen Kane, dir. Orson Welles</span>
+<span class="token comment">// Song: The One And Only, by Chesney Hawkes</span>
+<span class="token comment">// Song: Never Gonna Give You Up, by Rick Astley</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>🔴 範例： </p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">for</span> item <span class="token keyword">in</span> library<span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> item <span class="token keyword">is</span> <span class="token class-name">Movie</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">let</span> movie <span class="token operator">=</span> item <span class="token keyword">as</span><span class="token operator">!</span> <span class="token class-name">Movie</span>
+        <span class="token comment">// as 沒有 ! movie.不出東西</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Movie: </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">movie<span class="token punctuation">.</span>name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">,dir. </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">movie<span class="token punctuation">.</span>director</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token keyword">let</span> song <span class="token operator">=</span> item <span class="token keyword">as</span><span class="token operator">?</span> <span class="token class-name">Song</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// as 沒有 ? song.不出東西</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Song: </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">song<span class="token punctuation">.</span>name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">, by </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">song<span class="token punctuation">.</span>artist</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="向上轉型（轉回其所屬父類別）"><a href="#向上轉型（轉回其所屬父類別）" class="headerlink" title="向上轉型（轉回其所屬父類別）"></a>向上轉型（轉回其所屬父類別）</h2><p>🔴 範例：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">let</span> abc <span class="token operator">=</span> <span class="token class-name">Movie</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"kkk"</span></span><span class="token punctuation">,</span> director<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"ttt"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span>abc <span class="token keyword">as</span> <span class="token class-name">MediaItem</span><span class="token punctuation">)</span><span class="token punctuation">.</span>name
+<span class="token comment">//kkk</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Any-和-AnyObject-的型別轉換-Type-Casting-for-Any-and-AnyObject"><a href="#Any-和-AnyObject-的型別轉換-Type-Casting-for-Any-and-AnyObject" class="headerlink" title="Any 和 AnyObject 的型別轉換 Type Casting for Any and AnyObject"></a>Any 和 AnyObject 的型別轉換 Type Casting for Any and AnyObject</h2><p>Swift 提供了兩種”特殊型別”來處理非特定型別：  </p>
+<ol>
+<li>Any可以表示任何型別的實體，包括函式型別、結構、列舉、類別、協定。</li>
+<li>AnyObject可以表示任何類別型別的實體。</li>
+</ol>
+<p>Any和AnyObject只有在確定需要它們提供的行為和功能時才去使用。最好具體說明希望在程式碼中使用的型別。</p>
+<p>🔴 範例：  </p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> things<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token keyword">Any</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+things<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">//Int的0</span>
+things<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">)</span>  <span class="token comment">// Doble的0</span>
+things<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span>   <span class="token comment">// Int的42</span>
+things<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token number">3.14159</span><span class="token punctuation">)</span>  <span class="token comment">// Doble的3.14159 π</span>
+things<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"hello"</span></span><span class="token punctuation">)</span>  <span class="token comment">// String的hello</span>
+things<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3.0</span><span class="token punctuation">,</span> <span class="token number">5.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment">//Tuple型別（double,dobule）的</span>
+things<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token class-name">Movie</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Ghostbusters"</span></span><span class="token punctuation">,</span> director<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Ivan Reitman"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// Movie的型別</span>
+things<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">String</span> <span class="token keyword">in</span> <span class="token string-literal"><span class="token string">"Hello, </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token comment">// 函式型別(String)->String</span>
+
+
+<span class="token keyword">for</span> thing <span class="token keyword">in</span> things <span class="token punctuation">&#123;</span>
+    <span class="token keyword">switch</span> thing <span class="token punctuation">&#123;</span>
+    <span class="token keyword">case</span> <span class="token number">0</span> <span class="token keyword">as</span> <span class="token class-name">Int</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"zero as an Int"</span></span><span class="token punctuation">)</span>
+        <span class="token comment">//攔截Double的0</span>
+    <span class="token keyword">case</span> <span class="token number">0</span> <span class="token keyword">as</span> <span class="token class-name">Double</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"zero as a Double"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> someInt <span class="token keyword">as</span> <span class="token class-name">Int</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"an integer value of </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">someInt</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token comment">// 攔截大於0的Duble</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> someDouble <span class="token keyword">as</span> <span class="token class-name">Double</span> <span class="token keyword">where</span> someDouble <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"a positive double value of </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">someDouble</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token comment">// 攔截小於0的Duble</span>
+    <span class="token keyword">case</span> <span class="token keyword">is</span> <span class="token class-name">Double</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"some other double value that I don't want to print"</span></span><span class="token punctuation">)</span>
+        <span class="token comment">// 小於等於 0 的 Duble ，攔截String</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> someString <span class="token keyword">as</span> <span class="token class-name">String</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"a string value of \"</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">someString</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">\""</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token punctuation">(</span><span class="token class-name">Double</span><span class="token punctuation">,</span> <span class="token class-name">Double</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment">// 攔截 Double,Double</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"an (x, y) point at </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">x</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">, </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">y</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> movie <span class="token keyword">as</span> <span class="token class-name">Movie</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"a movie called </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">movie<span class="token punctuation">.</span>name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">, dir. </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">movie<span class="token punctuation">.</span>director</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> stringConverter <span class="token keyword">as</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">String</span><span class="token punctuation">:</span>
+        <span class="token comment">// 執行函式</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token function">stringConverter</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Michael"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"something else"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// zero as an Int</span>
+<span class="token comment">// zero as a Double</span>
+<span class="token comment">// an integer value of 42</span>
+<span class="token comment">// a positive double value of 3.14159</span>
+<span class="token comment">// a string value of "hello"</span>
+<span class="token comment">// an (x, y) point at 3.0, 5.0</span>
+<span class="token comment">// a movie called Ghostbusters, dir. Ivan Reitman</span>
+<span class="token comment">// Hello, Michael</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/swift/" rel="tag"># swift</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/01/%E4%B8%80%E5%8F%B0%E9%9B%BB%E8%85%A6%E5%85%A9%E5%80%8BGitHub%E5%B8%B3%E6%88%B6/" rel="prev" title="一台電腦兩個GitHub帳戶">
+                  <i class="fa fa-chevron-left"></i> 一台電腦兩個GitHub帳戶
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/05/%E7%BE%8E%E5%8C%96iterm2/" rel="next" title="美化iterm2">
+                  美化iterm2 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"436aae01906e4603d27c1b18308cba42"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

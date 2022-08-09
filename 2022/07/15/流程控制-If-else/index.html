@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="流程控制 If- else">
+<meta property="og:url" content="https://huang0429.github.io/2022/07/15/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-If-else/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-07-15T10:29:01.000Z">
+<meta property="article:modified_time" content="2022-07-15T10:29:01.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="swift">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/07/15/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-If-else/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/15/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-If-else/","path":"2022/07/15/流程控制-If-else/","title":"流程控制 If- else"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>流程控制 If- else | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">32</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-If-else"><span class="nav-number">1.</span> <span class="nav-text">流程控制 If- else</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A3%E5%91%8AoptionalString%E8%AE%8A%E6%95%B8%E7%82%BAString%E5%9E%8B%E5%88%A5%E7%9A%84%E5%8C%85%E8%A3%9D%E7%9B%92%EF%BC%8C%E7%95%B6%E5%8C%85%E8%A3%9D%E7%9B%92%E7%82%BA%E7%A9%BA%E6%99%82%EF%BC%8C%E5%8D%B3%E7%82%BAnil"><span class="nav-number">1.0.1.</span> <span class="nav-text">宣告optionalString變數為String型別的包裝盒，當包裝盒為空時，即為nil</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A%E7%95%B6%E5%9E%8B%E5%88%A5%E7%9A%84%E5%8C%85%E8%A3%9D%E7%9B%92%E7%82%BA%E7%A9%BA%E5%80%BC%E6%99%82%EF%BC%8C%E4%B8%8D%E5%8F%AF%E4%BB%A5%E5%9F%B7%E8%A1%8C%E6%8B%86%E5%B0%81%E5%8F%96%E5%87%BA%E5%85%B6%E5%80%BC%E7%9A%84%E5%8B%95%E4%BD%9C"><span class="nav-number">1.0.2.</span> <span class="nav-text">注意：當型別的包裝盒為空值時，不可以執行拆封取出其值的動作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E5%8D%B0%E5%8C%85%E8%A3%9D%E7%9B%92%E6%98%AF%E5%90%A6%E7%82%BA%E7%A9%BA%E7%9A%84%E7%B5%90%E6%9E%9C"><span class="nav-number">1.0.3.</span> <span class="nav-text">列印包裝盒是否為空的結果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6"><span class="nav-number">1.0.4.</span> <span class="nav-text">測試</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6-1"><span class="nav-number">1.0.5.</span> <span class="nav-text">測試</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90%E7%B7%B4%E7%BF%924%E3%80%91"><span class="nav-number">1.0.6.</span> <span class="nav-text">【練習4】</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/15/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-If-else/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="流程控制 If- else | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          流程控制 If- else
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-15 18:29:01" itemprop="dateCreated datePublished" datetime="2022-07-15T18:29:01+08:00">2022-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="流程控制-If-else"><a href="#流程控制-If-else" class="headerlink" title="流程控制 If- else"></a>流程控制 If- else</h1><ul>
+<li>在if語句中，條件必須是一個BOOL表達式。</li>
+<li>可以同時使用if和let來與可能不存在值（nil）協同運作。</li>
+<li>這一類的值呈現為選擇值（optional value）。</li>
+<li>選擇值可能有值，也有可能為空值（nil）。</li>
+<li>可以在型別之後加上問號(?)來表示其值為選擇性，可以為空值。</li>
+<li>不是選擇性型別不得設定為空值（nil）。</li>
+</ul>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+<span class="token keyword">var</span> testString <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"abc"</span></span>      <span class="token comment">//因為已經設定初值，此行敘述運用型別推測機制，會直接配置記憶體</span>
+testString <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"def"</span></span>
+<span class="token comment">//testString = nil    //error:'nil' cannot be assigned to type 'String'</span>
+
+
+<span class="token keyword">var</span> testString2<span class="token punctuation">:</span><span class="token class-name">String</span>  <span class="token comment">//因為明確指定型別不得為空值，當沒有設定初始值時，不會真正配置到記憶體</span>
+testString2 <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"xyz"</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="宣告optionalString變數為String型別的包裝盒，當包裝盒為空時，即為nil"><a href="#宣告optionalString變數為String型別的包裝盒，當包裝盒為空時，即為nil" class="headerlink" title="宣告optionalString變數為String型別的包裝盒，當包裝盒為空時，即為nil"></a>宣告optionalString變數為String型別的包裝盒，當包裝盒為空時，即為nil</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> optionalString<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token operator">?</span>     <span class="token comment">//即使此時尚未設定初值，會直接配置記憶體，但其值為nil</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="注意：當型別的包裝盒為空值時，不可以執行拆封取出其值的動作"><a href="#注意：當型別的包裝盒為空值時，不可以執行拆封取出其值的動作" class="headerlink" title="注意：當型別的包裝盒為空值時，不可以執行拆封取出其值的動作"></a>注意：當型別的包裝盒為空值時，不可以執行拆封取出其值的動作</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+<span class="token function">print</span><span class="token punctuation">(</span>optionalString<span class="token operator">!</span><span class="token punctuation">)</span>  <span class="token comment">//error: Execution was interrupted（runtime error）</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">optionalString <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Hello"</span></span>        <span class="token comment">//在String型別的包裝盒中存放Hello字串</span>
+<span class="token function">print</span><span class="token punctuation">(</span>optionalString<span class="token operator">!</span><span class="token punctuation">)</span>  <span class="token comment">//拆開（unwrap）包裝盒，使用美工刀（!）才能取出包裝盒中的字串</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="列印包裝盒是否為空的結果"><a href="#列印包裝盒是否為空的結果" class="headerlink" title="列印包裝盒是否為空的結果"></a>列印包裝盒是否為空的結果</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token function">print</span><span class="token punctuation">(</span>optionalString <span class="token operator">==</span> <span class="token nil constant">nil</span><span class="token punctuation">)</span>	<span class="token comment">// false</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+optionalString <span class="token operator">=</span> <span class="token nil constant">nil</span>
+<span class="token keyword">if</span> optionalString <span class="token operator">==</span> <span class="token nil constant">nil</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"String包裝盒裡沒有任何東西！"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">else</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>optionalString<span class="token operator">!</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 結果：</span>
+<span class="token class-name">String</span>包裝盒裡沒有任何東西！
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="測試"><a href="#測試" class="headerlink" title="測試"></a>測試</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+<span class="token keyword">var</span> arrDouble<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token class-name">Double</span><span class="token operator">?</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12.23</span><span class="token punctuation">,</span><span class="token number">23.22</span><span class="token punctuation">,</span><span class="token nil constant">nil</span><span class="token punctuation">]</span>
+<span class="token keyword">var</span> arrInt<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token class-name">Int</span><span class="token punctuation">]</span><span class="token operator">?</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">Int</span><span class="token punctuation">(</span>arrDouble<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">!</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">//結果：</span>
+<span class="token number">12</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="測試-1"><a href="#測試-1" class="headerlink" title="測試"></a>測試</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+<span class="token keyword">var</span> optionalName<span class="token punctuation">:</span><span class="token class-name">String</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"John Appleseed"</span></span>
+<span class="token keyword">var</span> greeting <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Hello!"</span></span>
+<span class="token function">print</span><span class="token punctuation">(</span>optionalName<span class="token punctuation">)</span>
+<span class="token comment">//結果：</span>
+<span class="token class-name">Optional</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"John Appleseed"</span></span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="【練習4】"><a href="#【練習4】" class="headerlink" title="【練習4】"></a>【練習4】</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token comment">//選擇性綁定（optional binding）</span>
+<span class="token keyword">if</span> <span class="token keyword">let</span> aname <span class="token operator">=</span> optionalName      <span class="token comment">//如果型別的包裝盒中有值，則綁定成功，會自動拆封其值到對應的常數name</span>
+<span class="token punctuation">&#123;</span>
+    greeting <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Hello, </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">aname</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">else</span>    <span class="token comment">//如果綁定不成功，則執行else程式區段</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Hello"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">//結果：</span>
+<span class="token string-literal"><span class="token string">"Hello, John Appleseed"</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+<span class="token comment">//注意：也可以使用guard let執行選擇性綁定，綁定的結果(bname)可以在guard let之外使用，但目前限定此語法只能用在函式之內，且在else段最後一行必須為return</span>
+<span class="token comment">//</span>
+<span class="token comment">//guard let bname = optionalName</span>
+<span class="token comment">//else</span>
+<span class="token comment">//&#123;</span>
+<span class="token comment">//    print("Hello")</span>
+<span class="token comment">//    return</span>
+<span class="token comment">//&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/swift/" rel="tag"># swift</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/14/%E8%A4%87%E5%90%88%E5%80%BC-compound/" rel="prev" title="複合值 compound">
+                  <i class="fa fa-chevron-left"></i> 複合值 compound
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/15/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-4-%E3%80%91Gitalk-%E8%A9%95%E8%AB%96%E8%A8%AD%E5%AE%9A/" rel="next" title="【 Hexo網誌架設 4 】<br> Gitalk 評論設定">
+                  【 Hexo網誌架設 4 】<br> Gitalk 評論設定 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"601811e138bd8f0fb8cca781f786410d"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

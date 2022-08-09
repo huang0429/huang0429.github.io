@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="【 Hexo網誌架設 2 】&lt;br&gt;新增網誌">
+<meta property="og:url" content="https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/HuangSiaoPei2022-07-0618.31.18.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/HuangSiaoPei2022-07-0618.34.02.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/Xnip2022-07-06_18-50-43.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/Xnip2022-07-06_19-01-27.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/Xnip2022-07-06_19-08-24.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/HuangSiaoPei2022-07-0619.19.54.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/Xnip2022-07-06_19-24-28.jpg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/HuangSiaoPei2022-07-0619.31.50.jpg">
+<meta property="article:published_time" content="2022-07-06T11:05:40.000Z">
+<meta property="article:modified_time" content="2022-07-06T11:05:40.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/HuangSiaoPei2022-07-0618.31.18.jpg">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/","path":"2022/07/06/【-Hexo網誌架設-2-】新增網誌/","title":"【 Hexo網誌架設 2 】\u003cbr>新增網誌"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【 Hexo網誌架設 2 】<br>新增網誌 | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">32</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E2%80%A6"><span class="nav-number">1.</span> <span class="nav-text">開始…</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%93%E9%96%8B%E7%B5%82%E7%AB%AF%E6%A9%9F"><span class="nav-number">2.</span> <span class="nav-text">打開終端機</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C%E9%A0%81%E9%9D%A2"><span class="nav-number">3.</span> <span class="nav-text">新增網誌頁面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E7%9A%84-md-%E6%AA%94%E5%9C%A8%E5%93%AA%E8%A3%A1%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">新增的 .md 檔在哪裡？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E6%A0%BC%E5%BC%8F%E7%B7%A8%E8%BC%AF%E8%AA%AA%E6%98%8E"><span class="nav-number">5.</span> <span class="nav-text">文章格式編輯說明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E6%9D%9F"><span class="nav-number">6.</span> <span class="nav-text">結束</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C"><span class="nav-number">7.</span> <span class="nav-text">如果</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【 Hexo網誌架設 2 】<br>新增網誌 | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【 Hexo網誌架設 2 】<br>新增網誌
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-06 19:05:40" itemprop="dateCreated datePublished" datetime="2022-07-06T19:05:40+08:00">2022-07-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD/" itemprop="url" rel="index"><span itemprop="name">Hexo網誌架設</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>【 Hexo網誌架設 1 】都完整的安裝好，也確認  GitHub Pages 可以正常顯示後，接下來就是要測試一下，是否可以正常的新增文章，文章可以正常新增後，再來更換主題。</p>
+<h1 id="開始…"><a href="#開始…" class="headerlink" title="開始…"></a>開始…</h1><pre class="line-numbers language-none"><code class="language-none">🛢 在使用 Hexo 的時候，如果要用終端機下指令時，要隨時注意自己所在的資料層是不是正確的。  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h1 id="打開終端機"><a href="#打開終端機" class="headerlink" title="打開終端機"></a>打開終端機</h1><p>打開終端機後，將 Hexo 的資料夾拉到終端機中，放手之後，就會看到資料夾的路徑在上面了，然後按 <code>Enter</code>﹐就會跳到資料夾的路徑了 。  </p>
+<p><img src="/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/HuangSiaoPei2022-07-0618.31.18.jpg">  </p>
+<p><img src="/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/HuangSiaoPei2022-07-0618.34.02.jpg"></p>
+<p>接著輸入指令：</p>
+<pre class="line-numbers language-none"><code class="language-none">$ ls<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>應該只會看到一個資料夾，這個資料夾就是當初在 init 時建立的資料夾。  </p>
+<p>接著輸入指令：</p>
+<pre class="line-numbers language-none"><code class="language-none">$ cd 資料夾名稱 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然後按 <code>Enter</code> 就會進入這個資料夾。<br>同時也是 Hexo 要下指令的資料層。</p>
+<p><img src="/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/Xnip2022-07-06_18-50-43.jpg">  </p>
+<h1 id="新增網誌頁面"><a href="#新增網誌頁面" class="headerlink" title="新增網誌頁面"></a>新增網誌頁面</h1><p> 輸入指令：<br> <pre class="line-numbers language-none"><code class="language-none">$ hexo new &quot;網頁名稱&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></p>
+<p> 網頁名稱可以加空白<br> 這個名稱同時也會是你網頁的抬頭：  </p>
+<p> <img src="/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/Xnip2022-07-06_19-01-27.jpg">  </p>
+<p> Enter 按下去之後，Hexo 就會自動幫你新增一份.md 檔了。  </p>
+<p> <img src="/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/Xnip2022-07-06_19-08-24.jpg">  </p>
+<p> 為什麼是.md 檔？  </p>
+<p> 請容許我說點幹話…  </p>
+<p> 因為…Hexo 支援 MarkDown </p>
+<p> MarkDown 很好用，加幾個字符就可以改變大小，最重要的是寫程式碼也可以美美的。  </p>
+<h1 id="新增的-md-檔在哪裡？"><a href="#新增的-md-檔在哪裡？" class="headerlink" title="新增的 .md 檔在哪裡？"></a>新增的 .md 檔在哪裡？</h1><p> 回到桌面  </p>
+<p> 把 hexo 的資料夾用你的編輯器打開  （我用的是 VSCode ）</p>
+<p> mac 的做法是把資料夾拉到你的編輯器上就可以打開整份的資料夾了。  </p>
+<p> 拉到編輯器上時，編輯器會有點變透明，手放開就可以了。  </p>
+<p> <img src="/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/HuangSiaoPei2022-07-0619.19.54.jpg">  </p>
+<p> 編輯器左側可以看到 Hexo 底下所有的檔案  </p>
+<p> 點開 <code>source</code>  </p>
+<p> <img src="/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/Xnip2022-07-06_19-24-28.jpg">  </p>
+<p> 然後再點開 <code>_posts</code> 就會看到你新增的檔案了。 </p>
+<p>再點開你新增的檔案  </p>
+<p><img src="/2022/07/06/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-2-%E3%80%91%E6%96%B0%E5%A2%9E%E7%B6%B2%E8%AA%8C/HuangSiaoPei2022-07-0619.31.50.jpg">  </p>
+<p>在底下就是你編輯文章的地方  </p>
+<p>你的畫面可能會跟我有點不一樣  </p>
+<p>因為我有做一些設定，之後會再寫  </p>
+<p>往後，新增的文章都會在 <code>_posts</code> 底下  </p>
+<h1 id="文章格式編輯說明"><a href="#文章格式編輯說明" class="headerlink" title="文章格式編輯說明"></a>文章格式編輯說明</h1><p>現在看到的內容格式是 hexo 自動產生的  </p>
+<p>可以修改  </p>
+<p>在還沒有做其他設定之前  </p>
+<p>應該只會有</p>
+<pre class="line-numbers language-none"><code class="language-none">---
+title:  
+tags:
+- [ ]
+date: 
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>title： 你新增檔案的名稱<br>tags ； 自己新增，格式如上，最好一個 tags 寫一個 <code>- [ ]</code>，如果有多個可以如下填寫：</p>
+<pre class="line-numbers language-none"><code class="language-none">tags :
+- [ ]
+- [ ]
+- [ ]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>date： 會自動產生  </p>
+<h1 id="結束"><a href="#結束" class="headerlink" title="結束"></a>結束</h1><p>文章編輯完後，記得要存檔。  </p>
+<p>存檔之後，我建議先打開 server 看一下，滿意再上傳。  </p>
+<pre class="line-numbers language-none"><code class="language-none">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>會出現本地端的網址  </p>
+<p>打開來看。  </p>
+<p>滿意了  </p>
+<p>再到<code> Hexo/blog</code>下指令，上傳  </p>
+<p>還記得指令嗎？  </p>
+<pre class="line-numbers language-none"><code class="language-none">$ hexo clean
+$ hexo g -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>上傳完畢後，要打開網頁看一下有沒有成功，有可能會需要等幾分鍾。  </p>
+<h1 id="如果"><a href="#如果" class="headerlink" title="如果"></a>如果</h1><p>我是說如果…  </p>
+<p>在上傳的時候卡住了…  (很偶爾會發生)</p>
+<p>就按 <code>control + C</code>  </p>
+<p>重新輸入完整的指令：</p>
+<pre class="line-numbers language-none"><code class="language-none">$ hexo clean
+$ hexo generate
+$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/" rel="prev" title="Swift-集合1_陣列Array">
+                  <i class="fa fa-chevron-left"></i> Swift-集合1_陣列Array
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/08/google%E8%A1%8C%E4%BA%8B%E6%9B%86%E6%B4%BB%E5%8B%95%E7%94%A8Line%E6%8F%90%E9%86%92/" rel="next" title="google行事曆活動用Line提醒">
+                  google行事曆活動用Line提醒 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"b2f6fa5e3e05ec73681b96ae94bc6262"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

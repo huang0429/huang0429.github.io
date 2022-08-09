@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="Flex網頁排版術">
+<meta property="og:url" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_090358.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_091205.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_091615.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_092438.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_093429.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_093827.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_094237.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_140237.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_140608.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_141023.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_142807.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_142807.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_143838.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_144105.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_144346.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_144818.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_192839.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_191226.jpeg">
+<meta property="article:published_time" content="2022-07-30T11:14:00.000Z">
+<meta property="article:modified_time" content="2022-07-30T11:14:00.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="Flex">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_090358.jpeg">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/","path":"2022/07/30/Flex網頁排版術/","title":"Flex網頁排版術"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Flex網頁排版術 | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">32</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7%E8%A8%AD%E5%AE%9A"><span class="nav-number">1.</span> <span class="nav-text">工具設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%AE%B9%E5%99%A8%E5%B1%AC%E6%80%A7"><span class="nav-number">2.</span> <span class="nav-text">外容器屬性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-direction"><span class="nav-number">2.1.</span> <span class="nav-text">flex-direction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-wrap"><span class="nav-number">3.</span> <span class="nav-text">flex-wrap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#justify-content-%E4%B8%BB%E8%BB%B8"><span class="nav-number">4.</span> <span class="nav-text">justify-content 主軸</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-items-%E4%BA%A4%E9%8C%AF%E8%BB%B8"><span class="nav-number">5.</span> <span class="nav-text">align-items 交錯軸</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E9%8C%AF%E8%BB%B8%E5%A4%9A%E8%A1%8C%E5%B0%8D%E9%BD%8A%E5%B1%AC%E6%80%A7%EF%BC%9Aalign-content"><span class="nav-number">6.</span> <span class="nav-text">交錯軸多行對齊屬性：align-content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%A9%E4%B8%80%E4%B8%8B"><span class="nav-number">7.</span> <span class="nav-text">玩一下</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Flex網頁排版術 | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Flex網頁排版術
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-30 19:14:00" itemprop="dateCreated datePublished" datetime="2022-07-30T19:14:00+08:00">2022-07-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <ul>
+<li>display: flex 要下在外容器</li>
+<li>外容器下的語法只會對下一層的內元件有作用，再往下一層不會有作用</li>
+<li>能同時擁有內元件跟外容器身份</li>
+</ul>
+<h2 id="工具設定"><a href="#工具設定" class="headerlink" title="工具設定"></a>工具設定</h2><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>item1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>item2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>item3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>item4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>item4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-css" data-language="css"><code class="language-css">
+<span class="token selector">.container</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">.item</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_090358.jpeg">  </p>
+<h2 id="外容器屬性"><a href="#外容器屬性" class="headerlink" title="外容器屬性"></a>外容器屬性</h2><h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>在容器內有分主軸跟交錯軸<br>如果主軸是橫的，交錯軸就是直的。  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_091205.jpeg">  </p>
+<p>如果主軸是直的，交錯軸就是橫的。  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_091615.jpeg">  </p>
+<p>而 flex-direction 就是決定主軸是橫的還是直的  </p>
+<p>🟥 <strong>flex-direction: row;</strong><br>row 是預設值  </p>
+<p>主軸是橫軸  </p>
+<p>由左至右  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_092438.jpeg">  </p>
+<p>🟥 <strong>flex-direction: row-reverse;</strong>  </p>
+<p>主軸是橫軸  </p>
+<p>由右至左  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_093429.jpeg">  </p>
+<p>🟥 <strong>flex-direction: column;</strong></p>
+<p>主軸是直的  </p>
+<p>由上至下  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_093827.jpeg">  </p>
+<p>🟥 <strong>flex-direction: column-reverse;</strong> </p>
+<p>主軸是直的  </p>
+<p>但是是由下往上  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_094237.jpeg">  </p>
+<h2 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h2><p>也是寫在外容器  </p>
+<p>row 預設為橫向的  </p>
+<p>不換行也是預設的  </p>
+<p>就是不管有多少元件  </p>
+<p>都會塞在第一行  </p>
+<p>flex-wrap 就是設定是否換行的  </p>
+<p>超出範圍時是否換行的屬性，分為換行、不換行、換行時反轉。  </p>
+<p>🟥 <strong>flex-wrap:nowrap</strong></p>
+<p>這是預設值，換行。  </p>
+<p>圖片中一個 item 有 150px  </p>
+<p>很明顯的，圖中的 item 有比較短。  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_140237.jpeg">  </p>
+<p>🟥 <strong>flex-wrap:wrap</strong></p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_140608.jpeg">  </p>
+<p>🟥 <strong>flex-wrap:wrap-reverse</strong></p>
+<p>會反過來  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_141023.jpeg">  </p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+	<span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap-reverse<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">.item</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="justify-content-主軸"><a href="#justify-content-主軸" class="headerlink" title="justify-content 主軸"></a>justify-content 主軸</h2><p>這是對齊主軸的  </p>
+<p>設定是寫在外容器的  </p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">// 外容器
+.container</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">//內容器
+.item</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_142807.jpeg">  </p>
+<p>justify-content 有幾個設定：  </p>
+<ul>
+<li>flex-start</li>
+<li>flex-end</li>
+<li>center</li>
+<li>space-between</li>
+<li>space-around</li>
+</ul>
+<p>🛑 flex-start<br>這是預設值  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_142807.jpeg">  </p>
+<p>🛑 flex-end  </p>
+<p>全部靠右  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_143838.jpeg">  </p>
+<p>🛑 center  </p>
+<p>置中  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_144105.jpeg">  </p>
+<p>🛑 space-between  </p>
+<p>平均分散  </p>
+<p>但是最旁邊的兩個 item 會靠在邊界  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_144346.jpeg">  </p>
+<p>🛑 space-around  </p>
+<p>平均分散  </p>
+<p>但是最旁邊的兩個 item 不會靠在邊界  </p>
+<p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_144818.jpeg">  </p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+	<span class="token property">justify-content</span><span class="token punctuation">:</span> space-around <span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">.item</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="align-items-交錯軸"><a href="#align-items-交錯軸" class="headerlink" title="align-items 交錯軸"></a>align-items 交錯軸</h2><p>這是對齊交錯軸的  </p>
+<p>設定是寫在外容器的  </p>
+<p>有以下幾種設定：  </p>
+<ul>
+<li>flex-start</li>
+<li>flex-end</li>
+<li>center</li>
+<li>baseline</li>
+<li>stretch;</li>
+</ul>
+<p>下圖是<a target="_blank" rel="noopener" href="https://www.casper.tw/">卡斯伯</a>老師的圖<br><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_192839.jpeg">  </p>
+<h2 id="交錯軸多行對齊屬性：align-content"><a href="#交錯軸多行對齊屬性：align-content" class="headerlink" title="交錯軸多行對齊屬性：align-content"></a>交錯軸多行對齊屬性：align-content</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content">試一下</a></p>
+<ul>
+<li>align-content: start 多行對齊交錯軸線起點</li>
+<li>align-content: center 多行置中對齊交錯軸線</li>
+<li>align-content: space-between 寬度會平均分配，第一行和最後一行會貼齊邊緣</li>
+<li>align-content: space-around 寬度和間距平均分配(中間留白較多 左右兩邊留白各占一半空間)</li>
+</ul>
+<h2 id="玩一下"><a href="#玩一下" class="headerlink" title="玩一下"></a><a target="_blank" rel="noopener" href="https://codepen.io/peiqun/pen/WYzzYX">玩一下</a></h2><p><img src="/2022/07/30/Flex%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%E8%A1%93/HuangSP_20220730_191226.jpeg"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/css/" rel="tag"># css</a>
+              <a href="/tags/Flex/" rel="tag"># Flex</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/28/%E5%9C%96%E7%89%87%E5%8F%96%E4%BB%A3logo/" rel="prev" title="圖片取代logo">
+                  <i class="fa fa-chevron-left"></i> 圖片取代logo
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/31/RWD%E4%BB%8B%E7%B4%B9/" rel="next" title="RWD介紹">
+                  RWD介紹 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"7cd6d0674875bc80f43fa1b48a368fbf"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="美化iterm2">
+<meta property="og:url" content="https://huang0429.github.io/2022/08/05/%E7%BE%8E%E5%8C%96iterm2/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/NBsiOkC.jpg">
+<meta property="og:image" content="https://i.imgur.com/HaRSsv5.jpg">
+<meta property="og:image" content="https://i.imgur.com/v5Z3q4I.jpg">
+<meta property="og:image" content="https://i.imgur.com/jLkG9h6.jpg">
+<meta property="og:image" content="https://i.imgur.com/ErNHUfM.jpg">
+<meta property="og:image" content="https://i.imgur.com/p1br75j.jpg">
+<meta property="og:image" content="https://i.imgur.com/QObmlEz.jpg">
+<meta property="og:image" content="https://i.imgur.com/BSupyaB.jpg">
+<meta property="article:published_time" content="2022-08-05T12:06:02.000Z">
+<meta property="article:modified_time" content="2022-08-05T12:06:02.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="iTerm2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/NBsiOkC.jpg">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/08/05/%E7%BE%8E%E5%8C%96iterm2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/08/05/%E7%BE%8E%E5%8C%96iterm2/","path":"2022/08/05/美化iterm2/","title":"美化iterm2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>美化iterm2 | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">32</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-iTerm2"><span class="nav-number">1.</span> <span class="nav-text">安裝 iTerm2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AA%A2%E6%9F%A5-Report-Terminal-Type"><span class="nav-number">2.</span> <span class="nav-text">檢查 Report Terminal Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9-Color-Presets"><span class="nav-number">3.</span> <span class="nav-text">更改 Color Presets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-powerline-font"><span class="nav-number">4.</span> <span class="nav-text">安裝 powerline font</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D%E6%8C%87%E4%BB%A4%EF%BC%9A"><span class="nav-number">4.1.</span> <span class="nav-text">安裝指令：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D%E5%AE%8C%E5%BE%8C%E8%A6%81%E8%A8%AD%E5%AE%9A%E4%B8%80%E4%B8%8B%EF%BC%9A"><span class="nav-number">4.2.</span> <span class="nav-text">安裝完後要設定一下：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-oh-my-zsh"><span class="nav-number">5.</span> <span class="nav-text">安裝 oh-my-zsh</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%82%BA-x2F-zshrc"><span class="nav-number">5.1.</span> <span class="nav-text">zsh的配置文件為~&#x2F;.zshrc</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9Doh-my-zsh"><span class="nav-number">6.</span> <span class="nav-text">安裝oh-my-zsh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-zsh-%E4%B8%BB%E9%A1%8C"><span class="nav-number">7.</span> <span class="nav-text">修改 zsh 主題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D%E8%B6%85%E5%BC%B7-zsh-theme-Powerlevel10k"><span class="nav-number">8.</span> <span class="nav-text">安裝超強 zsh theme Powerlevel10k</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D"><span class="nav-number">8.1.</span> <span class="nav-text">安裝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-zsh-theme-%E7%82%BA-powerlevel10k"><span class="nav-number">9.</span> <span class="nav-text">修改 zsh theme 為 powerlevel10k</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E8%A8%AD%E5%AE%9A"><span class="nav-number">10.</span> <span class="nav-text">開始設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E8%AE%8A%E8%83%8C%E6%99%AF%E5%9C%96"><span class="nav-number">11.</span> <span class="nav-text">改變背景圖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E5%88%97%E6%8F%90%E7%A4%BA-navi"><span class="nav-number">12.</span> <span class="nav-text">命令列提示 - navi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8-brew-%E5%AE%89%E8%A3%9D"><span class="nav-number">12.1.</span> <span class="nav-text">用 brew 安裝</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/08/05/%E7%BE%8E%E5%8C%96iterm2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="美化iterm2 | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          美化iterm2
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-08-05 20:06:02" itemprop="dateCreated datePublished" datetime="2022-08-05T20:06:02+08:00">2022-08-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%B1%E5%AD%B8%E8%A5%BF%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">東學西學</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="安裝-iTerm2"><a href="#安裝-iTerm2" class="headerlink" title="安裝 iTerm2"></a>安裝 iTerm2</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ brew cask instal iterm2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="檢查-Report-Terminal-Type"><a href="#檢查-Report-Terminal-Type" class="headerlink" title="檢查 Report Terminal Type"></a>檢查 Report Terminal Type</h2><p>打開 iTerm2 檢查 Report Terminal Type 的設定，設定路徑：<br><code>Preferences</code>&gt;<code>Profiles</code>&gt;<code>Terminal</code>&gt;<code> Report Terminal Type</code></p>
+<p>設為 xterm-256color，才能看得到漂亮的顏色。  </p>
+<p><img src="https://i.imgur.com/NBsiOkC.jpg"></p>
+<h2 id="更改-Color-Presets"><a href="#更改-Color-Presets" class="headerlink" title="更改 Color Presets"></a>更改 Color Presets</h2><p>預設的不是很好看，改個自己喜歡的。  </p>
+<p>先下載<a target="_blank" rel="noopener" href="https://github.com/mbadolato/iTerm2-Color-Schemes">iTerm2-Color-Schemes</a>到電腦裡，然後 import 到 Color Presets 裡，改成自己要的。  </p>
+<p>路徑：<code>Preferences</code> &gt; <code>Profiles</code> &gt; <code>Colors</code> &gt; <code>Color Presets...</code></p>
+<p><img src="https://i.imgur.com/HaRSsv5.jpg">  </p>
+<h2 id="安裝-powerline-font"><a href="#安裝-powerline-font" class="headerlink" title="安裝 powerline font"></a>安裝 powerline font</h2><p>因為我們要用的 theme 會用到很多的特殊 icon，所以 iTerm2 選用的字型必需要支援這種特殊 icon font。<br>這類型的字體統稱為 powerline font（另外還有加強版支援更多特殊 icon 的叫的 nerd font）  </p>
+<h3 id="安裝指令："><a href="#安裝指令：" class="headerlink" title="安裝指令："></a>安裝指令：</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 先執行這行，才能用 homebrew 安裝字型。曾經執行過的人可以跳過這個指令</span>
+$ brew tap homebrew/cask-fonts
+
+<span class="token comment"># 安裝指令</span>
+$ brew search nerd<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="安裝完後要設定一下："><a href="#安裝完後要設定一下：" class="headerlink" title="安裝完後要設定一下："></a>安裝完後要設定一下：</h3><p><img src="https://i.imgur.com/v5Z3q4I.jpg">  </p>
+<h2 id="安裝-oh-my-zsh"><a href="#安裝-oh-my-zsh" class="headerlink" title="安裝 oh-my-zsh"></a>安裝 oh-my-zsh</h2><p>mac預設shell使用的是bash  </p>
+<p>zsh也是一種shell  </p>
+<p>功能更強大而且基本兼容前者  </p>
+<p>oh-my-zsh則是zsh的開源的插件包  </p>
+<p>讓zsh原本繁瑣的設定過程變得簡單  </p>
+<p>mac下自帶zsh，但不是最新  </p>
+<p>查看zsh版本：  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">zsh</span> --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>可以更新  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ brew <span class="token function">install</span> <span class="token function">zsh</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="zsh的配置文件為-x2F-zshrc"><a href="#zsh的配置文件為-x2F-zshrc" class="headerlink" title="zsh的配置文件為~&#x2F;.zshrc"></a>zsh的配置文件為~&#x2F;.zshrc</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看支持的shell</span>
+$ <span class="token function">open</span> /etc/shells
+<span class="token comment"># 若沒有zsh，則安裝</span>
+$ brew <span class="token function">install</span> <span class="token function">zsh</span>
+
+<span class="token comment"># 將zsh 設定為默認的shell</span>
+$ chsh -s /bin/zsh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="安裝oh-my-zsh"><a href="#安裝oh-my-zsh" class="headerlink" title="安裝oh-my-zsh"></a>安裝oh-my-zsh</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">sh</span> -c <span class="token string">" <span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="token variable">)</span></span> "</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>我出現了錯誤訊息：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
+The <span class="token variable">$ZSH</span> folder already exists <span class="token punctuation">(</span>/Users/huangxiaopei/.oh-my-zsh<span class="token punctuation">)</span>.
+
+You ran the installer with the <span class="token variable">$ZSH</span> setting or the <span class="token variable">$ZSH</span> variable is
+exported. You have <span class="token number">3</span> options:
+
+<span class="token number">1</span>. Unset the ZSH variable when calling the installer:
+   <span class="token variable"><span class="token variable">`</span><span class="token assign-left variable">ZSH</span><span class="token operator">=</span> <span class="token function">sh</span> install.sh<span class="token variable">`</span></span>
+<span class="token number">2</span>. Install Oh My Zsh to a directory that doesn<span class="token string">'t exist yet:
+   `ZSH=path/to/new/ohmyzsh/folder sh install.sh`
+3. (Caution) If the folder doesn'</span>t contain important information,
+   you can just remove it with <span class="token variable"><span class="token variable">`</span><span class="token function">rm</span> -r /Users/huangxiaopei/.oh-my-zsh<span class="token variable">`</span></span>
+   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我選擇第三個選項<br>先刪除再重裝</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">rm</span> -rf ~/.oh-my-zsh
+$ <span class="token function">rm</span> ~/.zshrc
+
+<span class="token comment"># 然後重新安裝</span>
+$ <span class="token function">sh</span> -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>結果：  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">></span>
+<span class="token function">sh</span> -c <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="token variable">)</span></span>"</span>
+Cloning Oh My Zsh<span class="token punctuation">..</span>.
+remote: Enumerating objects: <span class="token number">1279</span>, done.
+remote: Counting objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">1279</span>/1279<span class="token punctuation">)</span>, done.
+remote: Compressing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">1235</span>/1235<span class="token punctuation">)</span>, done.
+remote: Total <span class="token number">1279</span> <span class="token punctuation">(</span>delta <span class="token number">24</span><span class="token punctuation">)</span>, reused <span class="token number">1215</span> <span class="token punctuation">(</span>delta <span class="token number">24</span><span class="token punctuation">)</span>, pack-reused <span class="token number">0</span>
+Receiving objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">1279</span>/1279<span class="token punctuation">)</span>, <span class="token number">1.06</span> MiB <span class="token operator">|</span> <span class="token number">1.35</span> MiB/s, done.
+Resolving deltas: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">24</span>/24<span class="token punctuation">)</span>, done.
+From https://github.com/ohmyzsh/ohmyzsh
+ * <span class="token punctuation">[</span>new branch<span class="token punctuation">]</span>      master     -<span class="token operator">></span> origin/master
+Branch <span class="token string">'master'</span> <span class="token builtin class-name">set</span> up to track remote branch <span class="token string">'master'</span> from <span class="token string">'origin'</span><span class="token builtin class-name">.</span>
+Already on <span class="token string">'master'</span>
+/Users/huangxiaopei
+
+Looking <span class="token keyword">for</span> an existing <span class="token function">zsh</span> config<span class="token punctuation">..</span>.
+Using the Oh My Zsh template <span class="token function">file</span> and adding it to ~/.zshrc.
+
+         __                                     __
+  ____  / /_     ____ ___  __  __   ____  _____/ /_
+ / __ <span class="token punctuation">\</span>/ __ <span class="token punctuation">\</span>   / __ <span class="token variable"><span class="token variable">`</span>__ <span class="token punctuation">\</span>/ / / /  /_  / / ___/ __ <span class="token punctuation">\</span>
+/ /_/ / / / /  / / / / / / /_/ /    / /_<span class="token punctuation">(</span>__  <span class="token punctuation">)</span> / / /
+<span class="token punctuation">\</span>____/_/ /_/  /_/ /_/ /_/<span class="token punctuation">\</span>__, /    /___/____/_/ /_/
+                        /____/                       <span class="token punctuation">..</span><span class="token punctuation">..</span>is now installed<span class="token operator">!</span>
+
+
+Before you scream Oh My Zsh<span class="token operator">!</span> <span class="token function">look</span> over the <span class="token variable">`</span></span>.zshrc` <span class="token function">file</span> to <span class="token keyword">select</span> plugins, themes, and options.
+
+• Follow us on Twitter: @ohmyzsh
+• Join our Discord community: Discord server
+• Get stickers, t-shirts, coffee mugs and more: Planet Argon Shop
+
+➜  ~
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="修改-zsh-主題"><a href="#修改-zsh-主題" class="headerlink" title="修改 zsh 主題"></a>修改 zsh 主題</h2><p>oh-my-zsh 內建很多 theme，在Github Wiki 上有很多截圖可以參考效果：<a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">Themes</a>  </p>
+<p>打開  <code>~/.zshrc</code>  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">open</span> ~/.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>預設是<code>ZSH_THEME=&quot;robbyrussell&quot;</code>  </p>
+<p>修改完成後重新啟動 shell，讓效果生效：  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">exec</span> <span class="token environment constant">$SHELL</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="安裝超強-zsh-theme-Powerlevel10k"><a href="#安裝超強-zsh-theme-Powerlevel10k" class="headerlink" title="安裝超強 zsh theme Powerlevel10k"></a>安裝超強 zsh theme Powerlevel10k</h2><p>美化 iterm2，網路上有很多教學。不過有些教學年代久遠，用的是比較舊的套件，很多都是要手動加入的。  </p>
+<p>後來新的 Powerlevel10k 將這些設定又更進一步簡化，設定方式變得非常人性化。  </p>
+<p>本文使用較新的 Powerlevel10k，從零開始的安裝設定步驟。  </p>
+<p>Powerlevel9k 或 Powerlevel10k 都不是內建的 theme ，必須另外下載。  </p>
+<h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> clone --depth<span class="token operator">=</span><span class="token number">1</span> https://github.com/romkatv/powerlevel10k.git <span class="token variable">$&#123;ZSH_CUSTOM<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.oh-my-zsh<span class="token operator">/</span>custom&#125;</span>/themes/powerlevel10k<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>下載超快：  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
+➜  ~ <span class="token function">git</span> clone --depth<span class="token operator">=</span><span class="token number">1</span> https://github.com/romkatv/powerlevel10k.git <span class="token variable">$&#123;ZSH_CUSTOM<span class="token operator">:-</span>$HOME<span class="token operator">/</span>.oh-my-zsh<span class="token operator">/</span>custom&#125;</span>/themes/powerlevel10k
+Cloning into <span class="token string">'/Users/huangxiaopei/.oh-my-zsh/custom/themes/powerlevel10k'</span><span class="token punctuation">..</span>.
+remote: Enumerating objects: <span class="token number">92</span>, done.
+remote: Counting objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">92</span>/92<span class="token punctuation">)</span>, done.
+remote: Compressing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">78</span>/78<span class="token punctuation">)</span>, done.
+remote: Total <span class="token number">92</span> <span class="token punctuation">(</span>delta <span class="token number">16</span><span class="token punctuation">)</span>, reused <span class="token number">51</span> <span class="token punctuation">(</span>delta <span class="token number">10</span><span class="token punctuation">)</span>, pack-reused <span class="token number">0</span>
+Receiving objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">92</span>/92<span class="token punctuation">)</span>, <span class="token number">343.27</span> KiB <span class="token operator">|</span> <span class="token number">696.00</span> KiB/s, done.
+Resolving deltas: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">16</span>/16<span class="token punctuation">)</span>, done.
+➜  ~<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="修改-zsh-theme-為-powerlevel10k"><a href="#修改-zsh-theme-為-powerlevel10k" class="headerlink" title="修改 zsh theme 為 powerlevel10k"></a>修改 zsh theme 為 powerlevel10k</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">open</span> ~/.zshrc
+
+<span class="token comment">## 找到 ZSH_THEME 改成以下：</span>
+<span class="token assign-left variable">ZSH_THEME</span><span class="token operator">=</span><span class="token string">"powerlevel10k/powerlevel10k"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>記得存檔  </p>
+<h2 id="開始設定"><a href="#開始設定" class="headerlink" title="開始設定"></a>開始設定</h2><p>重新開一個 iterm2 就開始設定了  </p>
+<p><img src="https://i.imgur.com/jLkG9h6.jpg"></p>
+<p>成功!!!</p>
+<p><img src="https://i.imgur.com/ErNHUfM.jpg">  </p>
+<h2 id="改變背景圖"><a href="#改變背景圖" class="headerlink" title="改變背景圖"></a>改變背景圖</h2><p>先找一個背景圖。</p>
+<p><img src="https://i.imgur.com/p1br75j.jpg"><br><img src="https://i.imgur.com/QObmlEz.jpg"><br><img src="https://i.imgur.com/BSupyaB.jpg"></p>
+<h2 id="命令列提示-navi"><a href="#命令列提示-navi" class="headerlink" title="命令列提示 - navi"></a>命令列提示 - navi</h2><p>命令列是非常高效的工具，但一個很常見的現像是，很多命令列過一段時間就容易忘。  </p>
+<p>像最常用的 github 指令我也常常忘掉。  </p>
+<p>navi 也有備忘錄的功能  </p>
+<p>可以輸入 <code>navi</code> 就會出現以前打的指令  </p>
+<p>也可以刪除不要的指令  </p>
+<h3 id="用-brew-安裝"><a href="#用-brew-安裝" class="headerlink" title="用 brew 安裝"></a>用 brew 安裝</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ brew <span class="token function">install</span> denisidoro/tools/navi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/iTerm2/" rel="tag"># iTerm2</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/04/Swift-%E5%9E%8B%E5%88%A5%E8%BD%89%E6%8F%9BTypeCasting/" rel="prev" title="Swift-型別轉換TypeCasting">
+                  <i class="fa fa-chevron-left"></i> Swift-型別轉換TypeCasting
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/05/command-not-found-hexo/" rel="next" title="command-not-found:hexo">
+                  command-not-found:hexo <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"1427d03b25aa63dc1542ec78d6f339d5"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

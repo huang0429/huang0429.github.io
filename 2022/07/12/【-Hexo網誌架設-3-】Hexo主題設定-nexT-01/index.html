@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="【 Hexo網誌架設 3 】&lt;br&gt;Hexo主題設定-nexT-01">
+<meta property="og:url" content="https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_171230.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_174425.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_175149.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_181441.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_181804.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_182403.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_183357.jpeg">
+<meta property="og:image" content="https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_200218.jpeg">
+<meta property="article:published_time" content="2022-07-12T12:13:20.000Z">
+<meta property="article:modified_time" content="2022-07-12T12:13:20.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_171230.jpeg">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/","path":"2022/07/12/【-Hexo網誌架設-3-】Hexo主題設定-nexT-01/","title":"【 Hexo網誌架設 3 】\u003cbr>Hexo主題設定-nexT-01"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【 Hexo網誌架設 3 】<br>Hexo主題設定-nexT-01 | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">15</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">32</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A1%8C%E7%9A%84%E5%AE%89%E8%A3%9D%E8%B7%AF%E5%BE%91-%EF%BC%88theme%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">主題的安裝路徑 （theme）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scheme-%E8%A8%AD%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">Scheme 設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BB%91%E6%9A%97%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">黑暗模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E9%A0%81%E5%B0%BE%E7%9A%84%E4%BD%9C%E8%80%85%E9%80%A3%E7%B5%90"><span class="nav-number">4.</span> <span class="nav-text">設定頁尾的作者連結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%81%B8%E5%96%AE%E8%A8%AD%E7%BD%AE"><span class="nav-number">5.</span> <span class="nav-text">主選單設置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%B8%E5%96%AE%E6%A8%A3%E5%BC%8F%E8%A8%AD%E5%AE%9A"><span class="nav-number">6.</span> <span class="nav-text">選單樣式設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%B4%E9%82%8A%E6%AC%84%E4%BD%8D%E7%BD%AE"><span class="nav-number">7.</span> <span class="nav-text">側邊欄位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A0%AD%E5%83%8F"><span class="nav-number">8.</span> <span class="nav-text">頭像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%A0%E7%9A%84%E7%A4%BE%E7%BE%A4%E9%80%A3%E7%B5%90"><span class="nav-number">9.</span> <span class="nav-text">你的社群連結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E9%A0%81%E5%9C%96%E7%A4%BA%EF%BC%88-Favicon-%EF%BC%89"><span class="nav-number">10.</span> <span class="nav-text">網頁圖示（ Favicon ）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E5%88%B0%E9%A0%82%E9%83%A8%E6%8C%89%E9%88%95-%EF%BC%8B-%E9%80%B2%E5%BA%A6"><span class="nav-number">11.</span> <span class="nav-text">回到頂部按鈕 ＋ 進度(%)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6%E6%A2%9D"><span class="nav-number">12.</span> <span class="nav-text">閱讀進度條</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【 Hexo網誌架設 3 】<br>Hexo主題設定-nexT-01 | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【 Hexo網誌架設 3 】<br>Hexo主題設定-nexT-01
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-12 20:13:20" itemprop="dateCreated datePublished" datetime="2022-07-12T20:13:20+08:00">2022-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD/" itemprop="url" rel="index"><span itemprop="name">Hexo網誌架設</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo的主題</a>很多，可以多看看，我選的是 <a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">nexT</a> ，今天的主題也會是 nexT 。  </p>
+<h2 id="主題的安裝路徑-（theme）"><a href="#主題的安裝路徑-（theme）" class="headerlink" title="主題的安裝路徑 （theme）"></a>主題的安裝路徑 （theme）</h2><p>主題安裝在 theme 底下：  </p>
+<p><img src="/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_171230.jpeg">  </p>
+<p>用編輯器打開 hexo 的 <code>_config.yml</code> 檔案<br>最底下的 <code>theme:landscape</code> 前面加上 # ，這是預設的主題<br>下面再加上 <code>theme: next</code><br>可以打開 server 看一下新的主題  </p>
+<pre class="line-numbers language-marckdown" data-language="marckdown"><code class="language-marckdown"># Extensions
+## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;
+## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;
+## theme: landscape
+theme: next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>文件中的 <code>#</code> 是註解的意思，有加 # 就不會被執行，通常在做文件修改的時候，不會把原本的設定刪除掉，以防之後發生了什麼意外，還可以還原設定。  </p>
+</blockquote>
+<p>‼ 以下的設定主要是在 <code>theme</code> 底下設定的，請注意。 ‼  </p>
+<p>檔案名稱：<code> ../themes/next/_config.yml</code>  </p>
+<h2 id="Scheme-設定"><a href="#Scheme-設定" class="headerlink" title="Scheme 設定"></a>Scheme 設定</h2><p><code># Scheme Settings</code></p>
+<p>找到下面這段：  </p>
+<pre class="line-numbers language-markdowm" data-language="markdowm"><code class="language-markdowm"># ---------------------------------------------------------------
+# Scheme Settings
+# ---------------------------------------------------------------
+
+# Schemes
+#scheme: Muse
+#scheme: Mist
+scheme: Pisces
+#scheme: Gemini<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>scheme 是進入網頁時會出現的動畫模式，nexT 給了四種模式可選擇，要設定成什麼模式，都可以試一下。  </p>
+<h2 id="黑暗模式"><a href="#黑暗模式" class="headerlink" title="黑暗模式"></a>黑暗模式</h2><p><code># Dark Mode</code></p>
+<p>程式碼就在 Scheme 的下一行，如果要暗黑模式，darkmode 的設定值就改為 true。  </p>
+<h2 id="設定頁尾的作者連結"><a href="#設定頁尾的作者連結" class="headerlink" title="設定頁尾的作者連結"></a>設定頁尾的作者連結</h2><p><img src="/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_174425.jpeg">  </p>
+<h2 id="主選單設置"><a href="#主選單設置" class="headerlink" title="主選單設置"></a>主選單設置</h2><p><code># Menu Settings</code>  </p>
+<p><img src="/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_175149.jpeg"></p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> ---------------------------------------------------------------</span>
+<span class="token title important"><span class="token punctuation">#</span> Menu Settings</span>
+<span class="token title important"><span class="token punctuation">#</span> ---------------------------------------------------------------</span>
+
+<span class="token title important"><span class="token punctuation">#</span> Usage: `Key: /link/ || icon`</span>
+<span class="token title important"><span class="token punctuation">#</span> Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-sensitive.</span>
+<span class="token title important"><span class="token punctuation">#</span> Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.</span>
+<span class="token title important"><span class="token punctuation">#</span> External url should start with http:// or https://</span>
+menu:
+  home: / || fa fa-home
+  <span class="token title important"><span class="token punctuation">#</span>about: /about/ || fa fa-user</span>
+  <span class="token title important"><span class="token punctuation">#</span>tags: /tags/ || fa fa-tags</span>
+  <span class="token title important"><span class="token punctuation">#</span>categories: /categories/ || fa fa-th</span>
+  archives: /archives/ || fa fa-archive
+  <span class="token title important"><span class="token punctuation">#</span>schedule: /schedule/ || fa fa-calendar</span>
+  <span class="token title important"><span class="token punctuation">#</span>sitemap: /sitemap.xml || fa fa-sitemap</span>
+  <span class="token title important"><span class="token punctuation">#</span>commonweal: /404/ || fa fa-heartbeat</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>格式為：</p>
+<pre class="line-numbers language-none"><code class="language-none">分頁名稱: 路徑 || Icon 圖示<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><p>目前我只有開二個項目，是因為每開一個項目，就要另外開個頁面檔案，而這二個項目是 Hexo 預設的，這一篇主要是先把外在美設定好。  </p>
+</li>
+<li><p>Icon 圖示：是<code>首頁</code>旁邊的那個圖示。<a target="_blank" rel="noopener" href="https://fontawesome.com/icons/align-left?s=solid">圖示可以來這邊找</a>。</p>
+</li>
+</ul>
+<h2 id="選單樣式設定"><a href="#選單樣式設定" class="headerlink" title="選單樣式設定"></a>選單樣式設定</h2><p>再下一行：  </p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> Enable / Disable menu icons / item badges.</span>
+menu_settings:
+  icons: true
+  badges: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>icons：圖示是否要顯示</li>
+<li>badges：是否要顯示篇數</li>
+</ul>
+<p><img src="/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_181441.jpeg"></p>
+<h2 id="側邊欄位置"><a href="#側邊欄位置" class="headerlink" title="側邊欄位置"></a>側邊欄位置</h2><p><code># Sidebar Settings</code></p>
+<p><img src="/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_181804.jpeg">  </p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> ---------------------------------------------------------------</span>
+<span class="token title important"><span class="token punctuation">#</span> Sidebar Settings</span>
+<span class="token title important"><span class="token punctuation">#</span> See: https://theme-next.js.org/docs/theme-settings/sidebar</span>
+<span class="token title important"><span class="token punctuation">#</span> ---------------------------------------------------------------</span>
+
+sidebar:
+  <span class="token title important"><span class="token punctuation">#</span> Sidebar Position.</span>
+  <span class="token title important"><span class="token punctuation">#</span>position: left</span>
+  position: right
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>預設是靠左。  </p>
+<h2 id="頭像"><a href="#頭像" class="headerlink" title="頭像"></a>頭像</h2><p><img src="/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_182403.jpeg">  </p>
+<p>這是放照片的地方，只是我把照片換成 QRCode 。 </p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> Sidebar Avatar</span>
+avatar:
+  <span class="token title important"><span class="token punctuation">#</span> Replace the default image and set the url here.</span>
+  url: ../images/avatar.png
+  <span class="token title important"><span class="token punctuation">#</span> If true, the avatar will be displayed in circle.</span>
+  rounded: false
+  <span class="token title important"><span class="token punctuation">#</span> If true, the avatar will be rotated with the cursor.</span>
+  rotated: false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>url：是放圖片的路徑</li>
+<li>rounded：圖片會變成圓的</li>
+<li>rotated：圖片會隨著游標方向旋轉</li>
+</ul>
+<p>圖片路徑，hexo 預設是沒有放圖片的資料夾，我在 <code>soure</code> 底下設了一個 <code>images</code> 資料夾。 </p>
+<p><img src="/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_183357.jpeg">  </p>
+<h2 id="你的社群連結"><a href="#你的社群連結" class="headerlink" title="你的社群連結"></a>你的社群連結</h2><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> Social Links</span>
+<span class="token title important"><span class="token punctuation">#</span> Usage: `Key: permalink || icon`</span>
+<span class="token title important"><span class="token punctuation">#</span> Key is the link label showing to end users.</span>
+<span class="token title important"><span class="token punctuation">#</span> Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.</span>
+social:
+  GitHub: https://github.com/huang0429 || fab fa-github
+  E-Mail: mailto:iswork.huang@gmail.com || fa fa-envelope
+  <span class="token title important"><span class="token punctuation">#</span>Weibo: https://weibo.com/yourname || fab fa-weibo</span>
+  <span class="token title important"><span class="token punctuation">#</span>Google: https://plus.google.com/yourname || fab fa-google</span>
+  <span class="token title important"><span class="token punctuation">#</span>Twitter: https://twitter.com/yourname || fab fa-twitter</span>
+  FB: https://www.facebook.com/yourname || fab fa-facebook
+  <span class="token title important"><span class="token punctuation">#</span>StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow</span>
+  <span class="token title important"><span class="token punctuation">#</span>YouTube: https://youtube.com/yourname || fab fa-youtube</span>
+  <span class="token title important"><span class="token punctuation">#</span>Instagram: https://instagram.com/yourname || fab fa-instagram</span>
+  <span class="token title important"><span class="token punctuation">#</span>Skype: skype:yourname?call|chat || fab fa-skype</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再下一段：  </p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">social_icons:
+  <span class="token title important"><span class="token punctuation">#</span> 是否開啟顯示 icon 功能</span>
+  enable: true
+  <span class="token title important"><span class="token punctuation">#</span> 是否只顯示 icon，false 則只會顯示圖示</span>
+  icons_only: false
+  <span class="token title important"><span class="token punctuation">#</span> 若設定 true，滑動到社群連結時，會有效果</span>
+  transition: false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="網頁圖示（-Favicon-）"><a href="#網頁圖示（-Favicon-）" class="headerlink" title="網頁圖示（ Favicon ）"></a>網頁圖示（ Favicon ）</h2><p><img src="/2022/07/12/%E3%80%90-Hexo%E7%B6%B2%E8%AA%8C%E6%9E%B6%E8%A8%AD-3-%E3%80%91Hexo%E4%B8%BB%E9%A1%8C%E8%A8%AD%E5%AE%9A-nexT-01/HuangSP_20220710_200218.jpeg">  </p>
+<ul>
+<li>網路上製作 Favicon 的線上工具蠻多的。</li>
+<li>我製作的大小是 16px。</li>
+<li>檔名一樣是取 <code>favicon.ico</code>，直接覆蓋原本的icon。</li>
+</ul>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> ---------------------------------------------------------------</span>
+<span class="token title important"><span class="token punctuation">#</span> Site Information Settings</span>
+<span class="token title important"><span class="token punctuation">#</span> ---------------------------------------------------------------</span>
+
+favicon:
+  small: /images/favicon-16x16-next.png
+  medium: /images/favicon.ico
+  apple_touch_icon: /images/apple-touch-icon-next.png
+  safari_pinned_tab: /images/logo.svg
+  <span class="token title important"><span class="token punctuation">#</span>android_manifest: /manifest.json</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面是預設的路徑，因為對這個主題還在摸索，所以不會自訂路徑，會直接取一樣的檔名，然後覆蓋上去，以防因為路徑錯誤而無法顯示圖片。  </p>
+<h2 id="回到頂部按鈕-＋-進度"><a href="#回到頂部按鈕-＋-進度" class="headerlink" title="回到頂部按鈕 ＋ 進度(%)"></a>回到頂部按鈕 ＋ 進度(%)</h2><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">back2top:
+  enable: true
+  <span class="token title important"><span class="token punctuation">#</span> Back to top in sidebar.</span>
+  sidebar: false
+  <span class="token title important"><span class="token punctuation">#</span> Scroll percent label in b2t button.</span>
+  scrollpercent: true
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>sidebar：進度(%)會在個人資訊下，可以試看看（看起來會有點怪）  </p>
+<p>scrollpercent：顯示閱讀文章時的進度(%)  </p>
+<h2 id="閱讀進度條"><a href="#閱讀進度條" class="headerlink" title="閱讀進度條"></a>閱讀進度條</h2><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> Reading progress bar</span>
+reading_progress:
+  enable: true
+  <span class="token title important"><span class="token punctuation">#</span> Available values: left | right</span>
+  start_at: left
+  <span class="token title important"><span class="token punctuation">#</span> Available values: top | bottom</span>
+  position: top
+  reversed: false
+  color: "#37c6c0"
+  height: 3px<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>start_at: 起點  </li>
+<li>position: 位置</li>
+<li>reversed: 反轉</li>
+<li>color: 進度條的顏色</li>
+<li>height: 進度條的厚度</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/12/%E6%88%91Mac-M1-%E5%AE%89%E8%A3%9D%E7%9A%84%E8%BB%9F%E9%AB%94/" rel="prev" title="我Mac M1 安裝的軟體">
+                  <i class="fa fa-chevron-left"></i> 我Mac M1 安裝的軟體
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/13/Swift-%E5%9F%BA%E7%A4%8E%E8%AA%9E%E6%B3%95/" rel="next" title="Swift-基礎語法">
+                  Swift-基礎語法 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"bd70b372996b731094fd91dca65a08c0"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
