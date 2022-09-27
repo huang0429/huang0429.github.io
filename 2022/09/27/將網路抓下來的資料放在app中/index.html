@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="將網路抓下來的資料放在app中">
+<meta property="og:url" content="https://huang0429.github.io/2022/09/27/%E5%B0%87%E7%B6%B2%E8%B7%AF%E6%8A%93%E4%B8%8B%E4%BE%86%E7%9A%84%E8%B3%87%E6%96%99%E6%94%BE%E5%9C%A8app%E4%B8%AD/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/Q1onBge.jpg">
+<meta property="og:image" content="https://i.imgur.com/b8rxyG6.jpg">
+<meta property="og:image" content="https://i.imgur.com/9GHyUVY.jpg">
+<meta property="og:image" content="https://i.imgur.com/R1mEdI3.jpg">
+<meta property="og:image" content="https://i.imgur.com/cSKlPvC.jpg">
+<meta property="og:image" content="https://i.imgur.com/MSmabgl.jpg">
+<meta property="og:image" content="https://i.imgur.com/gCilXxZ.jpg">
+<meta property="og:image" content="https://i.imgur.com/fZaBQCB.jpg">
+<meta property="og:image" content="https://i.imgur.com/fCzdGzw.jpg">
+<meta property="article:published_time" content="2022-09-27T07:11:35.000Z">
+<meta property="article:modified_time" content="2022-09-27T07:11:35.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="JSON">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/Q1onBge.jpg">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/09/27/%E5%B0%87%E7%B6%B2%E8%B7%AF%E6%8A%93%E4%B8%8B%E4%BE%86%E7%9A%84%E8%B3%87%E6%96%99%E6%94%BE%E5%9C%A8app%E4%B8%AD/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/09/27/%E5%B0%87%E7%B6%B2%E8%B7%AF%E6%8A%93%E4%B8%8B%E4%BE%86%E7%9A%84%E8%B3%87%E6%96%99%E6%94%BE%E5%9C%A8app%E4%B8%AD/","path":"2022/09/27/將網路抓下來的資料放在app中/","title":"將網路抓下來的資料放在app中"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>將網路抓下來的資料放在app中 | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">35</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">17</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">40</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90-JSON-%E8%B3%87%E6%96%99%E7%9A%84%E5%85%A9%E5%80%8B%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">解析 JSON 資料的兩個方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%E3%80%81%E5%88%A9%E7%94%A8-JSONDecoder-amp-Codable-%E8%A7%A3%E6%9E%90-JSON"><span class="nav-number">1.1.</span> <span class="nav-text">方法一、利用 JSONDecoder &amp; Codable 解析 JSON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B2%92%E9%81%B5%E5%BE%9E-protocol-Codable-%E7%9A%84%E5%B1%AC%E6%80%A7%EF%BC%8C%E6%88%91%E5%80%91%E5%BF%85%E9%A0%88%E8%87%AA%E5%B7%B1%E5%AE%9A%E7%BE%A9-Codable-%E7%9A%84-function%EF%BC%8C%E5%A6%82%EF%BC%9AUIButton"><span class="nav-number">1.2.</span> <span class="nav-text">沒遵從 protocol Codable 的屬性，我們必須自己定義 Codable 的 function，如：UIButton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%BE%9E-JSON-%E8%B3%87%E6%96%99%E5%AE%9A%E7%BE%A9%E9%81%B5%E5%BE%9E-Codable-protocol-%E7%9A%84%E5%9E%8B%E5%88%A5"><span class="nav-number">1.3.</span> <span class="nav-text">如何從 JSON 資料定義遵從 Codable protocol 的型別</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E5%AF%A6%E4%BD%9C-%E9%9A%A8%E6%A9%9F%E7%9A%84-meme-%E5%9C%96%E7%89%87"><span class="nav-number">2.</span> <span class="nav-text">範例實作 - 隨機的 meme 圖片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%BE%A9%E5%9E%8B%E5%88%A5%EF%BC%9Amene"><span class="nav-number">2.1.</span> <span class="nav-text">定義型別：mene</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E4%B8%8B%E5%85%A9%E7%A8%AE%E6%83%85%E6%B3%81-property-%E8%A6%81%E5%AE%A3%E5%91%8A%E7%82%BA-optional%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">以下兩種情況 property 要宣告為 optional：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6-JSON-%E8%A7%A3%E7%A2%BC%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="nav-number">2.3.</span> <span class="nav-text">測試 JSON 解碼是否成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Meme-%E8%B3%87%E6%96%99%E6%94%BE%E5%88%B0-cell-%E4%B8%8A"><span class="nav-number">2.4.</span> <span class="nav-text">Meme 資料放到 cell 上</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DPackage-kingfisher"><span class="nav-number">2.4.1.</span> <span class="nav-text">安裝Package - kingfisher</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E6%AA%94%E6%A1%88%E4%BE%86%E6%94%BE%E6%96%B0%E5%A2%9E%E7%9A%84%E5%9E%8B%E5%88%A5"><span class="nav-number">2.4.2.</span> <span class="nav-text">新增檔案來放新增的型別</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%8A%E7%A8%8B%E5%BC%8F%E6%94%BE%E5%88%B0-ViewController-swift"><span class="nav-number">2.4.3.</span> <span class="nav-text">把程式放到 ViewController.swift</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/09/27/%E5%B0%87%E7%B6%B2%E8%B7%AF%E6%8A%93%E4%B8%8B%E4%BE%86%E7%9A%84%E8%B3%87%E6%96%99%E6%94%BE%E5%9C%A8app%E4%B8%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="將網路抓下來的資料放在app中 | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          將網路抓下來的資料放在app中
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-09-27 15:11:35" itemprop="dateCreated datePublished" datetime="2022-09-27T15:11:35+08:00">2022-09-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>先將它變成 array</p>
+<h2 id="解析-JSON-資料的兩個方法"><a href="#解析-JSON-資料的兩個方法" class="headerlink" title="解析 JSON 資料的兩個方法"></a>解析 JSON 資料的兩個方法</h2><ul>
+<li>利用 JSONDecoder</li>
+<li>利用 JSONSerialization (舊的方法)</li>
+</ul>
+<h3 id="方法一、利用-JSONDecoder-amp-Codable-解析-JSON"><a href="#方法一、利用-JSONDecoder-amp-Codable-解析-JSON" class="headerlink" title="方法一、利用 JSONDecoder &amp; Codable 解析 JSON"></a>方法一、利用 JSONDecoder &amp; Codable 解析 JSON</h3><p>遵從 protocol Codable 的型別 資料可以解碼（Decodable）和編碼（Encodable）</p>
+<ul>
+<li>Decodable<ul>
+<li>可以解碼(從 Data 型別轉換) </li>
+<li>可以讀檔</li>
+</ul>
+</li>
+<li>Encodable<ul>
+<li>可以編碼(轉換成 Data 型別) </li>
+<li>可以存檔</li>
+</ul>
+</li>
+</ul>
+<p>基本型別：</p>
+<ul>
+<li>Int</li>
+<li>String</li>
+<li>Bool</li>
+<li>Double, Float </li>
+<li>Data</li>
+<li>Date</li>
+<li>URL</li>
+<li>Array </li>
+<li>Dictionary</li>
+</ul>
+<p>遵從 protocol Codable 的型別：</p>
+<pre class="line-numbers language-swoft" data-language="swoft"><code class="language-swoft">struct Lover: Codable  &#123;
+    let name: String
+    let star: String
+    let innerBeauty: Bool
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>只要屬性都有遵從 protocol Codable，Swift 可以自動幫我們 寫出解碼編碼的程式，因此我們不用定義 Codable 的 function</p>
+<p>如果只要解碼，可以只遵從 Decodable protocol<br>如果只要編碼，可以只遵從 Encodable protocol</p>
+<p><strong>也可以用 class 或 enum 遵從 protocol Codable</strong></p>
+<h3 id="沒遵從-protocol-Codable-的屬性，我們必須自己定義-Codable-的-function，如：UIButton"><a href="#沒遵從-protocol-Codable-的屬性，我們必須自己定義-Codable-的-function，如：UIButton" class="headerlink" title="沒遵從 protocol Codable 的屬性，我們必須自己定義 Codable 的 function，如：UIButton"></a>沒遵從 protocol Codable 的屬性，我們必須自己定義 Codable 的 function，如：UIButton</h3><h3 id="如何從-JSON-資料定義遵從-Codable-protocol-的型別"><a href="#如何從-JSON-資料定義遵從-Codable-protocol-的型別" class="headerlink" title="如何從 JSON 資料定義遵從 Codable protocol 的型別"></a>如何從 JSON 資料定義遵從 Codable protocol 的型別</h3><p><a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/foundation/jsondecoder">官方文件</a></p>
+<h2 id="範例實作-隨機的-meme-圖片"><a href="#範例實作-隨機的-meme-圖片" class="headerlink" title="範例實作 - 隨機的 meme 圖片"></a>範例實作 - 隨機的 meme 圖片</h2><p>API 的網址如下</p>
+<p><a target="_blank" rel="noopener" href="https://some-random-api.ml/meme">https://some-random-api.ml/meme</a></p>
+<p>格式如下：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+<span class="token punctuation">&#123;</span>
+<span class="token string-literal"><span class="token string">"id"</span></span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+<span class="token string-literal"><span class="token string">"image"</span></span><span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"https://i.some-random-api.ml/07jjUxQKNf.png"</span></span><span class="token punctuation">,</span>
+<span class="token string-literal"><span class="token string">"caption"</span></span><span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Ooof"</span></span><span class="token punctuation">,</span>
+<span class="token string-literal"><span class="token string">"category"</span></span><span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"random"</span></span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="定義型別：mene"><a href="#定義型別：mene" class="headerlink" title="定義型別：mene"></a>定義型別：mene</h3><p>測試程式時，可以先用playground測試</p>
+<blockquote>
+<p>利用 JSONDecoder，我們可以將網路上抓下來的 JSON 資料從 Data 型別變成自訂型別 Meme。</p>
+</blockquote>
+<blockquote>
+<p>將 JSON 裡以 { } 描述的 object 變成自訂型別，可以用 class，也可以用 struct 定義，型別名字可自取。</p>
+</blockquote>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">struct</span> mame<span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> id<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+    <span class="token keyword">let</span> image<span class="token punctuation">:</span> <span class="token constant">URL</span>
+    <span class="token keyword">let</span> caption<span class="token punctuation">:</span> <span class="token class-name">String</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>遵從 protocol Codable 後，Meme 將有解碼跟編碼的功能。</p>
+</blockquote>
+<p>JSON 裡 object 的 key 將成為自訂型別的 property 名字， 而 property 的型別則由 key 對應的 value 型別決定。</p>
+<p>property 可宣告為變數，也可宣告為常數。</p>
+<p>以下幾點規則決定 property 的型別：</p>
+<ul>
+<li>網址 ➪ URL。(如果網址包含 ASCII 以外的文字，請將型別宣告為 String，之後再另外轉成 URL)</li>
+<li>時間 ➪ Date。</li>
+<li>整數 ➪ Int</li>
+<li>浮點數 ➪ Float 或 Double</li>
+<li>字串 ➪ String</li>
+<li>true 或 false ➪ Bool</li>
+<li>陣列 ➪ Array</li>
+<li>若value 是 object ➪ 遵從 protocol Decodable 或 Codable 的自訂型別。</li>
+<li>key 不一定會出現或 key 的 value 可能為 null 時 ➪ 型別要宣告為 optional。</li>
+</ul>
+<p>習慣用 extension 遵從 protocol 的朋友，也可以改用以下寫法：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">Meme</span> <span class="token punctuation">&#123;</span>
+   <span class="token keyword">let</span> id<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+   <span class="token keyword">let</span> image<span class="token punctuation">:</span> <span class="token constant">URL</span>
+   <span class="token keyword">let</span> caption<span class="token punctuation">:</span> <span class="token class-name">String</span>
+   <span class="token keyword">let</span> category<span class="token punctuation">:</span> <span class="token class-name">String</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">extension</span> <span class="token class-name">Meme</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">&#123;</span> <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>值得注意的，只要型別不對就會失敗，就算加問號也一樣，因此 let id: String? 也會轉換失敗。</p>
+</blockquote>
+<h3 id="以下兩種情況-property-要宣告為-optional："><a href="#以下兩種情況-property-要宣告為-optional：" class="headerlink" title="以下兩種情況 property 要宣告為 optional："></a>以下兩種情況 property 要宣告為 optional：</h3><blockquote>
+<p> JSON object 不一定有的 key 。<br> JSON object 某個 key 對應的 value 有可能是 null。</p>
+</blockquote>
+<h3 id="測試-JSON-解碼是否成功"><a href="#測試-JSON-解碼是否成功" class="headerlink" title="測試 JSON 解碼是否成功"></a>測試 JSON 解碼是否成功</h3><p>方法 1: 使用 async &amp; await</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">Meme</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> id<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+    <span class="token keyword">let</span> image<span class="token punctuation">:</span> <span class="token constant">URL</span>
+    <span class="token keyword">let</span> caption<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> category<span class="token punctuation">:</span> <span class="token class-name">String</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> urlString <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"https://some-random-api.ml/meme"</span></span>
+<span class="token keyword">if</span> <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token function">URL</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> urlString<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">Task</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">do</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">let</span> <span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token omit keyword">_</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">try</span> <span class="token keyword">await</span> <span class="token class-name">URLSession</span><span class="token punctuation">.</span>shared<span class="token punctuation">.</span><span class="token function">data</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> url<span class="token punctuation">)</span>
+            <span class="token keyword">let</span> decoder <span class="token operator">=</span> <span class="token class-name">JSONDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">let</span> meme <span class="token operator">=</span> <span class="token keyword">try</span> decoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">Meme</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> data<span class="token punctuation">)</span>
+            <span class="token function">print</span><span class="token punctuation">(</span>meme<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">print</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token operator">......</span>
+
+<span class="token class-name">Meme</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> <span class="token number">7</span><span class="token punctuation">,</span> image<span class="token punctuation">:</span> https<span class="token punctuation">:</span><span class="token operator">//</span>i<span class="token punctuation">.</span><span class="token keyword">some</span><span class="token operator">-</span>random<span class="token operator">-</span>api<span class="token punctuation">.</span>ml<span class="token operator">/</span>9sBO7cjaDe<span class="token punctuation">.</span>png<span class="token punctuation">,</span> caption<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Google it please..."</span></span><span class="token punctuation">,</span> category<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"random"</span></span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>方法 2: 使用 completion handler</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">Meme</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> id<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+    <span class="token keyword">let</span> image<span class="token punctuation">:</span> <span class="token constant">URL</span>
+    <span class="token keyword">let</span> caption<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> category<span class="token punctuation">:</span> <span class="token class-name">String</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> urlString <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"https://some-random-api.ml/meme"</span></span>
+<span class="token keyword">if</span> <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token function">URL</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> urlString<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">URLSession</span><span class="token punctuation">.</span>shared<span class="token punctuation">.</span><span class="token function">dataTask</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> url<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> data<span class="token punctuation">,</span> response <span class="token punctuation">,</span> error <span class="token keyword">in</span>
+        <span class="token keyword">if</span> <span class="token keyword">let</span> data <span class="token punctuation">&#123;</span>
+            <span class="token keyword">let</span> decoder <span class="token operator">=</span> <span class="token class-name">JSONDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">do</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">let</span> meme <span class="token operator">=</span> <span class="token keyword">try</span> decoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">Meme</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> data<span class="token punctuation">)</span>
+                <span class="token function">print</span><span class="token punctuation">(</span>meme<span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">&#123;</span>
+                <span class="token function">print</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">.</span><span class="token function">resume</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">//或是</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">Meme</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> id<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+    <span class="token keyword">let</span> image<span class="token punctuation">:</span> <span class="token constant">URL</span>
+    <span class="token keyword">let</span> caption<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> category<span class="token punctuation">:</span> <span class="token class-name">String</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token function">URL</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"https://some-random-api.ml/meme"</span></span><span class="token punctuation">)</span><span class="token operator">!</span>
+
+<span class="token class-name">URLSession</span><span class="token punctuation">.</span>shared<span class="token punctuation">.</span><span class="token function">dataTask</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> url<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    data<span class="token punctuation">,</span> response<span class="token punctuation">,</span> error
+    <span class="token keyword">in</span>
+    <span class="token keyword">if</span> <span class="token keyword">let</span> data <span class="token punctuation">&#123;</span>
+        <span class="token keyword">let</span> decoder <span class="token operator">=</span> <span class="token class-name">JSONDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">do</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">let</span> meme <span class="token operator">=</span> <span class="token keyword">try</span> decoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">Meme</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> data<span class="token punctuation">)</span>
+            <span class="token function">print</span><span class="token punctuation">(</span>meme<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span>  <span class="token punctuation">&#123;</span>
+            <span class="token function">print</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">.</span><span class="token function">resume</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Meme-資料放到-cell-上"><a href="#Meme-資料放到-cell-上" class="headerlink" title="Meme 資料放到 cell 上"></a>Meme 資料放到 cell 上</h3><p>新增一個檔案</p>
+<p>新增二個元件，一個圖片一個文字，並拉線命名。</p>
+<p><img src="https://i.imgur.com/Q1onBge.jpg"></p>
+<h4 id="安裝Package-kingfisher"><a href="#安裝Package-kingfisher" class="headerlink" title="安裝Package - kingfisher"></a>安裝Package - kingfisher</h4><p>方便抓取網路上的圖片</p>
+<p><img src="https://i.imgur.com/b8rxyG6.jpg"></p>
+<p><img src="https://i.imgur.com/9GHyUVY.jpg"></p>
+<p><img src="https://i.imgur.com/R1mEdI3.jpg"></p>
+<p><img src="https://i.imgur.com/cSKlPvC.jpg"></p>
+<p><img src="https://i.imgur.com/MSmabgl.jpg"></p>
+<p><img src="https://i.imgur.com/gCilXxZ.jpg"></p>
+<p>完成</p>
+<p>因為要引用套件</p>
+<p>記得要 <code>import Kingfisher</code></p>
+<h4 id="新增檔案來放新增的型別"><a href="#新增檔案來放新增的型別" class="headerlink" title="新增檔案來放新增的型別"></a>新增檔案來放新增的型別</h4><p>檔名：File</p>
+<p>並把剛剛的型別命名貼上</p>
+<p><img src="https://i.imgur.com/fZaBQCB.jpg"></p>
+<h4 id="把程式放到-ViewController-swift"><a href="#把程式放到-ViewController-swift" class="headerlink" title="把程式放到 ViewController.swift"></a>把程式放到 ViewController.swift</h4><p>主程式：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+<span class="token operator">/</span>
+<span class="token comment">//  ViewController.swift</span>
+<span class="token comment">//  0927jsonDemo</span>
+<span class="token comment">//</span>
+<span class="token comment">//  Created by Huang on 2022/9/27.</span>
+<span class="token comment">//</span>
+
+<span class="token keyword">import</span> <span class="token class-name">UIKit</span>
+<span class="token keyword">import</span> <span class="token class-name">Kingfisher</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ViewController</span><span class="token punctuation">:</span> <span class="token class-name">UIViewController</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token attribute atrule">@IBOutlet</span> <span class="token keyword">weak</span> <span class="token keyword">var</span> imageView<span class="token punctuation">:</span> <span class="token class-name">UIImageView</span><span class="token operator">!</span>
+    <span class="token attribute atrule">@IBOutlet</span> <span class="token keyword">weak</span> <span class="token keyword">var</span> label<span class="token punctuation">:</span> <span class="token class-name">UILabel</span><span class="token operator">!</span>
+    
+    
+    <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        
+        
+        <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token function">URL</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"https://some-random-api.ml/meme"</span></span><span class="token punctuation">)</span><span class="token operator">!</span>
+        
+        <span class="token class-name">URLSession</span><span class="token punctuation">.</span>shared<span class="token punctuation">.</span><span class="token function">dataTask</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> url<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            data<span class="token punctuation">,</span> response<span class="token punctuation">,</span> error
+            <span class="token keyword">in</span>
+            <span class="token keyword">if</span> <span class="token keyword">let</span> data <span class="token punctuation">&#123;</span>
+                <span class="token keyword">let</span> decoder <span class="token operator">=</span> <span class="token class-name">JSONDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token keyword">do</span> <span class="token punctuation">&#123;</span>
+                    <span class="token keyword">let</span> meme <span class="token operator">=</span> <span class="token keyword">try</span> decoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">Meme</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> data<span class="token punctuation">)</span>
+                <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span>  <span class="token punctuation">&#123;</span>
+                    <span class="token function">print</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">.</span><span class="token function">resume</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+
+
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在閉包裡面，如果要讀到外面的型別，就要加 <code>self</code></p>
+<p>把文字放到label：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">self</span><span class="token punctuation">.</span>label<span class="token punctuation">.</span>text <span class="token operator">=</span> meme<span class="token punctuation">.</span>caption<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>把圖片放到 image</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">self</span><span class="token punctuation">.</span>imageView<span class="token punctuation">.</span>kf<span class="token punctuation">.</span><span class="token function">setImage</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> meme<span class="token punctuation">.</span>image<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>上面兩行放在 do 裡面</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+<span class="token keyword">do</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> meme <span class="token operator">=</span> <span class="token keyword">try</span> decoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">Meme</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> data<span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>meme<span class="token punctuation">.</span>caption<span class="token punctuation">)</span>
+    <span class="token comment">//文字</span>
+    <span class="token keyword">self</span><span class="token punctuation">.</span>label<span class="token punctuation">.</span>text <span class="token operator">=</span> meme<span class="token punctuation">.</span>caption
+    <span class="token comment">//圖片</span>
+    <span class="token keyword">self</span><span class="token punctuation">.</span>imageView<span class="token punctuation">.</span>kf<span class="token punctuation">.</span><span class="token function">setImage</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> meme<span class="token punctuation">.</span>image<span class="token punctuation">)</span>
+
+<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span>  <span class="token punctuation">&#123;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>啟動模擬手機</p>
+<p>打開後圖片跟文字都會顯示出來，但是可能會比較慢，並且，會出現<code>紫色</code>的提示訊息。</p>
+<p><img src="https://i.imgur.com/fCzdGzw.jpg"></p>
+<p>再改一下程式碼：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">do</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> meme <span class="token operator">=</span> <span class="token keyword">try</span> decoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">Meme</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> data<span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>meme<span class="token punctuation">.</span>caption<span class="token punctuation">)</span>
+    
+    <span class="token class-name">DispatchQueue</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>sync <span class="token punctuation">&#123;</span>
+        <span class="token comment">//文字</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>label<span class="token punctuation">.</span>text <span class="token operator">=</span> meme<span class="token punctuation">.</span>caption
+        <span class="token comment">//圖片</span>
+        <span class="token keyword">self</span><span class="token punctuation">.</span>imageView<span class="token punctuation">.</span>kf<span class="token punctuation">.</span><span class="token function">setImage</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> meme<span class="token punctuation">.</span>image<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span>  <span class="token punctuation">&#123;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>程式改完後，下載的速度快了些，紫色訊息也不見了。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JSON/" rel="tag"># JSON</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/27/Xcode-%E5%AE%89%E8%A3%9D-Package/" rel="prev" title="Xcode 安裝 Package">
+                  <i class="fa fa-chevron-left"></i> Xcode 安裝 Package
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"b91a5c724aa2d16918bc6d15d32b158d"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
