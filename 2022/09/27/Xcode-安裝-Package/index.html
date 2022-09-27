@@ -21,25 +21,32 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 重新安裝">
-<meta property="og:url" content="https://huang0429.github.io/2022/08/09/Hexo-%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%9D/index.html">
+<meta property="og:title" content="Xcode 安裝 Package">
+<meta property="og:url" content="https://huang0429.github.io/2022/09/27/Xcode-%E5%AE%89%E8%A3%9D-Package/index.html">
 <meta property="og:site_name" content="天下第一不是我">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-08-09T05:44:55.000Z">
-<meta property="article:modified_time" content="2022-08-09T05:44:55.000Z">
+<meta property="og:image" content="https://i.imgur.com/Z8D1jY4.jpg">
+<meta property="og:image" content="https://i.imgur.com/Y3YO7fF.jpg">
+<meta property="og:image" content="https://i.imgur.com/s9xs141.jpg">
+<meta property="og:image" content="https://i.imgur.com/WMLy3YO.jpg">
+<meta property="og:image" content="https://i.imgur.com/5vbBloM.jpg">
+<meta property="og:image" content="https://i.imgur.com/8IwsBIW.jpg">
+<meta property="article:published_time" content="2022-09-27T05:35:00.000Z">
+<meta property="article:modified_time" content="2022-09-27T05:35:00.000Z">
 <meta property="article:author" content="黃筱珮">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="Swift">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/Z8D1jY4.jpg">
 
 
-<link rel="canonical" href="https://huang0429.github.io/2022/08/09/Hexo-%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%9D/">
+<link rel="canonical" href="https://huang0429.github.io/2022/09/27/Xcode-%E5%AE%89%E8%A3%9D-Package/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/08/09/Hexo-%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%9D/","path":"2022/08/09/Hexo-重新安裝/","title":"Hexo 重新安裝"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/09/27/Xcode-%E5%AE%89%E8%A3%9D-Package/","path":"2022/09/27/Xcode-安裝-Package/","title":"Xcode 安裝 Package"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hexo 重新安裝 | 天下第一不是我</title>
+<title>Xcode 安裝 Package | 天下第一不是我</title>
   
 
 
@@ -115,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E7%B3%BB%E7%B5%B1"><span class="nav-number">1.</span> <span class="nav-text">我的系統</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%92%B0%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A4%87%E8%A3%BD%E5%8E%9F-Hexo-%E7%9A%84%E6%AA%94%E6%A1%88"><span class="nav-number">3.</span> <span class="nav-text">複製原 Hexo 的檔案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BC%89%E5%A5%97%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">下載套件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E5%B0%91key%E5%B9%BE%E5%80%8B%E5%AD%97%E4%BA%86"><span class="nav-number">5.</span> <span class="nav-text">可以少key幾個字了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BA%E7%8F%BE-Error-Spawn-failed-%E9%8C%AF%E8%AA%A4"><span class="nav-number">6.</span> <span class="nav-text">出現 Error: Spawn failed 錯誤</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Xcode-%E5%AE%89%E8%A3%9D-Package"><span class="nav-number">1.</span> <span class="nav-text">Xcode 安裝 Package</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5-Kingfisher-%E7%82%BA%E7%AF%84%E4%BE%8B"><span class="nav-number">1.1.</span> <span class="nav-text">以 Kingfisher 為範例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D%E5%AE%8C%E6%88%90"><span class="nav-number">1.2.</span> <span class="nav-text">安裝完成</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -192,7 +199,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/08/09/Hexo-%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%9D/">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/09/27/Xcode-%E5%AE%89%E8%A3%9D-Package/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/../images/avatar.png">
@@ -205,12 +212,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Hexo 重新安裝 | 天下第一不是我">
+      <meta itemprop="name" content="Xcode 安裝 Package | 天下第一不是我">
       <meta itemprop="description" content=" ">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hexo 重新安裝
+          Xcode 安裝 Package
         </h1>
 
         <div class="post-meta-container">
@@ -221,7 +228,7 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2022-08-09 13:44:55" itemprop="dateCreated datePublished" datetime="2022-08-09T13:44:55+08:00">2022-08-09</time>
+      <time title="創建時間：2022-09-27 13:35:00" itemprop="dateCreated datePublished" datetime="2022-09-27T13:35:00+08:00">2022-09-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -229,7 +236,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+          <a href="/categories/Xcode/" itemprop="url" rel="index"><span itemprop="name">Xcode</span></a>
         </span>
     </span>
 
@@ -244,38 +251,24 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="我的系統"><a href="#我的系統" class="headerlink" title="我的系統"></a>我的系統</h2><p>macOS Monterey 12.4<br>NexT version 8.12.1<br>node v16.14.0<br>npm 8.3.1</p>
-<p>這幾天不小心把 Hexo 給玩爛了  </p>
-<p>想說看有沒有什麼辦法  </p>
-<p>可以重新安裝 Hexo   </p>
-<p>然後不改到設定  </p>
-<p>試了幾下  </p>
-<p>終於搞定了。</p>
-<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><p>要有 node、npm、git、hexo 。</p>
-<p>Hexo 做到 init  。</p>
-<h2 id="複製原-Hexo-的檔案"><a href="#複製原-Hexo-的檔案" class="headerlink" title="複製原 Hexo 的檔案"></a>複製原 Hexo 的檔案</h2><p>不是所有檔案都要：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">_config.yml 
-package.json 
-scaffold/ 
-source/ 
-themes/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="下載套件"><a href="#下載套件" class="headerlink" title="下載套件"></a>下載套件</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-server 
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save 
-<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-feed --save 
-<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="可以少key幾個字了"><a href="#可以少key幾個字了" class="headerlink" title="可以少key幾個字了"></a>可以少key幾個字了</h2><p>上傳指令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean 
-hexo g 
-hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="出現-Error-Spawn-failed-錯誤"><a href="#出現-Error-Spawn-failed-錯誤" class="headerlink" title="出現 Error: Spawn failed 錯誤"></a>出現 Error: Spawn failed 錯誤</h2><p>因為我的電腦是使用ssh上傳，所以如果出現這個錯誤，多半是權限問題。<br>我會先看看 Hexo 的 config 的設定有沒有問題。<br>以下是ssh的 repo 寫法：  </p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">deploy:
-    type: <span class="token function">git</span>
-    <span class="token comment">#repo: git@github.com:huang0429/huang0429.github.io.git</span>
-    repo: git@github.com-huang0429:huang0429/huang0429.github.io.git
-    branch: main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <h1 id="Xcode-安裝-Package"><a href="#Xcode-安裝-Package" class="headerlink" title="Xcode 安裝 Package"></a>Xcode 安裝 Package</h1><h2 id="以-Kingfisher-為範例"><a href="#以-Kingfisher-為範例" class="headerlink" title="以 Kingfisher 為範例"></a>以 Kingfisher 為範例</h2><p>Kingfisher 方便取得網路圖片的套件</p>
+<p>先用 google 搜尋 “Kingfisher swift” 的github</p>
+<p><img src="https://i.imgur.com/Z8D1jY4.jpg"></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/onevcat/Kingfisher">網址</a></p>
+<p>可以看一下內容介紹</p>
+<p>複製github網址</p>
+<p><img src="https://i.imgur.com/Y3YO7fF.jpg"></p>
+<p>打開 Xcode 的 File -&gt; Add Packages…</p>
+<p><img src="https://i.imgur.com/s9xs141.jpg"></p>
+<p>將剛剛複製的網址貼上去，然後按 Add Package</p>
+<p><img src="https://i.imgur.com/WMLy3YO.jpg"></p>
+<p>Add Package</p>
+<p><img src="https://i.imgur.com/5vbBloM.jpg"></p>
+<ul>
+<li>如果有多個專案要用到的話，就要各別安裝一次。</li>
+<li>第一次安裝時，會花費比較多的時間。</li>
+</ul>
+<h2 id="安裝完成"><a href="#安裝完成" class="headerlink" title="安裝完成"></a>安裝完成</h2><p><img src="https://i.imgur.com/8IwsBIW.jpg"></p>
 
     </div>
 
@@ -285,21 +278,18 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/Swift/" rel="tag"># Swift</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/08/05/command-not-found-hexo/" rel="prev" title="command-not-found:hexo">
-                  <i class="fa fa-chevron-left"></i> command-not-found:hexo
+                <a href="/2022/09/15/UIKit-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84%E8%A1%A8%E6%A0%BC%E5%BC%8FApp/" rel="prev" title="UIKit-建立一個簡單的表格式App">
+                  <i class="fa fa-chevron-left"></i> UIKit-建立一個簡單的表格式App
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/08/09/Hexo-%E6%96%B0%E5%A2%9E%E5%88%86%E9%A1%9E%E9%A0%81%E9%9D%A2/" rel="next" title="Hexo 新增分類頁面">
-                  Hexo 新增分類頁面 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -350,7 +340,7 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"d8bbc565537ad4e75d9f7ba89da8721c"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"05a5c5743c345e813f5eea86d9b06710"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
