@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="iTunes API 抓取（JSON）">
+<meta property="og:url" content="https://huang0429.github.io/2022/09/28/iTunes-API-%E6%8A%93%E5%8F%96%EF%BC%88JSON%EF%BC%89/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/PkqcLQl.jpg">
+<meta property="og:image" content="https://i.imgur.com/POo7M4p.jpg">
+<meta property="article:published_time" content="2022-09-28T03:08:02.000Z">
+<meta property="article:modified_time" content="2022-09-28T03:08:02.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="JSON">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/PkqcLQl.jpg">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/09/28/iTunes-API-%E6%8A%93%E5%8F%96%EF%BC%88JSON%EF%BC%89/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/09/28/iTunes-API-%E6%8A%93%E5%8F%96%EF%BC%88JSON%EF%BC%89/","path":"2022/09/28/iTunes-API-抓取（JSON）/","title":"iTunes API 抓取（JSON）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>iTunes API 抓取（JSON） | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">35</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">17</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">41</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5-iTunes-%E6%90%9C%E5%B0%8B-swift-%E7%95%B6%E4%BE%8B%E5%AD%90"><span class="nav-number">1.</span> <span class="nav-text">以 iTunes 搜尋 swift 當例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E7%94%A8playground%E6%B8%AC%E8%A9%A6"><span class="nav-number">2.</span> <span class="nav-text">先用playground測試</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%99%E6%98%AF%E7%AC%AC%E4%B8%80%E5%B1%A4%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">這是第一層：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%99%E6%98%AF%E7%AC%AC%E4%BA%8C%E5%B1%A4%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">這是第二層：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%A8%AE%E5%AF%AB%E6%B3%95"><span class="nav-number">2.2.1.</span> <span class="nav-text">第二種寫法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">2.2.2.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6-JSON-%E8%A7%A3%E7%A2%BC%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="nav-number">2.3.</span> <span class="nav-text">測試 JSON 解碼是否成功</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-1-%E4%BD%BF%E7%94%A8-async-amp-await"><span class="nav-number">2.3.1.</span> <span class="nav-text">方法 1: 使用 async &amp; await</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-2-%E4%BD%BF%E7%94%A8-completion-handler"><span class="nav-number">2.3.2.</span> <span class="nav-text">方法 2: 使用 completion handler</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E6%90%9C%E5%B0%8B%E6%9C%83%E4%B8%8D%E4%B8%80%E6%A8%A3"><span class="nav-number">2.4.</span> <span class="nav-text">中文搜尋會不一樣</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/09/28/iTunes-API-%E6%8A%93%E5%8F%96%EF%BC%88JSON%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="iTunes API 抓取（JSON） | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          iTunes API 抓取（JSON）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-09-28 11:08:02" itemprop="dateCreated datePublished" datetime="2022-09-28T11:08:02+08:00">2022-09-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1">iTunes Search API 的文件</a></p>
+<h2 id="以-iTunes-搜尋-swift-當例子"><a href="#以-iTunes-搜尋-swift-當例子" class="headerlink" title="以 iTunes 搜尋 swift 當例子"></a>以 iTunes 搜尋 swift 當例子</h2><p>API 的網址為:</p>
+<p><a target="_blank" rel="noopener" href="https://itunes.apple.com/search?term=swift&amp;media=music&amp;country=tw">https://itunes.apple.com/search?term=swift&amp;media=music&amp;country=tw</a></p>
+<p>可以用 <a target="_blank" rel="noopener" href="https://jsoneditoronline.org/#left=local.ciziza">JSON Editor online</a> 看一下內容。</p>
+<blockquote>
+<p>解析時要一層一層的解</p>
+</blockquote>
+<h2 id="先用playground測試"><a href="#先用playground測試" class="headerlink" title="先用playground測試"></a>先用playground測試</h2><h3 id="這是第一層："><a href="#這是第一層：" class="headerlink" title="這是第一層："></a>這是第一層：</h3><p><img src="https://i.imgur.com/PkqcLQl.jpg"><br>解析：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">SearchResponse</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">&#123;</span>
+       <span class="token keyword">let</span> resultCount<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+       <span class="token keyword">let</span> results<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+   <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>results :[] 因為還不知道 array 成員的型別，所以先寫 [ ]。</p>
+<h3 id="這是第二層："><a href="#這是第二層：" class="headerlink" title="這是第二層："></a>這是第二層：</h3><p><img src="https://i.imgur.com/POo7M4p.jpg"></p>
+<p>定義型別： StoreItem</p>
+<p>解析：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"> <span class="token keyword">struct</span> <span class="token class-name">StoreItem</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> trackId<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+    <span class="token keyword">let</span> artistName<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> trackName<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> collectionName<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token operator">?</span>
+    <span class="token keyword">let</span> previewUrl<span class="token punctuation">:</span> <span class="token constant">URL</span>
+    <span class="token keyword">let</span> artworkUrl100<span class="token punctuation">:</span> <span class="token constant">URL</span>
+    <span class="token keyword">let</span> trackPrice<span class="token punctuation">:</span> <span class="token class-name">Double</span><span class="token operator">?</span>
+    <span class="token keyword">let</span> isStreamable<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token operator">?</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然後 <code>results  :[]</code> 改成 <code>results: [StoreItem]</code></p>
+<p>程式碼：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">SearchResponse</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">&#123;</span>
+       <span class="token keyword">let</span> resultCount<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+       <span class="token keyword">let</span> results<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">StoreItem</span><span class="token punctuation">]</span>
+   <span class="token punctuation">&#125;</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">StoreItem</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> trackId<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+    <span class="token keyword">let</span> artistName<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> trackName<span class="token punctuation">:</span> <span class="token class-name">String</span>
+    <span class="token keyword">let</span> collectionName<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token operator">?</span>
+    <span class="token keyword">let</span> previewUrl<span class="token punctuation">:</span> <span class="token constant">URL</span>
+    <span class="token keyword">let</span> artworkUrl100<span class="token punctuation">:</span> <span class="token constant">URL</span>
+    <span class="token keyword">let</span> trackPrice<span class="token punctuation">:</span> <span class="token class-name">Double</span><span class="token operator">?</span>
+    <span class="token keyword">let</span> isStreamable<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token operator">?</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="第二種寫法"><a href="#第二種寫法" class="headerlink" title="第二種寫法"></a>第二種寫法</h4><p>SearchResponse 包住 StoreItem</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+<span class="token keyword">struct</span> <span class="token class-name">SearchResponse</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">&#123;</span>
+       <span class="token keyword">let</span> resultCount<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+       <span class="token keyword">let</span> results<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">StoreItem</span><span class="token punctuation">]</span>
+    <span class="token keyword">struct</span> <span class="token class-name">StoreItem</span><span class="token punctuation">:</span> <span class="token class-name">Codable</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">let</span> trackId<span class="token punctuation">:</span> <span class="token class-name">Int</span>
+        <span class="token keyword">let</span> artistName<span class="token punctuation">:</span> <span class="token class-name">String</span>
+        <span class="token keyword">let</span> trackName<span class="token punctuation">:</span> <span class="token class-name">String</span>
+        <span class="token keyword">let</span> collectionName<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token operator">?</span>
+        <span class="token keyword">let</span> previewUrl<span class="token punctuation">:</span> <span class="token constant">URL</span>
+        <span class="token keyword">let</span> artworkUrl100<span class="token punctuation">:</span> <span class="token constant">URL</span>
+        <span class="token keyword">let</span> trackPrice<span class="token punctuation">:</span> <span class="token class-name">Double</span><span class="token operator">?</span>
+        <span class="token keyword">let</span> isStreamable<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token operator">?</span>
+    <span class="token punctuation">&#125;</span>
+   <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><blockquote>
+<p>有些 property 被宣告為 optional<br>因為 JSON 裡有些 key 不會每一筆資料都有<br>比方不是每首歌都可以買，所以不一定有 trackPrice<br>不一定會有的 collectionName，trackPrice &amp; isStreamable 設為 optional<br>如果沒有設為 optional，到時候一旦發現沒有這些欄位，將造成轉換失敗。</p>
+</blockquote>
+<h3 id="測試-JSON-解碼是否成功"><a href="#測試-JSON-解碼是否成功" class="headerlink" title="測試 JSON 解碼是否成功"></a>測試 JSON 解碼是否成功</h3><h4 id="方法-1-使用-async-amp-await"><a href="#方法-1-使用-async-amp-await" class="headerlink" title="方法 1: 使用 async &amp; await"></a>方法 1: 使用 async &amp; await</h4><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">let</span> urlString <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"https://itunes.apple.com/search?term=swift&amp;media=music&amp;country=tw"</span></span>
+<span class="token keyword">if</span> <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token function">URL</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> urlString<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">Task</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">do</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">let</span> <span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token omit keyword">_</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">try</span> <span class="token keyword">await</span> <span class="token class-name">URLSession</span><span class="token punctuation">.</span>shared<span class="token punctuation">.</span><span class="token function">data</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> url<span class="token punctuation">)</span>
+            <span class="token keyword">let</span> decoder <span class="token operator">=</span> <span class="token class-name">JSONDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">let</span> searchResponse <span class="token operator">=</span> <span class="token keyword">try</span> decoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">SearchResponse</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> data<span class="token punctuation">)</span>
+            <span class="token function">print</span><span class="token punctuation">(</span>searchResponse<span class="token punctuation">.</span>results<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">print</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="方法-2-使用-completion-handler"><a href="#方法-2-使用-completion-handler" class="headerlink" title="方法 2: 使用 completion handler"></a>方法 2: 使用 completion handler</h4><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">let</span> urlString <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"https://itunes.apple.com/search?term=swift&amp;media=music&amp;country=tw"</span></span>
+
+<span class="token keyword">if</span> <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token function">URL</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> urlString<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">URLSession</span><span class="token punctuation">.</span>shared<span class="token punctuation">.</span><span class="token function">dataTask</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> url<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        data<span class="token punctuation">,</span> response<span class="token punctuation">,</span> error
+        <span class="token keyword">in</span>
+        <span class="token keyword">if</span> <span class="token keyword">let</span> data <span class="token punctuation">&#123;</span>
+            <span class="token keyword">let</span> decoder <span class="token operator">=</span> <span class="token class-name">JSONDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">do</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">let</span> searchResponse <span class="token operator">=</span> <span class="token keyword">try</span> decoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">SearchResponse</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> data<span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span>  <span class="token punctuation">&#123;</span>
+                <span class="token function">print</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span> 
+    <span class="token punctuation">&#125;</span><span class="token punctuation">.</span><span class="token function">resume</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="中文搜尋會不一樣"><a href="#中文搜尋會不一樣" class="headerlink" title="中文搜尋會不一樣"></a>中文搜尋會不一樣</h3><p>需要加上一段程式碼：</p>
+<p><code>.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),</code></p>
+<p>完整程式碼：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+<span class="token keyword">if</span> <span class="token keyword">let</span> urlString <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"https://itunes.apple.com/search?term=伍佰&amp;media=music&amp;country=tw"</span></span><span class="token punctuation">.</span><span class="token function">addingPercentEncoding</span><span class="token punctuation">(</span>withAllowedCharacters<span class="token punctuation">:</span> <span class="token punctuation">.</span>urlQueryAllowed<span class="token punctuation">)</span><span class="token punctuation">,</span>
+   <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token function">URL</span><span class="token punctuation">(</span>string<span class="token punctuation">:</span> urlString<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">URLSession</span><span class="token punctuation">.</span>shared<span class="token punctuation">.</span><span class="token function">dataTask</span><span class="token punctuation">(</span>with<span class="token punctuation">:</span> url<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        data<span class="token punctuation">,</span> response<span class="token punctuation">,</span> error
+        <span class="token keyword">in</span>
+        <span class="token keyword">if</span> <span class="token keyword">let</span> data <span class="token punctuation">&#123;</span>
+            <span class="token keyword">let</span> decoder <span class="token operator">=</span> <span class="token class-name">JSONDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">do</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">let</span> searchResponse <span class="token operator">=</span> <span class="token keyword">try</span> decoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">SearchResponse</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> data<span class="token punctuation">)</span>
+                <span class="token keyword">let</span> itme <span class="token operator">=</span> searchResponse<span class="token punctuation">.</span>results<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+                <span class="token function">print</span><span class="token punctuation">(</span>itme<span class="token punctuation">.</span>trackName<span class="token punctuation">,</span> itme<span class="token punctuation">.</span>previewUrl<span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span>  <span class="token punctuation">&#123;</span>
+                <span class="token function">print</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">.</span><span class="token function">resume</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://drive.google.com/file/d/12rC3TDrGyFTO7GTCFhYXYm00LKM5guxa/view?usp=sharing">練習檔案</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JSON/" rel="tag"># JSON</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/27/%E5%B0%87%E7%B6%B2%E8%B7%AF%E6%8A%93%E4%B8%8B%E4%BE%86%E7%9A%84%E8%B3%87%E6%96%99%E6%94%BE%E5%9C%A8app%E4%B8%AD/" rel="prev" title="將網路抓下來的資料放在app中">
+                  <i class="fa fa-chevron-left"></i> 將網路抓下來的資料放在app中
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"06a0ea4bdba6258003bcc34bfc200af4"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
