@@ -21,28 +21,27 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="article">
-<meta property="og:title" content="Swift-集合4_Tuple">
-<meta property="og:url" content="https://huang0429.github.io/2022/07/28/Swift-%E9%9B%86%E5%90%884-Tuple/index.html">
+<meta property="og:title" content="mysql筆記1">
+<meta property="og:url" content="https://huang0429.github.io/2022/09/29/mysql%E7%AD%86%E8%A8%981/index.html">
 <meta property="og:site_name" content="天下第一不是我">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://huang0429.github.io/2022/07/28/Swift-%E9%9B%86%E5%90%884-Tuple/tuple01.jpeg">
-<meta property="article:published_time" content="2022-07-28T06:33:58.000Z">
-<meta property="article:modified_time" content="2022-07-28T06:33:58.000Z">
+<meta property="og:image" content="https://i.imgur.com/jNRnHH7.jpg">
+<meta property="article:published_time" content="2022-09-29T07:25:59.000Z">
+<meta property="article:modified_time" content="2022-09-29T07:25:59.000Z">
 <meta property="article:author" content="黃筱珮">
-<meta property="article:tag" content="Swift">
-<meta property="article:tag" content="集合">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://huang0429.github.io/2022/07/28/Swift-%E9%9B%86%E5%90%884-Tuple/tuple01.jpeg">
+<meta name="twitter:image" content="https://i.imgur.com/jNRnHH7.jpg">
 
 
-<link rel="canonical" href="https://huang0429.github.io/2022/07/28/Swift-%E9%9B%86%E5%90%884-Tuple/">
+<link rel="canonical" href="https://huang0429.github.io/2022/09/29/mysql%E7%AD%86%E8%A8%981/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/28/Swift-%E9%9B%86%E5%90%884-Tuple/","path":"2022/07/28/Swift-集合4-Tuple/","title":"Swift-集合4_Tuple"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/09/29/mysql%E7%AD%86%E8%A8%981/","path":"2022/09/29/mysql筆記1/","title":"mysql筆記1"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Swift-集合4_Tuple | 天下第一不是我</title>
+<title>mysql筆記1 | 天下第一不是我</title>
   
 
 
@@ -118,7 +117,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%9E%8B%E5%88%A5"><span class="nav-number">1.</span> <span class="nav-text">集合型別</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tuple-%E5%85%83%E7%B5%84"><span class="nav-number">2.</span> <span class="nav-text">Tuple 元組</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A3%E5%91%8ATuple"><span class="nav-number">2.1.</span> <span class="nav-text">宣告Tuple</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6"><span class="nav-number">2.2.</span> <span class="nav-text">測試</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql%E6%9C%89%E5%9B%9B%E9%83%A8%E4%BB%BD"><span class="nav-number">1.</span> <span class="nav-text">sql有四部份</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%AE%9A%E7%BE%A9%E8%AA%9E%E8%A8%80-DDL"><span class="nav-number">1.1.</span> <span class="nav-text">資料定義語言(DDL)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E6%93%8D%E4%BD%9C%E8%AA%9E%E8%A8%80-DML"><span class="nav-number">1.2.</span> <span class="nav-text">資料操作語言(DML)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E6%9F%A5%E8%A9%A2%E8%AA%9E%E8%A8%80-DQL"><span class="nav-number">1.3.</span> <span class="nav-text">資料查詢語言(DQL)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E6%8E%A7%E5%88%B6%E8%AA%9E%E8%A8%80-DCL"><span class="nav-number">1.4.</span> <span class="nav-text">資料控制語言(DCL)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E8%A1%A8"><span class="nav-number">2.</span> <span class="nav-text">新增資料表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%BA%E8%B3%87%E6%96%99%E8%A1%A8%E6%8F%92%E5%85%A5%E8%B3%87%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">為資料表插入資料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E5%AD%98%E5%8F%96%E4%BB%8B%E9%9D%A2"><span class="nav-number">4.</span> <span class="nav-text">資料庫存取介面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ODBC"><span class="nav-number">4.1.</span> <span class="nav-text">ODBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC"><span class="nav-number">4.2.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADO-NET"><span class="nav-number">4.3.</span> <span class="nav-text">ADO.NET</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PDO"><span class="nav-number">4.4.</span> <span class="nav-text">PDO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A9%85%E5%8B%95%E7%A8%8B%E5%BC%8F"><span class="nav-number">4.5.</span> <span class="nav-text">驅動程式</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -195,7 +194,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/28/Swift-%E9%9B%86%E5%90%884-Tuple/">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/09/29/mysql%E7%AD%86%E8%A8%981/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/../images/avatar.png">
@@ -208,12 +207,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Swift-集合4_Tuple | 天下第一不是我">
+      <meta itemprop="name" content="mysql筆記1 | 天下第一不是我">
       <meta itemprop="description" content=" ">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Swift-集合4_Tuple
+          mysql筆記1
         </h1>
 
         <div class="post-meta-container">
@@ -224,7 +223,7 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2022-07-28 14:33:58" itemprop="dateCreated datePublished" datetime="2022-07-28T14:33:58+08:00">2022-07-28</time>
+      <time title="創建時間：2022-09-29 15:25:59" itemprop="dateCreated datePublished" datetime="2022-09-29T15:25:59+08:00">2022-09-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -232,7 +231,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+          <a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
         </span>
     </span>
 
@@ -247,54 +246,27 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="集合型別"><a href="#集合型別" class="headerlink" title="集合型別"></a>集合型別</h2><ul>
-<li>陣列（ Array ）<ul>
-<li>是有序的集合</li>
-<li>索引從0開始</li>
-<li>元素要同一型態</li>
-</ul>
-</li>
-<li>字典（Dictionary）<ul>
-<li>元素以：key ⇒ value 的形式構成 ( 鍵 ⇒ 值 )</li>
-<li>通常是用 key 來進行存取</li>
-<li>key 不能重覆</li>
-<li>無序的集合</li>
-<li>元素型態可不一樣</li>
-</ul>
-</li>
-<li>集合（ Sets ）<ul>
-<li>與陣列類似</li>
-<li>無序的集合</li>
-<li>集合內的值不可重複</li>
-<li>元素要同一型態</li>
-</ul>
-</li>
-<li>元組（ 雜堆 ）（ Tuple ）<ul>
-<li>元素有順序（可用 index 或 key）</li>
-<li>一旦決𤴓元素內容，就不能再更動</li>
-<li>元素、index 、key 不限型態，可以混用</li>
-</ul>
-</li>
-</ul>
-<h2 id="Tuple-元組"><a href="#Tuple-元組" class="headerlink" title="Tuple 元組"></a>Tuple 元組</h2><blockquote>
-<p>Swift中的元組佔據了字典和結構之間的空間：它們保存非常特定類型的數據（如結構），但可以動態創建（如字典）。它們通常用於從函數調用中返回多個值。  </p>
-</blockquote>
-<h3 id="宣告Tuple"><a href="#宣告Tuple" class="headerlink" title="宣告Tuple"></a>宣告Tuple</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
-<span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Paul"</span></span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">35</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>看起來很像結構</p>
-<h3 id="測試"><a href="#測試" class="headerlink" title="測試"></a>測試</h3><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">split</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token punctuation">(</span>firstName<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> lastName<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">let</span> split <span class="token operator">=</span> name<span class="token punctuation">.</span><span class="token function">components</span><span class="token punctuation">(</span>separatedBy<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">" "</span></span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>split<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> split<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">let</span> parts <span class="token operator">=</span> <span class="token function">split</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Paul Hudson"</span></span><span class="token punctuation">)</span>
-parts<span class="token punctuation">.</span><span class="token number">0</span>
-parts<span class="token punctuation">.</span><span class="token number">1</span>
-parts<span class="token punctuation">.</span>firstName
-parts<span class="token punctuation">.</span>lastName
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/2022/07/28/Swift-%E9%9B%86%E5%90%884-Tuple/tuple01.jpeg">  </p>
+        <h2 id="sql有四部份"><a href="#sql有四部份" class="headerlink" title="sql有四部份"></a>sql有四部份</h2><h3 id="資料定義語言-DDL"><a href="#資料定義語言-DDL" class="headerlink" title="資料定義語言(DDL)"></a>資料定義語言(DDL)</h3><p>DROP、CREATE、ALTER</p>
+<h3 id="資料操作語言-DML"><a href="#資料操作語言-DML" class="headerlink" title="資料操作語言(DML)"></a>資料操作語言(DML)</h3><p>INSERT（插入）UPDATE（修改）DELETE（刪除）</p>
+<h3 id="資料查詢語言-DQL"><a href="#資料查詢語言-DQL" class="headerlink" title="資料查詢語言(DQL)"></a>資料查詢語言(DQL)</h3><p>SELECT 敘述</p>
+<h3 id="資料控制語言-DCL"><a href="#資料控制語言-DCL" class="headerlink" title="資料控制語言(DCL)"></a>資料控制語言(DCL)</h3><p>GRANT、REVOKE、COMMIT、ROLLBACK</p>
+<h2 id="新增資料表"><a href="#新增資料表" class="headerlink" title="新增資料表"></a>新增資料表</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> students2 <span class="token punctuation">(</span>
+	student_id <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span><span class="token punctuation">,</span>
+    name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>student_id<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>students2 是資料表<br>student_id、name 是欄位<br>PRIMARY KEY (student_id)是指定student_id為主鍵</p>
+<p>目前是新增資料表，但沒有內容</p>
+<h2 id="為資料表插入資料"><a href="#為資料表插入資料" class="headerlink" title="為資料表插入資料"></a>為資料表插入資料</h2><p>新增一筆資料</p>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">INSERT INTO students2 (student_id,name)
+VALUES (41048101, &#39;LUCY GREEN&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/jNRnHH7.jpg"></p>
+<h2 id="資料庫存取介面"><a href="#資料庫存取介面" class="headerlink" title="資料庫存取介面"></a>資料庫存取介面</h2><p>主要的資料庫存取介面有ODBC、JDBC、ADO.NET、PDO</p>
+<h3 id="ODBC"><a href="#ODBC" class="headerlink" title="ODBC"></a>ODBC</h3><p>此技術為存取不同的SQL資料庫提供了一個共同的介面。<br>ODBC使用SQL作為存取資料的標準，以提供了大幅的互通性。<br>ODBC最大的優點是能以統一的方式處理所有的資料庫。</p>
+<h3 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h3><p>是用於Java程式連接資料庫的標準方法。<br>是一種用於執行SQL敘述的Java API。</p>
+<h3 id="ADO-NET"><a href="#ADO-NET" class="headerlink" title="ADO.NET"></a>ADO.NET</h3><p>是在.NET架構下的物件導向類別庫。<br>ADO.NET提供了對關聯資料、XML和應用程式資料的存取，允許和不同類型的資料來源以及資料庫進行互動。</p>
+<h3 id="PDO"><a href="#PDO" class="headerlink" title="PDO"></a>PDO</h3><p>為PHP存取資料庫定義的介面</p>
+<h3 id="驅動程式"><a href="#驅動程式" class="headerlink" title="驅動程式"></a>驅動程式</h3><p><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/">官方的驅動程式</a></p>
 
     </div>
 
@@ -304,22 +276,18 @@ parts<span class="token punctuation">.</span>lastName
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Swift/" rel="tag"># Swift</a>
-              <a href="/tags/%E9%9B%86%E5%90%88/" rel="tag"># 集合</a>
+              <a href="/tags/mysql/" rel="tag"># mysql</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/07/28/Swift-%E9%9B%86%E5%90%883-Sets/" rel="prev" title="Swift-集合3_Sets">
-                  <i class="fa fa-chevron-left"></i> Swift-集合3_Sets
+                <a href="/2022/09/29/%E7%AC%AC%E4%B8%89%E6%96%B9api-JSON%E6%8A%93%E5%8F%96%E7%B7%B4%E7%BF%92-Random/" rel="prev" title="第三方api JSON抓取練習-Random">
+                  <i class="fa fa-chevron-left"></i> 第三方api JSON抓取練習-Random
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/07/28/%E5%9C%96%E7%89%87%E5%8F%96%E4%BB%A3logo/" rel="next" title="圖片取代logo">
-                  圖片取代logo <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -370,7 +338,7 @@ parts<span class="token punctuation">.</span>lastName
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"1e54e1ddc8c797f7e07f3297290d1e3e"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"9f6bc7f67e75307ec90bd83d64384884"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
