@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="MySQL語法練習1">
+<meta property="og:url" content="https://huang0429.github.io/2022/10/04/MySQL%E8%AA%9E%E6%B3%95%E7%B7%B4%E7%BF%921/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/iU0axI2.jpg">
+<meta property="og:image" content="https://i.imgur.com/SK6agq1.jpg">
+<meta property="og:image" content="https://i.imgur.com/CvGzZ64.jpg">
+<meta property="og:image" content="https://i.imgur.com/8iosFi3.jpg">
+<meta property="og:image" content="https://i.imgur.com/ok2phZ2.jpg">
+<meta property="og:image" content="https://i.imgur.com/eSR5YFq.jpg">
+<meta property="og:image" content="https://i.imgur.com/7joAQ2T.jpg">
+<meta property="og:image" content="https://i.imgur.com/p7sbqb3.jpg">
+<meta property="og:image" content="https://i.imgur.com/2y2Tl9b.jpg">
+<meta property="og:image" content="https://i.imgur.com/wby3iTr.jpg">
+<meta property="og:image" content="https://i.imgur.com/M73bFnD.jpg">
+<meta property="og:image" content="https://i.imgur.com/QWsio0Z.jpg">
+<meta property="og:image" content="https://i.imgur.com/7Fq1NHh.jpg">
+<meta property="og:image" content="https://i.imgur.com/5uu5xFD.jpg">
+<meta property="article:published_time" content="2022-10-04T03:50:01.000Z">
+<meta property="article:modified_time" content="2022-10-04T03:50:01.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="mysql">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/iU0axI2.jpg">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/10/04/MySQL%E8%AA%9E%E6%B3%95%E7%B7%B4%E7%BF%921/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/10/04/MySQL%E8%AA%9E%E6%B3%95%E7%B7%B4%E7%BF%921/","path":"2022/10/04/MySQL語法練習1/","title":"MySQL語法練習1"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>MySQL語法練習1 | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">36</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">18</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">48</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B"><span class="nav-number">1.</span> <span class="nav-text">開始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">登入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%B3%87%E6%96%99%E5%BA%AB"><span class="nav-number">3.</span> <span class="nav-text">查看資料庫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%EF%BC%88%E5%88%87%E6%8F%9B%EF%BC%89%E8%B3%87%E6%96%99%E5%BA%AB"><span class="nav-number">4.</span> <span class="nav-text">使用（切換）資料庫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E8%B3%87%E6%96%99%E8%A1%A8"><span class="nav-number">5.</span> <span class="nav-text">查詢資料表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E8%B3%87%E6%96%99%E8%A1%A8%E5%85%A7%E5%AE%B9"><span class="nav-number">6.</span> <span class="nav-text">查詢資料表內容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#select"><span class="nav-number">7.</span> <span class="nav-text">select</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%88%A5%E5%90%8D"><span class="nav-number">8.</span> <span class="nav-text">使用別名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%BB%E9%99%A4%E9%87%8D%E8%A4%87%E8%B3%87%E6%96%99-DISTINCT"><span class="nav-number">9.</span> <span class="nav-text">去除重複資料 DISTINCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E7%AF%A9%E9%81%B8%E6%A2%9D%E4%BB%B6-WHERE"><span class="nav-number">10.</span> <span class="nav-text">設定篩選條件 WHERE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E7%AF%A9%E9%81%B8%E7%AF%84%E5%9C%8D-BETWEEN-%E2%80%A6-AND"><span class="nav-number">11.</span> <span class="nav-text">設定篩選範圍 BETWEEN … AND</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E5%AD%97%E4%B8%B2%E6%AF%94%E5%B0%8D%E7%9A%84%E7%AF%A9%E9%81%B8%E5%80%BC%E6%90%AD%E9%85%8D%E8%90%AC%E7%94%A8%E5%AD%97%E5%85%83-LIKE"><span class="nav-number">12.</span> <span class="nav-text">設定字串比對的篩選值搭配萬用字元 - LIKE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%A9%A2%E7%B5%90%E6%9E%9C%E7%9A%84%E6%8E%92%E5%BA%8F-ORDER-BY"><span class="nav-number">13.</span> <span class="nav-text">查詢結果的排序 - ORDER BY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E6%9F%A5%E8%A9%A2%E9%A1%AF%E7%A4%BA%E7%9A%84%E7%AD%86%E6%95%B8-LIMIT"><span class="nav-number">14.</span> <span class="nav-text">設定查詢顯示的筆數 - LIMIT</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/10/04/MySQL%E8%AA%9E%E6%B3%95%E7%B7%B4%E7%BF%921/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="MySQL語法練習1 | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MySQL語法練習1
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-10-04 11:50:01" itemprop="dateCreated datePublished" datetime="2022-10-04T11:50:01+08:00">2022-10-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>我的資料表：<br><img src="https://i.imgur.com/iU0axI2.jpg"></p>
+<p>資料表檔案： students.sql</p>
+<p><a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1YD8kQxgGiVd-X1Il5YTxvM4kjS618dvt/view?usp=sharing">https://drive.google.com/file/d/1YD8kQxgGiVd-X1Il5YTxvM4kjS618dvt/view?usp=sharing</a></p>
+<h2 id="開始"><a href="#開始" class="headerlink" title="開始"></a>開始</h2><ul>
+<li>使用終端機練習</li>
+</ul>
+<h2 id="登入"><a href="#登入" class="headerlink" title="登入"></a>登入</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">mysql <span class="token operator">-</span>u root <span class="token operator">-</span>p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="查看資料庫"><a href="#查看資料庫" class="headerlink" title="查看資料庫"></a>查看資料庫</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">databases</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="使用（切換）資料庫"><a href="#使用（切換）資料庫" class="headerlink" title="使用（切換）資料庫"></a>使用（切換）資料庫</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">use</span> class<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>class是資料庫名稱</p>
+<h2 id="查詢資料表"><a href="#查詢資料表" class="headerlink" title="查詢資料表"></a>查詢資料表</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">tables</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="查詢資料表內容"><a href="#查詢資料表內容" class="headerlink" title="查詢資料表內容"></a>查詢資料表內容</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> students<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/SK6agq1.jpg"></p>
+<h2 id="select"><a href="#select" class="headerlink" title="select"></a>select</h2><p><code>SELECT 欄位名稱 FROM 資料表名稱；</code></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> students<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/CvGzZ64.jpg"></p>
+<p>星號是全部的意思<br>如果只要某幾個欄位可以直接指定並以逗號隔開</p>
+<p>ex:</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> cName<span class="token punctuation">,</span> cBirthday <span class="token keyword">from</span> students<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/8iosFi3.jpg"></p>
+<h2 id="使用別名"><a href="#使用別名" class="headerlink" title="使用別名"></a>使用別名</h2><p><code>SELECT 欄位名稱 AS 欄位別名 FROM 資料名稱</code></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> cName <span class="token keyword">as</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span> cHeight <span class="token keyword">as</span> <span class="token string">'身高'</span> <span class="token keyword">from</span> students<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://i.imgur.com/ok2phZ2.jpg"></p>
+<p>如果要加入多個欄位<br>記得要加逗號</p>
+<h2 id="去除重複資料-DISTINCT"><a href="#去除重複資料-DISTINCT" class="headerlink" title="去除重複資料 DISTINCT"></a>去除重複資料 DISTINCT</h2><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">
+select distinct cSex from students;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="https://i.imgur.com/eSR5YFq.jpg"></p>
+<h2 id="設定篩選條件-WHERE"><a href="#設定篩選條件-WHERE" class="headerlink" title="設定篩選條件 WHERE"></a>設定篩選條件 WHERE</h2><p>在查詢資料時，並不是每一次都要顯示所有的內容。</p>
+<p><code>SELECT 欄位名稱 FROM 資料表名稱 WHERER 條件敘述包</code></p>
+<p>ex:選出男生</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> cSex<span class="token operator">=</span><span class="token string">'M'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://i.imgur.com/7joAQ2T.jpg"></p>
+<h2 id="設定篩選範圍-BETWEEN-…-AND"><a href="#設定篩選範圍-BETWEEN-…-AND" class="headerlink" title="設定篩選範圍 BETWEEN … AND"></a>設定篩選範圍 BETWEEN … AND</h2><p><code>SELECT 欄位名稱 FROM 資料表名稱 WHERE 條件敘述句；</code></p>
+<p>ex:選出cID大於4且小於6的同學：</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> cID <span class="token operator">between</span> <span class="token number">4</span> <span class="token operator">and</span> <span class="token number">6</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>ex: 尋找生日在1987年~1988年之間的學生資料</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> cBirthday <span class="token operator">between</span> <span class="token string">'1987-01-01'</span> <span class="token operator">and</span> <span class="token string">'1988-12-31'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/p7sbqb3.jpg"></p>
+<p>如果沒有特別說明，通常年都是指一整年。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> 欄位名稱
+<span class="token keyword">FROM</span> 資料表名稱
+<span class="token keyword">WHERE</span> 欄位名稱 <span class="token operator">IN</span> （欄位值<span class="token number">1</span>，欄位值<span class="token number">2.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>ex:找出cID號碼為1.3.5.7.9的學生資料</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> cID <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/2y2Tl9b.jpg"></p>
+<h2 id="設定字串比對的篩選值搭配萬用字元-LIKE"><a href="#設定字串比對的篩選值搭配萬用字元-LIKE" class="headerlink" title="設定字串比對的篩選值搭配萬用字元 - LIKE"></a>設定字串比對的篩選值搭配萬用字元 - LIKE</h2><p>萬用字元：</p>
+<ul>
+<li>_ ：代表任何單一字元、單一文字。</li>
+<li>% ：代表多個字元所組成的字串。</li>
+</ul>
+<p>ex:找出電話號碼為0918開頭的學生資料</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> cPhone <span class="token operator">like</span> <span class="token string">'0918%'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/wby3iTr.jpg"></p>
+<p>ex:找出學生的名字中有”林”的學生資料</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> students <span class="token keyword">where</span> cName <span class="token operator">like</span> <span class="token string">'%林%'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/M73bFnD.jpg"></p>
+<h2 id="查詢結果的排序-ORDER-BY"><a href="#查詢結果的排序-ORDER-BY" class="headerlink" title="查詢結果的排序 - ORDER BY"></a>查詢結果的排序 - ORDER BY</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> 欄位名稱
+<span class="token keyword">FROM</span> 資料表名稱
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> 指定排序的欄位 排序方式<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>排序方式有二種：</p>
+<ul>
+<li>ASC：遞增排序，由小排到大，也是預設排序方法。</li>
+<li>DESC:遞減排序，由大排到小。</li>
+</ul>
+<p>ex:以學生生日遞減排序</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> students <span class="token keyword">order</span> <span class="token keyword">by</span> cBirthday <span class="token keyword">desc</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/QWsio0Z.jpg"></p>
+<p>ex: 先以性別做遞增排序，再依生日遞減排序</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> students <span class="token keyword">order</span> <span class="token keyword">by</span> cSex <span class="token keyword">asc</span><span class="token punctuation">,</span> cBirthday <span class="token keyword">desc</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://i.imgur.com/7Fq1NHh.jpg"></p>
+<h2 id="設定查詢顯示的筆數-LIMIT"><a href="#設定查詢顯示的筆數-LIMIT" class="headerlink" title="設定查詢顯示的筆數 - LIMIT"></a>設定查詢顯示的筆數 - LIMIT</h2><p>LIMIT 是在查詢後的結果再進行擷取資料的動作<br>如果與 ORDER BY 進行排序搭配可以輕易取得最前的 10 筆資料或是最後的 10 筆資料的結果。<br>所以，LIMIT 在使用時必須放置在 ORDER BY 之後。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> 欄位名稱
+<span class="token keyword">FROM</span> 資料表名稱
+<span class="token keyword">LIMIT</span> 開始顯示的筆數，顯示多少筆資料；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>ex:依性別遞增排序，再依生日遞減排序的前 5 筆資料</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> students <span class="token keyword">order</span> <span class="token keyword">by</span> cSex <span class="token keyword">asc</span><span class="token punctuation">,</span> cBirthday <span class="token keyword">desc</span> <span class="token keyword">limit</span> <span class="token number">5</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/5uu5xFD.jpg"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mysql/" rel="tag"># mysql</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/10/04/MySQL-%E8%B3%87%E6%96%99%E8%A1%A8%E5%8C%AF%E5%87%BA%E5%8C%AF%E5%85%A5/" rel="prev" title="MySQL-資料表匯出匯入">
+                  <i class="fa fa-chevron-left"></i> MySQL-資料表匯出匯入
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"008414f3b31294d6c3a132026504af3e"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
