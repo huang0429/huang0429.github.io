@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="PHP連接MySQL資料庫">
+<meta property="og:url" content="https://huang0429.github.io/2022/10/07/PHP%E9%80%A3%E6%8E%A5MySQL%E8%B3%87%E6%96%99%E5%BA%AB/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/VrLWGeP.png">
+<meta property="og:image" content="https://i.imgur.com/uhLluqQ.png">
+<meta property="og:image" content="https://i.imgur.com/gVMxBPP.jpg">
+<meta property="og:image" content="https://i.imgur.com/ga78aLB.jpg">
+<meta property="og:image" content="https://i.imgur.com/c3wM3is.jpg">
+<meta property="og:image" content="https://i.imgur.com/LGkeiQy.jpg">
+<meta property="og:image" content="https://i.imgur.com/9UReCpw.jpg">
+<meta property="article:published_time" content="2022-10-07T08:23:45.000Z">
+<meta property="article:modified_time" content="2022-10-07T08:23:45.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="php">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/VrLWGeP.png">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/10/07/PHP%E9%80%A3%E6%8E%A5MySQL%E8%B3%87%E6%96%99%E5%BA%AB/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/10/07/PHP%E9%80%A3%E6%8E%A5MySQL%E8%B3%87%E6%96%99%E5%BA%AB/","path":"2022/10/07/PHP連接MySQL資料庫/","title":"PHP連接MySQL資料庫"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>PHP連接MySQL資料庫 | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">37</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">18</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">50</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%A3%E6%8E%A5"><span class="nav-number">1.</span> <span class="nav-text">連接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%96%E5%80%BC"><span class="nav-number">2.</span> <span class="nav-text">取值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">新增資料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#input-%E6%96%B0%E5%A2%9E%E4%BD%BF%E7%94%A8%E8%80%85"><span class="nav-number">4.</span> <span class="nav-text">input 新增使用者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E8%B3%87%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">刪除資料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E5%8A%A0%E5%80%8B%E5%88%AA%E9%99%A4%E9%8D%B5"><span class="nav-number">5.1.</span> <span class="nav-text">先加個刪除鍵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E-delete-php-%E6%AA%94%E6%A1%88"><span class="nav-number">5.2.</span> <span class="nav-text">新增 delete.php 檔案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B7%A8%E8%BC%AF%E8%B3%87%E6%96%99"><span class="nav-number">5.3.</span> <span class="nav-text">編輯資料</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/10/07/PHP%E9%80%A3%E6%8E%A5MySQL%E8%B3%87%E6%96%99%E5%BA%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="PHP連接MySQL資料庫 | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PHP連接MySQL資料庫
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-10-07 16:23:45" itemprop="dateCreated datePublished" datetime="2022-10-07T16:23:45+08:00">2022-10-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>macOS Monterey 12.6<br>XAMPP 8.1.6<br>檔案在XAMPP的路徑：htdocs&#x2F;example&#x2F;</p>
+<h2 id="連接"><a href="#連接" class="headerlink" title="連接"></a>連接</h2><blockquote>
+<p>.gitignore 忽略那些不該上傳的 Git 檔案</p>
+</blockquote>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">#conn.php
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token variable">$server_name</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'localhost'</span><span class="token punctuation">;</span>
+<span class="token variable">$username</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'huang2'</span><span class="token punctuation">;</span>
+<span class="token variable">$password</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'0000'</span><span class="token punctuation">;</span>
+<span class="token variable">$db_name</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'huang2'</span><span class="token punctuation">;</span>
+
+<span class="token variable">$conn</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mysqli</span><span class="token punctuation">(</span><span class="token variable">$server_name</span><span class="token punctuation">,</span> <span class="token variable">$username</span><span class="token punctuation">,</span> <span class="token variable">$password</span><span class="token punctuation">,</span> <span class="token variable">$db_name</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">connect_error</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'資料庫連線錯誤：'</span> <span class="token operator">.</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">connect_error</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'SET NAMES UTF8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'SET time_zone = "+8:00"'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h2><pre class="line-numbers language-php" data-language="php"><code class="language-php">#index.php
+
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">require_once</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'conn.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"select * from users;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">error</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token variable">$row</span> <span class="token operator">=</span> <span class="token variable">$result</span><span class="token operator">-></span><span class="token function">fetch_assoc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"id:"</span> <span class="token operator">.</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cID'</span><span class="token punctuation">]</span> <span class="token operator">.</span> <span class="token string single-quoted-string">'&lt;br>'</span><span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"username:"</span> <span class="token operator">.</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cName'</span><span class="token punctuation">]</span> <span class="token operator">.</span> <span class="token string single-quoted-string">'&lt;br>'</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://i.imgur.com/VrLWGeP.png"></p>
+<h2 id="新增資料"><a href="#新增資料" class="headerlink" title="新增資料"></a>新增資料</h2><p>新增一個 apple</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">#add.php
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">require_once</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'conn.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"insert into users(
+    cName) values('apple')"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable">$result</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">error</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">print_r</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/uhLluqQ.png"></p>
+<h2 id="input-新增使用者"><a href="#input-新增使用者" class="headerlink" title="input 新增使用者"></a>input 新增使用者</h2><pre class="line-numbers language-php" data-language="php"><code class="language-php">#index.php
+
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">require_once</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'conn.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"select * from users;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">error</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token variable">$row</span> <span class="token operator">=</span> <span class="token variable">$result</span><span class="token operator">-></span><span class="token function">fetch_assoc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"id:"</span> <span class="token operator">.</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cID'</span><span class="token punctuation">]</span> <span class="token operator">.</span> <span class="token string single-quoted-string">'&lt;br>'</span><span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"username:"</span> <span class="token operator">.</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cName'</span><span class="token punctuation">]</span> <span class="token operator">.</span> <span class="token string single-quoted-string">'&lt;br>'</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token delimiter important">?></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>新增 user<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>add.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    username: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>後面新增一個表單<br>action&#x3D;”add.php”是目標網頁</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">#add.php
+
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">require_once</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'conn.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'username'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'請輸入 username'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token variable">$username</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'username'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token function">sprintf</span><span class="token punctuation">(</span>
+    <span class="token string double-quoted-string">"insert into users(cName) values('%s')"</span><span class="token punctuation">,</span>
+    <span class="token variable">$username</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//這是抓蟲用的</span>
+<span class="token keyword">echo</span> <span class="token string single-quoted-string">'SQL:'</span> <span class="token operator">.</span><span class="token variable">$sql</span> <span class="token operator">.</span> <span class="token string double-quoted-string">"&lt;br>"</span><span class="token punctuation">;</span>
+
+<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable">$result</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">error</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">echo</span> <span class="token string double-quoted-string">"新增成功！"</span>
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>sprintf 格式化<br>先到 index.php<br>新增 abc<br><img src="https://i.imgur.com/gVMxBPP.jpg"></p>
+<p>新增成功會跳到add.php&#x3D;</p>
+<p><img src="https://i.imgur.com/ga78aLB.jpg"></p>
+<p>再跳回 index.php<br>看一下資料庫內容<br><img src="https://i.imgur.com/c3wM3is.jpg"></p>
+<p>資料庫<br><img src="https://i.imgur.com/LGkeiQy.jpg"></p>
+<p>以上都要手動改網址返回<br>在底下加個a連結<br>會方便許多</p>
+<p><img src="https://i.imgur.com/9UReCpw.jpg"></p>
+<p>或是自動跳轉</p>
+<p>在 add.php 最後加上一行。</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token function">header</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"Location: index.php"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<h2 id="刪除資料"><a href="#刪除資料" class="headerlink" title="刪除資料"></a>刪除資料</h2><h3 id="先加個刪除鍵"><a href="#先加個刪除鍵" class="headerlink" title="先加個刪除鍵"></a>先加個刪除鍵</h3><pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;a href='delete.php?id=x'>刪除&lt;/a>"</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;br>"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token comment">#index.php</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token variable">$row</span> <span class="token operator">=</span> <span class="token variable">$result</span><span class="token operator">-></span><span class="token function">fetch_assoc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"id:"</span> <span class="token operator">.</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cID'</span><span class="token punctuation">]</span> <span class="token operator">.</span> <span class="token string single-quoted-string">'&lt;br>'</span><span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"username:"</span> <span class="token operator">.</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cName'</span><span class="token punctuation">]</span> <span class="token operator">.</span> <span class="token string single-quoted-string">'&lt;br>'</span><span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;a href='delete.php?cID="</span><span class="token operator">.</span><span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cID'</span><span class="token punctuation">]</span> <span class="token operator">.</span> <span class="token string double-quoted-string">"'>刪除&lt;/a>"</span><span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;br>"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="新增-delete-php-檔案"><a href="#新增-delete-php-檔案" class="headerlink" title="新增 delete.php 檔案"></a>新增 delete.php 檔案</h3><pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">require_once</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'conn.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cID'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'刪除失敗，沒有咬到id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token variable">$id</span> <span class="token operator">=</span> <span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cID'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token function">sprintf</span><span class="token punctuation">(</span>
+    <span class="token string double-quoted-string">"delete from users where cID = %d"</span><span class="token punctuation">,</span>
+    <span class="token variable">$id</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token variable">$sql</span><span class="token punctuation">;</span>
+
+<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable">$result</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">error</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">affected_rows</span> <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;br>"</span><span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"成功刪除 "</span> <span class="token operator">.</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">affected_rows</span> <span class="token operator">.</span> <span class="token string double-quoted-string">" 筆資料。"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"查無資料"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">//header("Location: index.php");</span>
+<span class="token delimiter important">?></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>返回 index.php <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>$conn-&gt;affected_rows 會顯示被刪除的筆數的數量</p>
+<h3 id="編輯資料"><a href="#編輯資料" class="headerlink" title="編輯資料"></a>編輯資料</h3><p>在 index.php 裡面再加入一個表單</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">
+#index.php
+
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">require_once</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'conn.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"select * from users;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">error</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token variable">$row</span> <span class="token operator">=</span> <span class="token variable">$result</span><span class="token operator">-></span><span class="token function">fetch_assoc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"id:"</span> <span class="token operator">.</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cID'</span><span class="token punctuation">]</span> <span class="token operator">.</span> <span class="token string single-quoted-string">'&lt;br>'</span><span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"username:"</span> <span class="token operator">.</span> <span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cName'</span><span class="token punctuation">]</span> <span class="token operator">.</span> <span class="token string single-quoted-string">'&lt;br>'</span><span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;a href='delete.php?cID="</span><span class="token operator">.</span><span class="token variable">$row</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cID'</span><span class="token punctuation">]</span> <span class="token operator">.</span> <span class="token string double-quoted-string">"'>刪除&lt;/a>"</span><span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;br>"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token delimiter important">?></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>新增 user<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>add.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    username: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>編輯資料<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>update.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    id: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cID<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    username: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cName<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>新增 update.php</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">require_once</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'conn.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cID'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cName'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'請輸入 id 與 username'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token variable">$id</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cID'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$username</span> <span class="token operator">=</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'cName'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token variable">$sql</span> <span class="token operator">=</span> <span class="token function">sprintf</span><span class="token punctuation">(</span>
+    <span class="token string double-quoted-string">"update users set cName='%s' where cID=%d"</span><span class="token punctuation">,</span>
+    <span class="token variable">$username</span><span class="token punctuation">,</span>
+    <span class="token variable">$id</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//錯誤訊息</span>
+<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token variable">$conn</span><span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token variable">$sql</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable">$result</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">die</span><span class="token punctuation">(</span><span class="token variable">$conn</span><span class="token operator">-></span><span class="token property">error</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">echo</span> <span class="token string double-quoted-string">"修改成功！"</span><span class="token punctuation">;</span>
+<span class="token comment">// header("Location: index.php");</span>
+<span class="token delimiter important">?></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index.php<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>返回 index.php <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mysql/" rel="tag"># mysql</a>
+              <a href="/tags/php/" rel="tag"># php</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/10/06/SWIFT-guard-let-%E7%94%A8%E6%B3%95/" rel="prev" title="SWIFT-guard let 用法">
+                  <i class="fa fa-chevron-left"></i> SWIFT-guard let 用法
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"654517a4d9f94d125aa939317ab16ed3"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
