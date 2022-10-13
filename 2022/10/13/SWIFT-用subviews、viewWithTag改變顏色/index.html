@@ -21,29 +21,33 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="article">
-<meta property="og:title" content="更改資料夾顏色">
-<meta property="og:url" content="https://huang0429.github.io/2022/07/12/%E6%9B%B4%E6%94%B9%E8%B3%87%E6%96%99%E5%A4%BE%E9%A1%8F%E8%89%B2/index.html">
+<meta property="og:title" content="SWIFT-用subviews、viewWithTag改變顏色">
+<meta property="og:url" content="https://huang0429.github.io/2022/10/13/SWIFT-%E7%94%A8subviews%E3%80%81viewWithTag%E6%94%B9%E8%AE%8A%E9%A1%8F%E8%89%B2/index.html">
 <meta property="og:site_name" content="天下第一不是我">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://huang0429.github.io/2022/07/12/%E6%9B%B4%E6%94%B9%E8%B3%87%E6%96%99%E5%A4%BE%E9%A1%8F%E8%89%B2/Huang20220712_161104.jpeg">
-<meta property="og:image" content="https://huang0429.github.io/2022/07/12/%E6%9B%B4%E6%94%B9%E8%B3%87%E6%96%99%E5%A4%BE%E9%A1%8F%E8%89%B2/Huang20220712_161104.jpeg">
-<meta property="og:image" content="https://huang0429.github.io/2022/07/12/%E6%9B%B4%E6%94%B9%E8%B3%87%E6%96%99%E5%A4%BE%E9%A1%8F%E8%89%B2/Huang20220712_161725.jpeg">
-<meta property="article:published_time" content="2022-07-12T10:56:12.000Z">
-<meta property="article:modified_time" content="2022-07-12T10:56:12.000Z">
+<meta property="og:image" content="https://i.imgur.com/suUF2pp.jpg">
+<meta property="og:image" content="https://i.imgur.com/54j1CZv.jpg">
+<meta property="og:image" content="https://i.imgur.com/WWciSde.jpg">
+<meta property="og:image" content="https://i.imgur.com/PZ5zrsA.jpg">
+<meta property="og:image" content="https://i.imgur.com/o1tPwA0.jpg">
+<meta property="og:image" content="https://i.imgur.com/tHQl0jL.jpg">
+<meta property="article:published_time" content="2022-10-13T06:19:03.000Z">
+<meta property="article:modified_time" content="2022-10-13T06:19:03.000Z">
 <meta property="article:author" content="黃筱珮">
-<meta property="article:tag" content="Manila">
+<meta property="article:tag" content="subviews">
+<meta property="article:tag" content="viewWithTag">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://huang0429.github.io/2022/07/12/%E6%9B%B4%E6%94%B9%E8%B3%87%E6%96%99%E5%A4%BE%E9%A1%8F%E8%89%B2/Huang20220712_161104.jpeg">
+<meta name="twitter:image" content="https://i.imgur.com/suUF2pp.jpg">
 
 
-<link rel="canonical" href="https://huang0429.github.io/2022/07/12/%E6%9B%B4%E6%94%B9%E8%B3%87%E6%96%99%E5%A4%BE%E9%A1%8F%E8%89%B2/">
+<link rel="canonical" href="https://huang0429.github.io/2022/10/13/SWIFT-%E7%94%A8subviews%E3%80%81viewWithTag%E6%94%B9%E8%AE%8A%E9%A1%8F%E8%89%B2/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/07/12/%E6%9B%B4%E6%94%B9%E8%B3%87%E6%96%99%E5%A4%BE%E9%A1%8F%E8%89%B2/","path":"2022/07/12/更改資料夾顏色/","title":"更改資料夾顏色"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/10/13/SWIFT-%E7%94%A8subviews%E3%80%81viewWithTag%E6%94%B9%E8%AE%8A%E9%A1%8F%E8%89%B2/","path":"2022/10/13/SWIFT-用subviews、viewWithTag改變顏色/","title":"SWIFT-用subviews、viewWithTag改變顏色"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>更改資料夾顏色 | 天下第一不是我</title>
+<title>SWIFT-用subviews、viewWithTag改變顏色 | 天下第一不是我</title>
   
 
 
@@ -119,7 +123,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E7%B3%BB%E7%B5%B1"><span class="nav-number">1.</span> <span class="nav-text">我的系統</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E2%80%A6"><span class="nav-number">2.</span> <span class="nav-text">開始…</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8subviews%E6%94%B9%E8%AE%8A%E9%A1%8F%E8%89%B2"><span class="nav-number">1.</span> <span class="nav-text">用subviews改變顏色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8viewWithTag%E6%94%B9%E8%AE%8A%E9%A1%8F%E8%89%B2"><span class="nav-number">2.</span> <span class="nav-text">用viewWithTag改變顏色</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -196,7 +200,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/07/12/%E6%9B%B4%E6%94%B9%E8%B3%87%E6%96%99%E5%A4%BE%E9%A1%8F%E8%89%B2/">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/10/13/SWIFT-%E7%94%A8subviews%E3%80%81viewWithTag%E6%94%B9%E8%AE%8A%E9%A1%8F%E8%89%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/../images/avatar.png">
@@ -209,12 +213,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="更改資料夾顏色 | 天下第一不是我">
+      <meta itemprop="name" content="SWIFT-用subviews、viewWithTag改變顏色 | 天下第一不是我">
       <meta itemprop="description" content=" ">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          更改資料夾顏色
+          SWIFT-用subviews、viewWithTag改變顏色
         </h1>
 
         <div class="post-meta-container">
@@ -225,7 +229,7 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2022-07-12 18:56:12" itemprop="dateCreated datePublished" datetime="2022-07-12T18:56:12+08:00">2022-07-12</time>
+      <time title="創建時間：2022-10-13 14:19:03" itemprop="dateCreated datePublished" datetime="2022-10-13T14:19:03+08:00">2022-10-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -233,7 +237,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9D%B1%E5%AD%B8%E8%A5%BF%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">東學西學</span></a>
+          <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
         </span>
     </span>
 
@@ -248,24 +252,53 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>更換資料夾的方法是利用一位外國朋友所寫的套件。  </p>
-<p><a target="_blank" rel="noopener" href="https://github.com/neilsardesai/Manila">套件下載處</a>  </p>
-<h2 id="我的系統"><a href="#我的系統" class="headerlink" title="我的系統"></a>我的系統</h2><p>macOS Monterey 12.4  </p>
-<h2 id="開始…"><a href="#開始…" class="headerlink" title="開始…"></a>開始…</h2><ul>
-<li>到網站下載最新版本。</li>
-<li>下載解壓縮後將套件拉到 “ 應用程式 “</li>
-<li>隨便找個資料夾</li>
-<li>按右鍵 -&gt; 快速動作 -&gt; 自訂</li>
-</ul>
-<p><img src="/2022/07/12/%E6%9B%B4%E6%94%B9%E8%B3%87%E6%96%99%E5%A4%BE%E9%A1%8F%E8%89%B2/Huang20220712_161104.jpeg">  </p>
-<ul>
-<li>選擇 “ 加入的延伸功能 “</li>
-<li>Manila 下方打勾</li>
-</ul>
-<p><img src="/2022/07/12/%E6%9B%B4%E6%94%B9%E8%B3%87%E6%96%99%E5%A4%BE%E9%A1%8F%E8%89%B2/Huang20220712_161104.jpeg"></p>
-<p>設定好了之後，在資料夾上按右鍵 -&gt; Color -&gt; 有顏色的資料夾。</p>
-<p>成功。  </p>
-<p><img src="/2022/07/12/%E6%9B%B4%E6%94%B9%E8%B3%87%E6%96%99%E5%A4%BE%E9%A1%8F%E8%89%B2/Huang20220712_161725.jpeg">  </p>
+        <p><img src="https://i.imgur.com/suUF2pp.jpg"></p>
+<h2 id="用subviews改變顏色"><a href="#用subviews改變顏色" class="headerlink" title="用subviews改變顏色"></a>用subviews改變顏色</h2><pre class="line-numbers language-swi" data-language="swi"><code class="language-swi">
+&#x2F;&#x2F;
+&#x2F;&#x2F;  ViewController.swift
+&#x2F;&#x2F;  1013myDemo
+&#x2F;&#x2F;
+&#x2F;&#x2F;  Created by Huang on 2022&#x2F;10&#x2F;13.
+&#x2F;&#x2F;
+
+import UIKit
+
+class ViewController: UIViewController &#123;
+
+    override func viewDidLoad() &#123;
+        super.viewDidLoad()
+        &#x2F;&#x2F;用subviews改變顏色
+        let color &#x3D; view.subviews[0].subviews[1]
+        color.backgroundColor &#x3D; .purple
+    &#125;
+&#125;
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/54j1CZv.jpg"></p>
+<p>說明：</p>
+<p><img src="https://i.imgur.com/WWciSde.jpg"></p>
+<p>第一個 View 是父層的View<br>第二個 View 是第三跟第四個的View的父層View</p>
+<p>反過來說</p>
+<p>第三個跟第四個View被第二個View包住<br>（第三個跟第四個View是第二個View的子物件）<br>第二個View被第一個View包住</p>
+<p>所以 subView 是取子物件</p>
+<h2 id="用viewWithTag改變顏色"><a href="#用viewWithTag改變顏色" class="headerlink" title="用viewWithTag改變顏色"></a>用viewWithTag改變顏色</h2><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">import</span> <span class="token class-name">UIKit</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ViewController</span><span class="token punctuation">:</span> <span class="token class-name">UIViewController</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        
+        <span class="token comment">// 用viewWithTag改變顏色</span>
+        <span class="token keyword">let</span> color2 <span class="token operator">=</span> view<span class="token punctuation">.</span><span class="token function">viewWithTag</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+        color2<span class="token operator">?</span><span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token punctuation">.</span>yellow
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.imgur.com/PZ5zrsA.jpg"></p>
+<p><img src="https://i.imgur.com/o1tPwA0.jpg"></p>
+<p><img src="https://i.imgur.com/tHQl0jL.jpg"></p>
+<p>viewWithTag(2)的數字2是在Tag做設定的</p>
 
     </div>
 
@@ -275,21 +308,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Manila/" rel="tag"># Manila</a>
+              <a href="/tags/subviews/" rel="tag"># subviews</a>
+              <a href="/tags/viewWithTag/" rel="tag"># viewWithTag</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/07/09/%E4%BD%BF%E7%94%A8Homebrew%E5%AE%89%E8%A3%85PHP%E3%80%81MySql%E3%80%81nginx-Mac/" rel="prev" title="使用Homebrew安装PHP、MySql、nginx-Mac">
-                  <i class="fa fa-chevron-left"></i> 使用Homebrew安装PHP、MySql、nginx-Mac
+                <a href="/2022/10/11/SWIFT-PHP-MYSQL-%E4%BD%BF%E7%94%A8%E8%80%85%E7%99%BB%E5%85%A5/" rel="prev" title="SWIFT-PHP-MYSQL-使用者登入">
+                  <i class="fa fa-chevron-left"></i> SWIFT-PHP-MYSQL-使用者登入
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/07/12/%E6%88%91Mac-M1-%E5%AE%89%E8%A3%9D%E7%9A%84%E8%BB%9F%E9%AB%94/" rel="next" title="我Mac M1 安裝的軟體">
-                  我Mac M1 安裝的軟體 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -340,7 +371,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"eba9432abe78fcd42a5885d850d81e14"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"5f721fabd1a7355bd9c18e6b4eccbede"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
