@@ -20,25 +20,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="不要把我看的太重，因為我贏不了你">
-<meta property="og:type" content="website">
-<meta property="og:title" content="天下第一不是我">
-<meta property="og:url" content="https://huang0429.github.io/tags/Swift/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="UIKit實作100#1-簡單的Table View">
+<meta property="og:url" content="https://huang0429.github.io/2022/11/13/UIKit%E5%AF%A6%E4%BD%9C100-1-%E7%B0%A1%E5%96%AE%E7%9A%84Table-View/index.html">
 <meta property="og:site_name" content="天下第一不是我">
-<meta property="og:description" content="不要把我看的太重，因為我贏不了你">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/7kx1m8w.jpg">
+<meta property="og:image" content="https://i.imgur.com/um9X1xq.jpg">
+<meta property="og:image" content="https://i.imgur.com/R7hl7f5.jpg">
+<meta property="og:image" content="https://i.imgur.com/OBPWqRU.jpg">
+<meta property="article:published_time" content="2022-11-13T02:43:49.000Z">
+<meta property="article:modified_time" content="2022-11-13T02:43:49.000Z">
 <meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="UIKit">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/7kx1m8w.jpg">
 
 
-<link rel="canonical" href="https://huang0429.github.io/tags/Swift/">
+<link rel="canonical" href="https://huang0429.github.io/2022/11/13/UIKit%E5%AF%A6%E4%BD%9C100-1-%E7%B0%A1%E5%96%AE%E7%9A%84Table-View/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"tags/Swift/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/11/13/UIKit%E5%AF%A6%E4%BD%9C100-1-%E7%B0%A1%E5%96%AE%E7%9A%84Table-View/","path":"2022/11/13/UIKit實作100-1-簡單的Table-View/","title":"UIKit實作100#1-簡單的Table View"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>標籤: Swift | 天下第一不是我</title>
+<title>UIKit實作100#1-簡單的Table View | 天下第一不是我</title>
   
 
 
@@ -101,7 +107,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -114,6 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9A%E4%B8%80%E5%80%8B%E7%B0%A1%E5%96%AE%E7%9A%84-Table-View-%E5%8F%AF%E4%BB%A5%E9%A1%AF%E7%A4%BA%E5%9C%96%E7%89%87%E8%B7%9F%E6%96%87%E5%AD%97"><span class="nav-number">1.</span> <span class="nav-text">做一個簡單的 Table View 可以顯示圖片跟文字</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -179,131 +186,117 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">Swift
-          <small>標籤</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/11/13/UIKit%E5%AF%A6%E4%BD%9C100-1-%E7%B0%A1%E5%96%AE%E7%9A%84Table-View/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="UIKit實作100#1-簡單的Table View | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          UIKit實作100#1-簡單的Table View
         </h1>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-11-13 10:43:49" itemprop="dateCreated datePublished" datetime="2022-11-13T10:43:49+08:00">2022-11-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="做一個簡單的-Table-View-可以顯示圖片跟文字"><a href="#做一個簡單的-Table-View-可以顯示圖片跟文字" class="headerlink" title="做一個簡單的 Table View 可以顯示圖片跟文字"></a>做一個簡單的 Table View 可以顯示圖片跟文字</h3><p><img src="https://i.imgur.com/7kx1m8w.jpg"></p>
+<p>如果要隱藏狀態列，就是時間那一排，就在最後加上一</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+<span class="token keyword">override</span> <span class="token keyword">var</span> prefersStatusBarHidden<span class="token punctuation">:</span> <span class="token class-name">Bool</span><span class="token punctuation">&#123;</span>
+       <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://i.imgur.com/um9X1xq.jpg"></p>
+<p>消失了</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/huang0429/swiftImplement100/tree/main/%231-SimpleTable">檔案：github</a></p>
+<p>重點：<br><img src="https://i.imgur.com/R7hl7f5.jpg"><br>記得要跟View Controller拉dataSource跟delegate</p>
+<p><img src="https://i.imgur.com/OBPWqRU.jpg"><br>要給id</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-09-27T13:35:00+08:00"
-              content="2022-09-27">
-          09-27
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/09/27/Xcode-%E5%AE%89%E8%A3%9D-Package/" itemprop="url">
-            <span itemprop="name">Xcode 安裝 Package</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/UIKit/" rel="tag"># UIKit</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/11/12/swift-Range%E9%81%8B%E7%AE%97%E5%AD%90-Bound/" rel="prev" title="swift-Range運算子 & Bound">
+                  <i class="fa fa-chevron-left"></i> swift-Range運算子 & Bound
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/11/13/UIKit%E5%AF%A6%E4%BD%9C100/" rel="next" title="UIKit實作100">
+                  UIKit實作100 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-07-28T14:33:58+08:00"
-              content="2022-07-28">
-          07-28
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/07/28/Swift-%E9%9B%86%E5%90%884-Tuple/" itemprop="url">
-            <span itemprop="name">Swift-集合4_Tuple</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-07-28T13:07:44+08:00"
-              content="2022-07-28">
-          07-28
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/07/28/Swift-%E9%9B%86%E5%90%883-Sets/" itemprop="url">
-            <span itemprop="name">Swift-集合3_Sets</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-07-08T20:14:12+08:00"
-              content="2022-07-08">
-          07-08
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/07/08/Swift-%E9%9B%86%E5%90%882-%E5%AD%97%E5%85%B8Dictionary/" itemprop="url">
-            <span itemprop="name">Swift-集合2_字典Dictionary</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-07-06T17:44:50+08:00"
-              content="2022-07-06">
-          07-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/07/06/Swift-%E9%9B%86%E5%90%881-%E9%99%A3%E5%88%97Array/" itemprop="url">
-            <span itemprop="name">Swift-集合1_陣列Array</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
-
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -342,99 +335,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"662995121693537e94c0c0f779c944be"}</script>
-<script src="/js/third-party/comments/gitalk.js"></script>
-
-</body>
-</html>
-emtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-10-06T13:05:05+08:00"
-              content="2022-10-06">
-          10-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/10/06/SWIFT-guard-let-%E7%94%A8%E6%B3%95/" itemprop="url">
-            <span itemprop="name">SWIFT-guard let 用法</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-08-18T13:00:08+08:00"
-              content="2022-08-18">
-          08-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/08/18/%E4%BB%A5GCD%E5%87%BD%E5%BC%8F%E4%BE%86%E4%BD%BF%E7%94%A8%E5%A4%9A%E5%9F%B7%E8%A1%8C%E7%B7%92/" itemprop="url">
-            <span itemprop="name">以GCD函式來使用多執行緒</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/tags/swift/page/2/">2</a><a class="extend next" rel="next" href="/tags/swift/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
-  </nav>
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
-
-  
-
-
-
-
-
-  
-
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
-
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"2a8524b44887267ece13bd7a85622060"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"40406d9e9bdcd47682b5151573e39d22"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
