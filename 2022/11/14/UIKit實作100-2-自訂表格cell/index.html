@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huang0429.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="UIKit實作100#2-自訂表格cell">
+<meta property="og:url" content="https://huang0429.github.io/2022/11/14/UIKit%E5%AF%A6%E4%BD%9C100-2-%E8%87%AA%E8%A8%82%E8%A1%A8%E6%A0%BCcell/index.html">
+<meta property="og:site_name" content="天下第一不是我">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/Ce8j1SU.jpg">
+<meta property="og:image" content="https://i.imgur.com/YP07Cqg.jpg">
+<meta property="og:image" content="https://i.imgur.com/QUP6YOw.jpg">
+<meta property="og:image" content="https://i.imgur.com/fpLqUWp.jpg">
+<meta property="og:image" content="https://i.imgur.com/dhp0LeU.jpg">
+<meta property="og:image" content="https://i.imgur.com/lWYu44S.jpg">
+<meta property="og:image" content="https://i.imgur.com/AxDQ9MK.jpg">
+<meta property="og:image" content="https://i.imgur.com/GpT7AwX.jpg">
+<meta property="og:image" content="https://i.imgur.com/MAwTsut.jpg">
+<meta property="og:image" content="https://i.imgur.com/sebQRya.jpg">
+<meta property="og:image" content="https://i.imgur.com/qdGCqlk.jpg">
+<meta property="og:image" content="https://i.imgur.com/5AiHwBS.jpg">
+<meta property="og:image" content="https://i.imgur.com/kejjTfH.jpg">
+<meta property="og:image" content="https://i.imgur.com/up8kv3i.jpg">
+<meta property="og:image" content="https://i.imgur.com/3cyjFxH.jpg">
+<meta property="og:image" content="https://i.imgur.com/coLAtTp.jpg">
+<meta property="og:image" content="https://i.imgur.com/LbcRxdf.jpg">
+<meta property="og:image" content="https://i.imgur.com/aTz6sO3.jpg">
+<meta property="og:image" content="https://i.imgur.com/QNBUs67.jpg">
+<meta property="og:image" content="https://i.imgur.com/WDkn559.jpg">
+<meta property="og:image" content="https://i.imgur.com/S7Y07tu.jpg">
+<meta property="og:image" content="https://i.imgur.com/VSoFX8I.jpg">
+<meta property="og:image" content="https://i.imgur.com/vIoGvQz.jpg">
+<meta property="og:image" content="https://i.imgur.com/jbNclqs.jpg">
+<meta property="og:image" content="https://i.imgur.com/AYVgfek.jpg">
+<meta property="og:image" content="https://i.imgur.com/JEWUpJp.jpg">
+<meta property="og:image" content="https://i.imgur.com/WHcb4FK.jpg">
+<meta property="og:image" content="https://i.imgur.com/5CeKVxN.jpg">
+<meta property="og:image" content="https://i.imgur.com/FWYAJL3.jpg">
+<meta property="article:published_time" content="2022-11-14T08:14:31.000Z">
+<meta property="article:modified_time" content="2022-11-14T08:14:31.000Z">
+<meta property="article:author" content="黃筱珮">
+<meta property="article:tag" content="UIKit">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/Ce8j1SU.jpg">
+
+
+<link rel="canonical" href="https://huang0429.github.io/2022/11/14/UIKit%E5%AF%A6%E4%BD%9C100-2-%E8%87%AA%E8%A8%82%E8%A1%A8%E6%A0%BCcell/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://huang0429.github.io/2022/11/14/UIKit%E5%AF%A6%E4%BD%9C100-2-%E8%87%AA%E8%A8%82%E8%A1%A8%E6%A0%BCcell/","path":"2022/11/14/UIKit實作100-2-自訂表格cell/","title":"UIKit實作100#2-自訂表格cell"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>UIKit實作100#2-自訂表格cell | 天下第一不是我</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天下第一不是我</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">我學的很快樂</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">40</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">18</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>存檔<span class="badge">64</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E8%A8%82%E8%A1%A8%E6%A0%BCcell%E8%B3%AA%E6%84%9F%E7%9C%8B%E8%B5%B7%E4%BE%86%E6%9C%83%E5%A5%BD%E4%B8%80%E4%BA%9B"><span class="nav-number">1.</span> <span class="nav-text">自訂表格cell質感看起來會好一些</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%A2%9ETableViewController"><span class="nav-number"></span> <span class="nav-text">新增TableViewController</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E9%97%9C%E8%81%AF%E6%AA%94%E6%A1%88"><span class="nav-number"></span> <span class="nav-text">新增關聯檔案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E7%9A%84TableViewController%E8%B7%9F%E6%96%B0%E5%A2%9E%E7%9A%84%E6%AA%94%E6%A1%88%E5%81%9A%E8%81%AF%E7%B5%90"><span class="nav-number"></span> <span class="nav-text">新增的TableViewController跟新增的檔案做聯結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cell%E8%A8%AD%E5%AE%9AIdentifier%E5%90%8D%E7%A8%B1%E7%82%BAdatacell"><span class="nav-number"></span> <span class="nav-text">cell設定Identifier名稱為datacell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BB%9E%E9%96%8B-RestaurantTableViewController-swift"><span class="nav-number"></span> <span class="nav-text">點開 RestaurantTableViewController.swift</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A3%E5%91%8A%E8%AE%8A%E6%95%B8"><span class="nav-number"></span> <span class="nav-text">宣告變數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A3%E5%91%8A%E5%88%97%E8%88%89"><span class="nav-number"></span> <span class="nav-text">宣告列舉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B-UITableViewDiffableDataSoure%E7%9A%84%E5%AF%A6%E5%88%97"><span class="nav-number"></span> <span class="nav-text">建立 UITableViewDiffableDataSoure的實列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%B3%87%E6%96%99%E4%BE%86%E6%BA%90%E7%9A%84%E5%87%BD%E6%95%B8-lazy%E4%BF%AE%E9%A3%BE%E5%99%A8"><span class="nav-number"></span> <span class="nav-text">使用資料來源的函數-lazy修飾器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0viewDidLoad"><span class="nav-number"></span> <span class="nav-text">更新viewDidLoad</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%BE%E4%B8%8D%E5%90%8C%E7%9A%84%E7%85%A7%E7%89%87"><span class="nav-number"></span> <span class="nav-text">放不同的照片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88Prototype-Cell"><span class="nav-number"></span> <span class="nav-text">設計Prototype Cell</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9cell%E6%A8%A3%E5%BC%8F-Custom"><span class="nav-number"></span> <span class="nav-text">更改cell樣式-Custom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%8A%E6%9B%B4cell%E9%AB%98%E5%BA%A6"><span class="nav-number"></span> <span class="nav-text">變更cell高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E5%87%BA%E5%85%83%E4%BB%B6%E6%94%BE%E5%88%B0cell%E5%85%A7"><span class="nav-number"></span> <span class="nav-text">拉出元件放到cell內</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%AB%E7%A8%8B%E5%BC%8F%E3%80%82%E3%80%82%E3%80%82%E3%80%82"><span class="nav-number"></span> <span class="nav-text">寫程式。。。。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%BAcell%E5%BB%BA%E7%AB%8B%E9%A1%9E%E5%88%A5"><span class="nav-number"></span> <span class="nav-text">為cell建立類別</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%88%87cell%E5%81%9A%E8%81%AF%E7%B5%90"><span class="nav-number"></span> <span class="nav-text">與cell做聯結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A3%E5%91%8AOutlet%E8%AE%8A%E6%95%B8"><span class="nav-number"></span> <span class="nav-text">宣告Outlet變數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0cell%E6%8F%90%E4%BE%9B%E8%80%85"><span class="nav-number"></span> <span class="nav-text">更新cell提供者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6%E5%BE%8C%E7%99%BC%E7%8F%BE%E9%AB%98%E5%BA%A6%E4%B8%8D%E8%83%BD%E8%AA%BF%E9%AB%98"><span class="nav-number"></span> <span class="nav-text">測試後發現高度不能調高</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%87%E7%B8%AE%E5%9C%96%E8%AE%8A%E6%88%90%E5%9C%93%E5%BD%A2"><span class="nav-number"></span> <span class="nav-text">將縮圖變成圓形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E4%BB%8B%E9%9D%A2%E5%BB%BA%E6%A7%8B%E5%99%A8%E4%BE%86%E4%BF%AE%E6%94%B9"><span class="nav-number">1.</span> <span class="nav-text">以介面建構器來修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%94%A8%E7%A8%8B%E5%BC%8F%E4%BF%AE%E6%94%B9%E5%9C%96%E7%89%87"><span class="nav-number">2.</span> <span class="nav-text">也可以用程式修改圖片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%B7%B1%E8%89%B2%E6%A8%A1%E5%BC%8F%E6%B8%AC%E8%A9%A6APP"><span class="nav-number"></span> <span class="nav-text">使用深色模式測試APP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%87-Location-%E8%B7%9F-Type-%E9%A1%AF%E7%A4%BA%E4%B8%8A%E5%8E%BB"><span class="nav-number"></span> <span class="nav-text">將 Location 跟 Type 顯示上去</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4cell%E5%88%86%E9%9A%94%E7%B7%9A"><span class="nav-number"></span> <span class="nav-text">移除cell分隔線</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E8%A8%AD%E8%A8%88cell"><span class="nav-number"></span> <span class="nav-text">重新設計cell</span></a></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="黃筱珮"
+      src="/../images/avatar.png">
+  <p class="site-author-name" itemprop="name">黃筱珮</p>
+  <div class="site-description" itemprop="description">不要把我看的太重，因為我贏不了你</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huang0429" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huang0429" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iswork.huang@gmail.com" title="E-Mail → mailto:iswork.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://huang0429.github.io/2022/11/14/UIKit%E5%AF%A6%E4%BD%9C100-2-%E8%87%AA%E8%A8%82%E8%A1%A8%E6%A0%BCcell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../images/avatar.png">
+      <meta itemprop="name" content="黃筱珮">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天下第一不是我">
+      <meta itemprop="description" content="不要把我看的太重，因為我贏不了你">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="UIKit實作100#2-自訂表格cell | 天下第一不是我">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          UIKit實作100#2-自訂表格cell
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-11-14 16:14:31" itemprop="dateCreated datePublished" datetime="2022-11-14T16:14:31+08:00">2022-11-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="自訂表格cell質感看起來會好一些"><a href="#自訂表格cell質感看起來會好一些" class="headerlink" title="自訂表格cell質感看起來會好一些"></a>自訂表格cell質感看起來會好一些</h3><p>使用UITableViewController與UITableViewDifableDataSource來建立表格。</p>
+<h2 id="新增TableViewController"><a href="#新增TableViewController" class="headerlink" title="新增TableViewController"></a>新增TableViewController</h2><p>新增檔案後，都會有預設的storyboard跟關聯swift檔案，把這兩個刪除，然後另外新增一個storyboard跟關聯swift檔案。</p>
+<p>is Initial View Controller記得要打勾<br>才能會是第一個畫面</p>
+<p><img src="https://i.imgur.com/Ce8j1SU.jpg"></p>
+<p><img src="https://i.imgur.com/YP07Cqg.jpg"></p>
+<h2 id="新增關聯檔案"><a href="#新增關聯檔案" class="headerlink" title="新增關聯檔案"></a>新增關聯檔案</h2><p>新增檔案<br>檔名：RestaurantTableViewController</p>
+<p><img src="https://i.imgur.com/QUP6YOw.jpg"></p>
+<p>選擇Cocoa Touch Class，後按Next</p>
+<p><img src="https://i.imgur.com/fpLqUWp.jpg"></p>
+<p>Subclass of 要撰”UITableViewController”</p>
+<p>接下來都預設</p>
+<p>成功新增後會出現新增檔案的內容</p>
+<p><img src="https://i.imgur.com/dhp0LeU.jpg"></p>
+<p>裡面的程式是我們在使用TableViewController時可能會用到的</p>
+<h2 id="新增的TableViewController跟新增的檔案做聯結"><a href="#新增的TableViewController跟新增的檔案做聯結" class="headerlink" title="新增的TableViewController跟新增的檔案做聯結"></a>新增的TableViewController跟新增的檔案做聯結</h2><p><img src="https://i.imgur.com/lWYu44S.jpg"></p>
+<p>數字3按下去就會看到剛剛新增的檔案，按下去就聯結了。<br>如果沒有你要的檔案，可能Subclass of選錯了。</p>
+<h2 id="cell設定Identifier名稱為datacell"><a href="#cell設定Identifier名稱為datacell" class="headerlink" title="cell設定Identifier名稱為datacell"></a>cell設定Identifier名稱為datacell</h2><p>要使用cell都要設Identifier</p>
+<p><img src="https://i.imgur.com/AxDQ9MK.jpg"></p>
+<p>如果要選定某個元表，選數字1的部份會比較好選，不容易選錯。</p>
+<p><img src="https://i.imgur.com/GpT7AwX.jpg"></p>
+<p>Style 要選擇 Basic</p>
+<p>接下來要寫程式了…</p>
+<h2 id="點開-RestaurantTableViewController-swift"><a href="#點開-RestaurantTableViewController-swift" class="headerlink" title="點開 RestaurantTableViewController.swift"></a>點開 RestaurantTableViewController.swift</h2><p><img src="https://i.imgur.com/MAwTsut.jpg"></p>
+<p>點開後會看到這二個func</p>
+<p>因為要使用UITableViewDiffableDataSoure</p>
+<p>所以就不用用到這二個func了</p>
+<p>可以先刪除或註解掉</p>
+<h2 id="宣告變數"><a href="#宣告變數" class="headerlink" title="宣告變數"></a>宣告變數</h2><p>宣告變數來存放表格資料</p>
+<p>放在viewDidLoad()上面</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> restaurantNames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"Cafe Deadend"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Homei"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Teakha"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Cafe Loisl"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Petite Oyster"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"For Kee Restaurant"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Po's Atelier"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Bourke Street Bakery"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Haigh's Chocolate"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Palomino Espresso"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Upstate"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Traif"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Graham Avenue Meats And Deli"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Waffle &amp; Wolf"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Five Leaves"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Cafe Lore"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Confessional"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Barrafina"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Donostia"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Royal Oak"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"CASK Pub and Kitchen"</span></span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="宣告列舉"><a href="#宣告列舉" class="headerlink" title="宣告列舉"></a>宣告列舉</h2><p>因為沒有了上面那兩個方法，無法告訴程式要放什麼資料，<br>所以我們要使用NSDiffableDataSourceSnapshot<br>要使用就要宣告列舉</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">enum</span> <span class="token class-name">Section</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">case</span> all
+    <span class="token punctuation">&#125;</span>
+    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>寫在restaurantNames變數的上方</p>
+<p>這個列舉是用來定義一個新的 Section 型別。</p>
+<p>只有一個case是因為表格只有一個區塊、</p>
+<p>而case命名為all，表示為所有的資料。</p>
+<h2 id="建立-UITableViewDiffableDataSoure的實列"><a href="#建立-UITableViewDiffableDataSoure的實列" class="headerlink" title="建立 UITableViewDiffableDataSoure的實列"></a>建立 UITableViewDiffableDataSoure的實列</h2><p>程式碼可以寫在viewDidLoad()底下</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">configureDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">UITableViewDiffableDataSource</span><span class="token operator">&lt;</span><span class="token class-name">Section</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token operator">></span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">let</span> cellIdentifier <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"datacell"</span></span>
+        <span class="token keyword">let</span> dataSource <span class="token operator">=</span> <span class="token class-name">UITableViewDiffableDataSource</span><span class="token operator">&lt;</span><span class="token class-name">Section</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token operator">></span><span class="token punctuation">(</span>
+            tableView<span class="token punctuation">:</span> tableView<span class="token punctuation">,</span>
+            cellProvider<span class="token punctuation">:</span> <span class="token punctuation">&#123;</span> tableView<span class="token punctuation">,</span> indexPath<span class="token punctuation">,</span> restaurantNames <span class="token keyword">in</span>
+                <span class="token keyword">let</span> cell <span class="token operator">=</span> tableView<span class="token punctuation">.</span><span class="token function">dequeueReusableCell</span><span class="token punctuation">(</span>withIdentifier<span class="token punctuation">:</span> cellIdentifier<span class="token punctuation">,</span> <span class="token keyword">for</span><span class="token punctuation">:</span> indexPath<span class="token punctuation">)</span>
+                
+                cell<span class="token punctuation">.</span>textLabel<span class="token operator">?</span><span class="token punctuation">.</span>text <span class="token operator">=</span> restaurantNames
+                cell<span class="token punctuation">.</span>imageView<span class="token operator">?</span><span class="token punctuation">.</span>image <span class="token operator">=</span> <span class="token class-name">UIImage</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"restaurant"</span></span><span class="token punctuation">)</span>
+                
+                <span class="token keyword">return</span> cell
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">)</span>
+        <span class="token keyword">return</span> dataSource
+    <span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>第一行是函數宣告方式</p>
+<p>-&gt;這個符號表示回傳</p>
+<p>後面接著的是回傳物件的型別</p>
+<p>configureDataSource是這個函數的名稱</p>
+<p>所以是建立了一個名為configureDataSource()的函數，</p>
+<p>回傳一個UITableViewDiffableDataSource&lt;Section, String&gt;的實例。</p>
+<p>以上是資料來源的函數</p>
+<h2 id="使用資料來源的函數-lazy修飾器"><a href="#使用資料來源的函數-lazy修飾器" class="headerlink" title="使用資料來源的函數-lazy修飾器"></a>使用資料來源的函數-lazy修飾器</h2><p>資料來源的函數寫好了，接著就要使用它。</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">lazy</span> <span class="token keyword">var</span> dataSource <span class="token operator">=</span> <span class="token function">configureDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果沒有加上”lazy”會出現錯誤訊息：Cannot use instance member ‘configureDataSource’ within property initializer; property initializers run before ‘self’ is available</p>
+<h2 id="更新viewDidLoad"><a href="#更新viewDidLoad" class="headerlink" title="更新viewDidLoad"></a>更新viewDidLoad</h2><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">    <span class="token keyword">override</span> <span class="token keyword">func</span> <span class="token function-definition function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">viewDidLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    tableView<span class="token punctuation">.</span>dataSource <span class="token operator">=</span> dataSource
+    
+    <span class="token keyword">var</span> snapshot <span class="token operator">=</span> <span class="token class-name">NSDiffableDataSourceSnapshot</span><span class="token operator">&lt;</span><span class="token class-name">Section</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    snapshot<span class="token punctuation">.</span><span class="token function">appendSections</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">.</span>all<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    snapshot<span class="token punctuation">.</span><span class="token function">appendItems</span><span class="token punctuation">(</span>restaurantNames<span class="token punctuation">,</span> toSection<span class="token punctuation">:</span> <span class="token punctuation">.</span>all<span class="token punctuation">)</span>
+    
+    dataSource<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>snapshot<span class="token punctuation">,</span> animatingDifferences<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>現在測試一下</p>
+<p><img src="https://i.imgur.com/sebQRya.jpg"></p>
+<p>因為只有放一張照片，所以只有一張照片。</p>
+<h2 id="放不同的照片"><a href="#放不同的照片" class="headerlink" title="放不同的照片"></a>放不同的照片</h2><p>新增新的陣列</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> restaurantImages <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"Cafe Deadend"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Homei"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Teakha"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Cafe Loisl"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Petite Oyster"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"For Kee Restaurant"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Po's Atelier"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Bourke Street Bakery"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Haigh's Chocolate"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Palomino Espresso"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Upstate"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Traif"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Graham Avenue Meats And Deli"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Waffle &amp; Wolf"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Five Leaves"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Cafe Lore"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Confessional"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Barrafina"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Donostia"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Royal Oak"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"CASK Pub and Kitchen"</span></span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>因為是陣列，所以要修改一下程式碼。</p>
+<p>把</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">cell<span class="token punctuation">.</span>imageView<span class="token operator">?</span><span class="token punctuation">.</span>image <span class="token operator">=</span> <span class="token class-name">UIImage</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"restaurant"</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>改成</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">cell<span class="token punctuation">.</span>imageView<span class="token operator">?</span><span class="token punctuation">.</span>image <span class="token operator">=</span> <span class="token class-name">UIImage</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token keyword">self</span><span class="token punctuation">.</span>restaurantImages<span class="token punctuation">[</span>indexPath<span class="token punctuation">.</span>row<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://i.imgur.com/qdGCqlk.jpg"></p>
+<h1 id="設計Prototype-Cell"><a href="#設計Prototype-Cell" class="headerlink" title="設計Prototype Cell"></a>設計Prototype Cell</h1><h2 id="更改cell樣式-Custom"><a href="#更改cell樣式-Custom" class="headerlink" title="更改cell樣式-Custom"></a>更改cell樣式-Custom</h2><p>上面在設定cell的樣式是用 Basic </p>
+<p>如果要自訂的話要用 Custom</p>
+<p><img src="https://i.imgur.com/5AiHwBS.jpg"></p>
+<h2 id="變更cell高度"><a href="#變更cell高度" class="headerlink" title="變更cell高度"></a>變更cell高度</h2><p><img src="https://i.imgur.com/kejjTfH.jpg"></p>
+<h2 id="拉出元件放到cell內"><a href="#拉出元件放到cell內" class="headerlink" title="拉出元件放到cell內"></a>拉出元件放到cell內</h2><p>先拉一個圖片物件<br>大小為120*120</p>
+<p>到它的屬性檢閱器，把 「Content Mode」改為  <strong>Aspect Fill</strong></p>
+<p>接著拉出三個Label</p>
+<p>分別作用：<br>Name-餐廳名稱<br>Location-餐廳位置<br>Type-餐廳類型</p>
+<p>屬性檢閱器有一些設定可以改</p>
+<p><img src="https://i.imgur.com/up8kv3i.jpg"></p>
+<p><img src="https://i.imgur.com/3cyjFxH.jpg"></p>
+<p>將三個label選取起來，要把它們群組起來</p>
+<p>在佈局列中點選 Embed in 按鈕</p>
+<p>選取「Stack View」</p>
+<p><img src="https://i.imgur.com/coLAtTp.jpg"></p>
+<p>接著再跟圖片做一次群組</p>
+<p><img src="https://i.imgur.com/LbcRxdf.jpg"></p>
+<h1 id="寫程式。。。。"><a href="#寫程式。。。。" class="headerlink" title="寫程式。。。。"></a>寫程式。。。。</h1><h2 id="為cell建立類別"><a href="#為cell建立類別" class="headerlink" title="為cell建立類別"></a>為cell建立類別</h2><p><img src="https://i.imgur.com/aTz6sO3.jpg"></p>
+<h2 id="與cell做聯結"><a href="#與cell做聯結" class="headerlink" title="與cell做聯結"></a>與cell做聯結</h2><p><img src="https://i.imgur.com/QNBUs67.jpg"></p>
+<h2 id="宣告Outlet變數"><a href="#宣告Outlet變數" class="headerlink" title="宣告Outlet變數"></a>宣告Outlet變數</h2><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token attribute atrule">@IBOutlet</span> <span class="token keyword">weak</span> <span class="token keyword">var</span> nameLabel<span class="token punctuation">:</span> <span class="token class-name">UILabel</span><span class="token operator">!</span>
+<span class="token attribute atrule">@IBOutlet</span> <span class="token keyword">weak</span> <span class="token keyword">var</span> locationLabel<span class="token punctuation">:</span> <span class="token class-name">UILabel</span><span class="token operator">!</span>
+<span class="token attribute atrule">@IBOutlet</span> <span class="token keyword">weak</span> <span class="token keyword">var</span> typeLabel<span class="token punctuation">:</span> <span class="token class-name">UILabel</span><span class="token operator">!</span>
+<span class="token attribute atrule">@IBOutlet</span> <span class="token keyword">weak</span> <span class="token keyword">var</span> thumbnailImageView<span class="token punctuation">:</span> <span class="token class-name">UIImageView</span><span class="token operator">!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="更新cell提供者"><a href="#更新cell提供者" class="headerlink" title="更新cell提供者"></a>更新cell提供者</h2><p>找出這一行程式碼：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">let</span> cell <span class="token operator">=</span> tableView<span class="token punctuation">.</span><span class="token function">dequeueReusableCell</span><span class="token punctuation">(</span>withIdentifier<span class="token punctuation">:</span> cellIdentifier<span class="token punctuation">,</span> <span class="token keyword">for</span><span class="token punctuation">:</span> indexPath<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>改成</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">let</span> cell <span class="token operator">=</span> tableView<span class="token punctuation">.</span><span class="token function">dequeueReusableCell</span><span class="token punctuation">(</span>withIdentifier<span class="token punctuation">:</span> cellIdentifier<span class="token punctuation">,</span> <span class="token keyword">for</span><span class="token punctuation">:</span> indexPath<span class="token punctuation">)</span> <span class="token keyword">as</span><span class="token operator">!</span> <span class="token class-name">RestaurantTableViewCell</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>接著</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">cell<span class="token punctuation">.</span>textLabel<span class="token operator">?</span><span class="token punctuation">.</span>text <span class="token operator">=</span> restaurantNames
+cell<span class="token punctuation">.</span>imageView<span class="token operator">?</span><span class="token punctuation">.</span>image <span class="token operator">=</span> <span class="token class-name">UIImage</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token keyword">self</span><span class="token punctuation">.</span>restaurantImages<span class="token punctuation">[</span>indexPath<span class="token punctuation">.</span>row<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>換成</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">cell<span class="token punctuation">.</span>nameLabel<span class="token punctuation">.</span>text <span class="token operator">=</span> restaurantNames
+cell<span class="token punctuation">.</span>thumbnailImageView<span class="token punctuation">.</span>image <span class="token operator">=</span> <span class="token class-name">UIImage</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token keyword">self</span><span class="token punctuation">.</span>restaurantImages<span class="token punctuation">[</span>indexPath<span class="token punctuation">.</span>row<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="測試後發現高度不能調高"><a href="#測試後發現高度不能調高" class="headerlink" title="測試後發現高度不能調高"></a>測試後發現高度不能調高</h2><p>剛剛我是從storyboard做高度的更改。。。無效</p>
+<p>現在我用程式改高：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">tableView<span class="token punctuation">.</span>rowHeight <span class="token operator">=</span> <span class="token number">140</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>寫在viewDidLoad()裡面</p>
+<p>就可以了</p>
+<p><img src="https://i.imgur.com/WDkn559.jpg"></p>
+<h2 id="將縮圖變成圓形"><a href="#將縮圖變成圓形" class="headerlink" title="將縮圖變成圓形"></a>將縮圖變成圓形</h2><ul>
+<li>背景顏色(Background Color)</li>
+<li>邊框(Border)</li>
+<li>邊框寛度(Border Width)</li>
+<li>陰影顏色(Shadow Color)</li>
+<li>陰影寛度(Width)</li>
+<li>透明度(Opacity)</li>
+<li>圓角半徑(Corner Radius)</li>
+</ul>
+<h3 id="以介面建構器來修改"><a href="#以介面建構器來修改" class="headerlink" title="以介面建構器來修改"></a>以介面建構器來修改</h3><p><img src="https://i.imgur.com/S7Y07tu.jpg"></p>
+<p>加號按下去之後：</p>
+<p><img src="https://i.imgur.com/VSoFX8I.jpg"></p>
+<p>“key Path” 改成 “cornerRadius” 然後Enter</p>
+<p>Type 屬性選 Number</p>
+<p>最後值設定為 20</p>
+<p><img src="https://i.imgur.com/vIoGvQz.jpg"></p>
+<p>另外記得 Clip to Bounds 要打勾</p>
+<p>這個功能是可以該圖形修為圓角</p>
+<p><img src="https://i.imgur.com/jbNclqs.jpg"></p>
+<p><img src="https://i.imgur.com/AYVgfek.jpg"></p>
+<h3 id="也可以用程式修改圖片"><a href="#也可以用程式修改圖片" class="headerlink" title="也可以用程式修改圖片"></a>也可以用程式修改圖片</h3><pre class="line-numbers language-swift!" data-language="swift!"><code class="language-swift!">@IBOutlet weak var thumbnailImageView: UIImageView!&#123;
+        didSet&#123;
+            thumbnailImageView.layer.cornerRadius &#x3D; 20
+            thumbnailImageView.clipsToBounds &#x3D; true
+        &#125;
+    &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>didSet就是swift的屬性觀察者。<br>在didSet區塊中，每次設定屬性值時會被呼叫。</p>
+<h2 id="使用深色模式測試APP"><a href="#使用深色模式測試APP" class="headerlink" title="使用深色模式測試APP"></a>使用深色模式測試APP</h2><p><img src="https://i.imgur.com/JEWUpJp.jpg"><br><img src="https://i.imgur.com/WHcb4FK.jpg"></p>
+<h2 id="將-Location-跟-Type-顯示上去"><a href="#將-Location-跟-Type-顯示上去" class="headerlink" title="將 Location 跟 Type 顯示上去"></a>將 Location 跟 Type 顯示上去</h2><pre class="line-numbers language-swift" data-language="swift"><code class="language-swift"><span class="token keyword">var</span> restaurantLocations <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"Hong Kong"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Hong Kong"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Hong Kong"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Hong Kong"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Hong Kong"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Hong Kong"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Hong Kong"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Sydney"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Sydney"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Sydney"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"New York"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"NewYork"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"New York"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"New York"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"New York"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"New York"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"New York"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"London"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"London"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"London"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"London"</span></span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">var</span> restaurantTypes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"Coffee &amp; Tea Shop"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Cafe"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Tea House"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Austrian / Causual Drink"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"French"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Bakery"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Bakery"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Chocolate"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Cafe"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"American / Seafood"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"American"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"American"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Breakfast &amp; Brunch"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Coffee &amp; Tea"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Coffee &amp; Tea"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Latin American"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Spanish"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Spanish"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Spanish"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"British"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Thai"</span></span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>另外，加上這兩行</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">cell<span class="token punctuation">.</span>locationLabel<span class="token punctuation">.</span>text <span class="token operator">=</span> restaurantLocations<span class="token punctuation">[</span>indexPath<span class="token punctuation">.</span>row<span class="token punctuation">]</span>
+cell<span class="token punctuation">.</span>typeLabel<span class="token punctuation">.</span>text <span class="token operator">=</span> restaurantTypes<span class="token punctuation">[</span>indexPath<span class="token punctuation">.</span>row<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>這樣就好看了</p>
+<p><img src="https://i.imgur.com/5CeKVxN.jpg"></p>
+<h2 id="移除cell分隔線"><a href="#移除cell分隔線" class="headerlink" title="移除cell分隔線"></a>移除cell分隔線</h2><p>在viewDidLoad()裡加入下行程式：</p>
+<pre class="line-numbers language-swift" data-language="swift"><code class="language-swift">
+tableView<span class="token punctuation">.</span>separatorStyle <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token keyword">none</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h1 id="重新設計cell"><a href="#重新設計cell" class="headerlink" title="重新設計cell"></a>重新設計cell</h1><p><img src="https://i.imgur.com/FWYAJL3.jpg"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/UIKit/" rel="tag"># UIKit</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/11/13/UIKit%E5%AF%A6%E4%BD%9C100/" rel="prev" title="UIKit實作100">
+                  <i class="fa fa-chevron-left"></i> UIKit實作100
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" rel="noopener" href='https://github.com/huang0429'>黃筱珮</a></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huang0429","repo":"huang0429.github.io","client_id":"a116ca00251b85b0c5ff","client_secret":"935d3d15bf69d1c539d2147a1d3d74009df1c9c4","admin_user":"huang0429","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"bb937bb606a224518db92dec88e17e57"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
